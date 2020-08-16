@@ -1,0 +1,65 @@
+@import "../../base.scss";
+
+.header {
+  display: inline-block;
+  color: white;
+  white-space: nowrap;
+  .text {
+    font-weight: $medium;
+    margin-left: 0.2rem;
+    margin-bottom: 0rem;
+    margin-right: 2rem;
+    @include respon(phone-pot) {
+      margin-right: 1rem;
+    }
+    @include respon(phone-land) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .center {
+    margin-right: 0.5rem;
+  }
+
+  .line {
+    margin: 0;
+    padding: 0;
+    border: 3px solid $primaryColor;
+    background-color: $primaryColor;
+    border-radius: 5px;
+  }
+}
+
+.xl {
+  font-size: $header-xl;
+  line-height: 4.7rem;
+  //xl = 4.5rem;
+  @include respon(phone-pot) {
+    font-size: 3rem;
+  }
+  @include respon(phone-land) {
+    font-size: 3.5rem;
+  }
+}
+.l {
+  font-size: $header-l;
+  //l 4rem
+  @include respon(phone-pot) {
+    font-size: 2rem;
+  }
+  @include respon(phone-land) {
+    font-size: 2.5rem;
+  }
+}
+.r {
+  font-size: $header-r;
+  //r = 2.25rem;
+  @include respon(phone-pot) {
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+  }
+  @include respon(phone-land) {
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+  }
+}

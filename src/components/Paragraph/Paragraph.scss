@@ -1,0 +1,20 @@
+@import "../../base.scss";
+
+.paragraph {
+  color: white;
+  font-weight: $thin;
+  font-size: $paragraph;
+  word-spacing: 2px;
+  line-height: 24px;
+}
+
+.paragraph-header {
+  font-size: $paragraph-header;
+  font-weight: $regular;
+}
+
+.paragraph-large {
+  font-size: $paragraph-large;
+  word-spacing: 5px;
+  line-height: 32px;
+}
