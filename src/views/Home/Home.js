@@ -125,7 +125,8 @@ const Home = () => {
             <div className="image-container"></div>
           </div>
         </div>
-        <div className="square-box"></div>
+        <div className="square-box-1"></div>
+        <div className="square-box-2"></div>
       </div>
 
       <div className="section-home-full-6">

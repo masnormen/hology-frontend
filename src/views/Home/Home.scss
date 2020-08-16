@@ -336,7 +336,7 @@
         position: relative;
         z-index: 2;
         opacity: 0.24;
-        height: 350px;
+        min-height: 450px;
         @include respon(phone-pot) {
           width: 100%;
           margin-bottom: 1.5rem;
@@ -351,12 +351,26 @@
     }
   }
 
-  .square-box {
+  .square-box-1 {
     background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
     width: 435px;
     height: 435px;
     bottom: -116px;
     left: -250px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+  .square-box-2 {
+    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    width: 435px;
+    height: 435px;
+    top: -116px;
+    right: -250px;
     position: absolute;
     transform: rotate(45deg);
     border-radius: 45px;
