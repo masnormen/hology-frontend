@@ -50,10 +50,9 @@ const Competition = () => {
           <div className="competition-card"></div>
           <div className="competition-card"></div>
         </div>
+        <div className="square-box-1"></div>
+        <div className="square-box-2"></div>
       </div>
-
-      <div className="square-box-1"></div>
-      <div className="square-box-2"></div>
     </>
   );
 };
