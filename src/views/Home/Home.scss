@@ -1,0 +1,631 @@
+@import "../../base.scss";
+
+.section-home-full-1 {
+  min-height: 100vh;
+  padding: 15% 10% 0;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(140deg, #030207 0%, #111339 100%);
+  @include respon(phone-pot) {
+    padding: 60% 10% 0;
+  }
+  @include respon(phone-land) {
+    padding: 30% 10% 0;
+  }
+  @include respon(tb-pot) {
+    padding: 20% 10% 0;
+  }
+  .title {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    @include respon(phone-pot) {
+      width: 100%;
+    }
+    @include respon(phone-land) {
+      width: 100%;
+    }
+    @include respon(tb-pot) {
+      width: 100%;
+    }
+  }
+
+  .square-box-1 {
+    background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+    width: 482px;
+    height: 482px;
+    top: -50px;
+    right: -240px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.15;
+      width: 382px;
+      height: 382px;
+      top: -25px;
+      right: -140px;
+    }
+  }
+  .square-box-2 {
+    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    width: 435px;
+    height: 435px;
+    bottom: 20px;
+    right: -200px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.15;
+      width: 322px;
+      height: 322px;
+      bottom: 10px;
+      right: -100px;
+    }
+  }
+}
+
+.section-home-full-2 {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 10% 10% 0;
+  background-color: #090a21;
+  @include respon(phone-pot) {
+    padding: 30% 10% 0;
+  }
+  @include respon(phone-land) {
+    padding: 20% 10% 0;
+  }
+  @include respon(tb-pot) {
+    padding: 15% 10% 0;
+  }
+
+  .title {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    @include respon(phone-pot) {
+      width: 100%;
+    }
+    @include respon(phone-land) {
+      width: 100%;
+    }
+    @include respon(tb-pot) {
+      width: 100%;
+    }
+  }
+
+  .square-box-1 {
+    background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+    width: 382px;
+    height: 382px;
+    bottom: -191px;
+    left: -50px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-top-left-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+  .square-box-2 {
+    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    width: 235px;
+    height: 235px;
+    bottom: -116px;
+    left: 250px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-top-left-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+}
+
+.section-home-full-3 {
+  min-height: 100vh;
+  position: relative;
+  padding: 10% 10%;
+  background: #0f1029;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  @include respon(phone-pot) {
+    flex-direction: column;
+  }
+  @include respon(phone-land) {
+    flex-direction: column;
+  }
+  @include respon(tb-pot) {
+    flex-direction: column;
+  }
+
+  .mascot-container {
+    width: 250px;
+    height: 350px;
+    background-color: white;
+    opacity: 0.24;
+  }
+  .text {
+    width: 55%;
+    @include respon(phone-pot) {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    @include respon(phone-land) {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    @include respon(tb-pot) {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .title {
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.section-home-full-4 {
+  min-height: 100vh;
+  padding: 10% 10% 0;
+  position: relative;
+  background: #090a21;
+  overflow: hidden;
+
+  .title {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: 3rem;
+  }
+
+  .description {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    @include respon(phone-pot) {
+      flex-direction: column;
+    }
+    @include respon(phone-land) {
+      flex-direction: column;
+    }
+    @include respon(tb-pot) {
+      flex-direction: column;
+    }
+
+    .text {
+      width: 50%;
+      @include respon(phone-pot) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      @include respon(tb-pot) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      .header {
+        margin-bottom: 1rem;
+      }
+    }
+    .image-container {
+      width: 435px;
+      height: 240px;
+      background-color: white;
+      opacity: 0.24;
+      @include respon(phone-pot) {
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+      @include respon(tb-pot) {
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .button-container {
+    position: relative;
+    z-index: 2;
+    @include respon(phone-pot) {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    @include respon(phone-land) {
+      text-align: left;
+      margin-bottom: 5rem;
+    }
+    @include respon(tb-pot) {
+      text-align: left;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .square-box-1 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    left: -80px;
+    top: -60px;
+    width: 500px;
+    height: 500px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .square-box-2 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    left: 150px;
+    top: -25px;
+    width: 550px;
+    height: 550px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+}
+
+.section-home-full-5 {
+  min-height: 100vh;
+  padding: 5% 10%;
+  overflow: hidden;
+  position: relative;
+  background-image: linear-gradient(140deg, #030207 0%, #111339 100%);
+
+  .title {
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .description {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    .header {
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .speaker-container {
+      display: flex;
+      justify-content: space-between;
+      @include respon(phone-pot) {
+        flex-direction: column;
+      }
+      @include respon(phone-land) {
+        flex-direction: column;
+      }
+
+      .image-container {
+        width: 30%;
+        background-color: white;
+        position: relative;
+        z-index: 2;
+        opacity: 0.24;
+        height: 350px;
+        @include respon(phone-pot) {
+          width: 100%;
+          margin-bottom: 1.5rem;
+          align-self: center;
+        }
+        @include respon(phone-land) {
+          width: 80%;
+          margin-bottom: 1.5rem;
+          align-self: center;
+        }
+      }
+    }
+  }
+
+  .square-box {
+    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    width: 435px;
+    height: 435px;
+    bottom: -116px;
+    left: -250px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+}
+
+.section-home-full-6 {
+  min-height: 100vh;
+  padding: 10% 10% 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #090a21;
+
+  .title {
+    margin-left: 50%;
+    display: inline-block;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+    @include respon(phone-pot) {
+      margin-left: 0;
+    }
+    @include respon(phone-land) {
+      margin-left: 0;
+    }
+    @include respon(tb-pot) {
+      margin-left: 0;
+    }
+  }
+
+  .description {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    @include respon(phone-pot) {
+      flex-direction: column;
+    }
+    @include respon(phone-land) {
+      flex-direction: column;
+    }
+    @include respon(tb-pot) {
+      flex-direction: column;
+    }
+
+    .text {
+      width: 50%;
+      @include respon(phone-pot) {
+        margin-top: 2rem;
+        width: 100%;
+      }
+      @include respon(phone-land) {
+        margin-top: 2rem;
+        width: 100%;
+      }
+      @include respon(tb-pot) {
+        margin-top: 2rem;
+        width: 100%;
+      }
+
+      .header {
+        margin-bottom: 1rem;
+      }
+    }
+    .image-container {
+      position: relative;
+      z-index: 2;
+      width: 435px;
+      height: 240px;
+      background-color: white;
+      opacity: 0.24;
+      @include respon(phone-pot) {
+        width: 100%;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+      }
+      @include respon(tb-pot) {
+        width: 100%;
+      }
+    }
+  }
+
+  .button-container {
+    position: relative;
+    z-index: 2;
+    margin-left: 50%;
+    @include respon(phone-pot) {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      text-align: center;
+    }
+    @include respon(phone-land) {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      text-align: left;
+    }
+    @include respon(tb-pot) {
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+
+  .square-box-1 {
+    background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+    width: 382px;
+    height: 382px;
+    bottom: -191px;
+    right: -50px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-top-left-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+  .square-box-2 {
+    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    width: 235px;
+    height: 235px;
+    bottom: -116px;
+    right: 250px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-top-left-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+}
+
+.section-home-full-7 {
+  height: 100vh;
+  padding: 10% 10% 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #0f1029;
+  @include respon(phone-pot) {
+    padding: 20% 10% 0;
+  }
+
+  .title {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    @include respon(phone-pot) {
+      width: 100%;
+    }
+    @include respon(phone-land) {
+      width: 100%;
+    }
+  }
+  .square-box-1 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    left: -80px;
+    top: -60px;
+    width: 500px;
+    height: 500px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .square-box-2 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    left: 150px;
+    top: -25px;
+    width: 550px;
+    height: 550px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+}
+
+.section-home-full-8 {
+  min-height: 100vh;
+  padding: 0% 10% 0;
+  display: flex;
+  background-image: linear-gradient(140deg, #030207 0%, #111339 100%);
+  justify-content: space-between;
+  align-items: center;
+  @include respon(phone-pot) {
+    padding: 10% 10% 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @include respon(phone-land) {
+    padding: 10% 10% 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @include respon(tb-pot) {
+    padding: 10% 10% 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .text {
+    display: inline-block;
+    @include respon(phone-pot) {
+      width: 100%;
+    }
+    @include respon(phone-land) {
+      width: 100%;
+    }
+    @include respon(tb-pot) {
+      width: 100%;
+    }
+    width: 50%;
+    .title {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .description {
+    }
+  }
+
+  .gallery-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 0.5rem;
+    @include respon(phone-pot) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    @include respon(phone-land) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    @include respon(tb-pot) {
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    .gallery-image-1 {
+      width: 100%;
+      height: 200px;
+      background-color: white;
+      opacity: 0.24;
+      margin: 0.5rem;
+    }
+
+    .gallery-image-2 {
+      width: 48%;
+      height: 200px;
+      background-color: white;
+      opacity: 0.24;
+    }
+  }
+}

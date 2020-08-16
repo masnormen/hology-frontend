@@ -1,0 +1,38 @@
+$primaryColor: #3d57f4;
+// $primaryColor: #bb86fc;
+$backgroundBase: #121212;
+
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+$header-xl: 4.5rem;
+$header-l: 4rem;
+$header-r: 2.25rem;
+$paragraph-header: 1.5rem;
+$paragraph-large: 2rem;
+$paragraph: 1.15rem;
+
+@mixin respon($breakpoint) {
+  @if $breakpoint == phone-pot {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-land {
+    @media (min-width: 481px) and (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tb-pot {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "../../base.scss";
+
+.button {
+  min-width: 220px;
+  min-height: 60px;
+  outline: none;
+  border: 2px solid $primaryColor;
+  font-weight: $regular;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.margin-right {
+  margin-right: 2rem;
+}
+
+.primary {
+  color: white;
+  background-color: $primaryColor;
+  &:hover,
+  :active {
+    color: $primaryColor;
+    background-color: white;
+    border-color: white;
+  }
+}
+
+.secondary {
+  border: 2px solid $primaryColor;
+  background-color: transparent;
+  color: $primaryColor;
+  &:hover,
+  :active {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+  }
+}
