@@ -15,7 +15,7 @@ const Competition = () => {
           </Header>
         </div>
         <div className="tagline">
-          <Paragraph large>
+          <Paragraph large header>
             FINDING THE BEST IT TALENTS THROUGH ONLINE COMPETITIONS
           </Paragraph>
         </div>

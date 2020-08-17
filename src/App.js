@@ -10,7 +10,8 @@ import Competition from "./views/Competition/Competition";
 import ScrollToTop from "./components/ScrollToTop";
 import CategoryCompetition from "./views/Category-Competition/CategoryCompetition";
 import Register from "./views/Register/Register";
-import "rsuite/dist/styles/rsuite-dark.css";
+import Footer from "./components/Footer/Footer";
+import GoAcademy from "./views/GoAcademy/GoAcademy";
 
 ReactGA.initialize("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", {
   debug: false,
@@ -21,15 +22,19 @@ const App = () => {
     <>
       <Helmet
         titleTemplate="%s | BEM FILKOM UB 2020"
-        defaultTitle="BEM FILKOM UB 2020 | Elaborasi Makna"
+        defaultTitle="HOLOGY 3.0"
       />
-      <ScrollToTop />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/competition" component={Competition} />
-        <Route path="/category" component={CategoryCompetition} />
-        <Route path="/register" component={Register} />
-      </Switch>
+      <>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/competition" component={Competition} />
+          <Route path="/category" component={CategoryCompetition} />
+          <Route path="/register" component={Register} />
+          <Route path="/goacademy" component={GoAcademy} />
+        </Switch>
+        <Footer />
+      </>
     </>
   );
 };
