@@ -74,18 +74,18 @@
 
 .section-competition-full-2 {
   min-height: 100vh;
-  padding: 3% 10% 0;
+  padding: 3% 5% 0;
   overflow: hidden;
   position: relative;
   background-color: #0f1029;
   @include respon(phone-pot) {
-    padding: 30% 10% 0;
+    padding: 30% 5% 0;
   }
   @include respon(phone-land) {
-    padding: 20% 10% 0;
+    padding: 20% 5% 0;
   }
   @include respon(tb-pot) {
-    padding: 15% 10% 0;
+    padding: 15% 5% 0;
   }
   .title {
     display: inline-block;
@@ -97,19 +97,27 @@
     margin-bottom: 2rem;
   }
 
-  .competition-category-container {
+  .competition-category-container-1 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-bottom: 3rem;
-
-    .competition-card {
-      min-width: 24%;
-      margin: 5px;
-      min-height: 240px;
-      background-color: white;
-      opacity: 0.24;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    @include respon(phone-pot) {
+      padding-bottom: 0;
     }
+    @include respon(phone-land) {
+      padding-bottom: 0;
+    }
+    @include respon(tb-pot) {
+      padding-bottom: 0;
+    }
+  }
+
+  .competition-category-container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 3rem;
   }
 
   .square-box-1 {
