@@ -6,6 +6,7 @@ import {
   FaLine,
   FaTwitterSquare,
   FaInstagram,
+  FaEnvelope,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -16,21 +17,47 @@ const Footer = () => {
           <Paragraph large header>
             Hology
           </Paragraph>
-          <Paragraph>
-            Fakultas Ilmu Komputer Jalan Veteran No.8, Kecamatan Lowokwaru,
-            Ketawanggede, Kota Malang, Jawa Timur 65145
-          </Paragraph>
-          <Paragraph>hology.filkomub@gmail.com</Paragraph>
+          <div className="location">
+            <Paragraph>
+              Fakultas Ilmu Komputer Jalan Veteran No.8, Kecamatan Lowokwaru,
+              Ketawanggede, Kota Malang, Jawa Timur 65145
+            </Paragraph>
+          </div>
+          <div className="email">
+            <FaEnvelope className="icon-email" />
+            <Paragraph>hology.filkomub@gmail.com</Paragraph>
+          </div>
         </div>
 
         <div className="social-media">
           <Paragraph large header>
             Find Us On Social Media
           </Paragraph>
-          <FaTwitterSquare className="icon" />
-          <FaLine className="icon" />
-          <FaYoutube className="icon" />
-          <FaInstagram className="icon" />
+          <div className="icons-container">
+            <div className="media">
+              <FaTwitterSquare className="icon" />
+              <a>@Hology_UB</a>
+            </div>
+            <div className="media">
+              <FaLine className="icon" />
+              <a>@Hology_UB</a>
+            </div>
+            <div className="media">
+              <FaYoutube className="icon" />
+              <a
+                href="https://www.youtube.com/channel/UCmpZJv7Kk1TUoOLSSgZQaWg/"
+                target="blank"
+              >
+                @Hology_UB
+              </a>
+            </div>
+            <div className="media">
+              <FaInstagram className="icon" />
+              <a href="https://www.instagram.com/hology_ub/" target="blank">
+                @Hology_UB
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div className="copyright">

@@ -2,19 +2,19 @@
 
 .section-go-academy-full-1 {
   min-height: 100vh;
-  padding: 15% 10% 0;
+  padding: 10% 10% 0;
   background-color: #090a21;
   overflow: hidden;
   position: relative;
   text-align: center;
   @include respon(phone-pot) {
-    padding: 60% 10% 0;
+    padding: 20% 10% 0;
   }
   @include respon(phone-land) {
-    padding: 30% 10% 0;
+    padding: 15% 10% 0;
   }
   @include respon(tb-pot) {
-    padding: 20% 10% 0;
+    padding: 10% 10% 0;
   }
   .title {
     position: relative;
@@ -41,6 +41,7 @@
     justify-content: space-between;
     position: relative;
     z-index: 2;
+    margin: 4rem auto;
     width: 480px;
     @include respon(phone-pot) {
       flex-direction: column;
@@ -59,38 +60,267 @@
   }
   .square-box-1 {
     background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
-    width: 402px;
-    height: 402px;
-    top: 15%;
-    right: -220px;
+    width: 382px;
+    height: 382px;
+    bottom: -191px;
+    right: -50px;
     position: absolute;
     transform: rotate(45deg);
-    border-radius: 45px;
+    border-top-left-radius: 45px;
     opacity: 0.302;
     @include respon(phone-pot) {
-      opacity: 0.15;
-      width: 382px;
-      height: 382px;
-      top: -25px;
-      right: -140px;
+      opacity: 0.25;
     }
   }
   .square-box-2 {
     background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
-    width: 402px;
-    height: 402px;
-    top: 15%;
-    left: -220px;
+    width: 235px;
+    height: 235px;
+    bottom: -116px;
+    right: 250px;
     position: absolute;
     transform: rotate(45deg);
-    border-radius: 45px;
+    border-top-left-radius: 45px;
     opacity: 0.302;
     @include respon(phone-pot) {
-      opacity: 0.15;
-      width: 382px;
-      height: 382px;
-      top: -25px;
-      right: -140px;
+      opacity: 0.25;
     }
+  }
+  .square-box-3 {
+    background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+    width: 382px;
+    height: 382px;
+    bottom: -191px;
+    left: -50px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-top-left-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+  .square-box-4 {
+    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    width: 235px;
+    height: 235px;
+    bottom: -116px;
+    left: 250px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-top-left-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.25;
+    }
+  }
+}
+
+.section-go-academy-full-2 {
+  min-height: 100vh;
+  padding: 5% 10% 0;
+  overflow: hidden;
+  background-color: #090a21;
+  position: relative;
+  @include respon(phone-pot) {
+    padding: 5% 10% 0;
+  }
+  @include respon(phone-land) {
+    padding: 5% 10% 0;
+  }
+  @include respon(tb-pot) {
+    padding: 5% 10% 0;
+  }
+  .title {
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tagline {
+    margin-bottom: 1.75rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: flex-start;
+    justify-content: space-between;
+    width: 480px;
+    position: relative;
+    z-index: 2;
+    @include respon(phone-pot) {
+      flex-direction: column;
+      justify-content: space-between;
+      height: 150px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    @include respon(phone-land) {
+      flex-direction: column;
+      height: 150px;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .timeline-container {
+    position: relative;
+    z-index: 2;
+
+    h3 {
+      line-height: 20px;
+    }
+    .container {
+      width: 100%;
+      padding: 50px 0;
+      margin: 50px auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -1px;
+      width: 2px;
+      height: 100%;
+      background: white;
+      z-index: 1;
+    }
+
+    .timeline-block {
+      width: -webkit-calc(50% + 8px);
+      width: -moz-calc(50% + 8px);
+      width: calc(50% + 8px);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -moz-box-pack: justify;
+      justify-content: space-between;
+      clear: both;
+    }
+
+    .timeline-block-right {
+      float: right;
+    }
+
+    .timeline-block-left {
+      float: left;
+      direction: rtl;
+    }
+
+    .marker {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid $primaryColor;
+      background: $primaryColor;
+      margin-top: 10px;
+      z-index: 9999;
+    }
+
+    .timeline-content {
+      width: 95%;
+      padding: 0 15px;
+      color: $primaryColor;
+    }
+
+    .timeline-content h3 {
+      margin-top: 5px;
+      margin-bottom: 1rem;
+      font-size: 25px;
+      font-weight: $bold;
+    }
+
+    .timeline-content span {
+      font-size: 15px;
+      color: white;
+      font-weight: $medium;
+    }
+
+    .timeline-content p {
+      font-size: 14px;
+      line-height: 1.5em;
+      word-spacing: 1px;
+      margin-top: 0.75rem;
+      font-weight: $light;
+      color: white;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container:before {
+        left: 8px;
+        width: 2px;
+      }
+      .timeline-block {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .timeline-block-right {
+        float: none;
+      }
+
+      .timeline-block-left {
+        float: none;
+        direction: ltr;
+      }
+    }
+  }
+
+  .square-box-1 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    right: -80px;
+    top: -60px;
+    width: 500px;
+    height: 500px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .square-box-2 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    right: 150px;
+    top: -25px;
+    width: 550px;
+    height: 550px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+
+  .square-box-3 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    left: -80px;
+    bottom: -60px;
+    width: 500px;
+    height: 500px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+
+  .square-box-4 {
+    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    opacity: 0.059;
+    left: 150px;
+    bottom: -25px;
+    width: 550px;
+    height: 550px;
+    border-radius: 45px;
+    position: absolute;
+    transform: rotate(45deg);
   }
 }

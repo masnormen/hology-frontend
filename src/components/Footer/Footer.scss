@@ -8,12 +8,116 @@
   .flexbox {
     display: flex;
     justify-content: space-between;
+    @include respon(phone-pot) {
+      flex-direction: column;
+    }
+    @include respon(phone-land) {
+      flex-direction: column;
+    }
+    @include respon(tb-pot) {
+      flex-direction: column;
+    }
     .description {
       width: 40%;
+      @include respon(phone-pot) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      @include respon(tb-pot) {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .location {
+        margin-top: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .email {
+        display: flex;
+        align-items: center;
+
+        .icon-email {
+          color: white;
+          width: 25px;
+          height: 25px;
+          margin-right: 1rem;
+        }
+      }
     }
 
     .social-media {
-      width: 40%;
+      width: 55%;
+      @include respon(phone-pot) {
+        width: 100%;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+      }
+      @include respon(tb-pot) {
+        width: 100%;
+      }
+
+      .icons-container {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include respon(phone-pot) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        @include respon(phone-land) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .media {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          @include respon(phone-pot) {
+            margin-bottom: 0.75rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+          @include respon(phone-land) {
+            margin-bottom: 0.75rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          &:hover {
+            .icon {
+              transform: rotate(360deg);
+            }
+            a {
+              text-decoration: underline;
+            }
+          }
+
+          .icon {
+            color: white;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+          }
+
+          a {
+            color: white;
+            margin-left: 0.75rem;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+      }
     }
   }
 
