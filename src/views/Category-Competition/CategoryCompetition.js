@@ -37,7 +37,7 @@ const CategoryCompetition = () => {
 
       <div className="section-competition-category-full-2">
         <div className="title">
-          <Header size="l" center>
+          <Header size="r" center>
             Competition Timeline
           </Header>
         </div>

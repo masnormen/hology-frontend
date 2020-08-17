@@ -155,7 +155,9 @@ const Home = () => {
           </div>
         </div>
         <div className="button-container">
-          <Button variant="primary">Explore Now</Button>
+          <Link to="/goacademy">
+            <Button variant="primary">Explore Now</Button>
+          </Link>
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
