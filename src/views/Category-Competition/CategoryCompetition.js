@@ -31,6 +31,8 @@ const CategoryCompetition = () => {
           <Button>Download Guidebook</Button>
           <Button variant="secondary">Download Guidebook</Button>
         </div>
+        <div className="square-box-1"></div>
+        <div className="square-box-2"></div>
       </div>
 
       <div className="section-competition-category-full-2">
@@ -121,6 +123,8 @@ const CategoryCompetition = () => {
             </div>
           </div>
         </div>
+        <div className="square-box-1"></div>
+        <div className="square-box-2"></div>
       </div>
     </>
   );

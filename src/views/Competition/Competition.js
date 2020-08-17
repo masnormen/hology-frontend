@@ -2,6 +2,8 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./Competition.scss";
+import { Link } from "react-router-dom";
+import Card from "../../components/Card/Card";
 
 const Competition = () => {
   return (
@@ -40,20 +42,60 @@ const Competition = () => {
           </Paragraph>
         </div>
 
-        <div className="competition-category-container">
-          <div className="competition-card"></div>
-          <div className="competition-card"></div>
-          <div className="competition-card"></div>
-          <div className="competition-card"></div>
-          <div className="competition-card"></div>
-          <div className="competition-card"></div>
-          <div className="competition-card"></div>
-          <div className="competition-card"></div>
+        <div className="competition-category-container-1">
+          <Card
+            title="App Innovation"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
+          <Card
+            variant="blue"
+            title="Business IT Case"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
+          <Card
+            variant="blue-light"
+            title="Programming"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
+          <Card
+            variant="purple-light"
+            title="Smart Device"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
         </div>
-      </div>
 
-      <div className="square-box-1"></div>
-      <div className="square-box-2"></div>
+        <div className="competition-category-container-2">
+          <Card
+            title="App Innovation"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
+          <Card
+            variant="blue"
+            title="Capture the Flag"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
+          <Card
+            variant="blue-light"
+            title="Game Development"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
+          <Card
+            variant="purple-light"
+            title="App Innovation"
+            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry."
+          />
+        </div>
+        <div className="square-box-1"></div>
+        <div className="square-box-2"></div>
+      </div>
     </>
   );
 };

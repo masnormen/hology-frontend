@@ -28,6 +28,12 @@
     background-color: $primaryColor;
     border-radius: 5px;
   }
+
+  .line-white {
+    border: 3px solid white;
+    background-color: white;
+    border-radius: 5px;
+  }
 }
 
 .xl {
@@ -61,5 +67,22 @@
   @include respon(phone-land) {
     font-size: 1.5rem;
     line-height: 2.75rem;
+  }
+}
+
+.s {
+  font-size: $header-s;
+  line-height: 2.5rem; //r = 2.25rem;
+  @include respon(phone-pot) {
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+  }
+  @include respon(phone-land) {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+  @include respon(tb-land) {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
   }
 }
