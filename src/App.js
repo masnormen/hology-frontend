@@ -28,10 +28,10 @@ const App = () => {
         <ScrollToTop />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/competition" component={Competition} />
-          <Route path="/category" component={CategoryCompetition} />
-          <Route path="/register" component={Register} />
-          <Route path="/goacademy" component={GoAcademy} />
+          <Route exact path="/competition" component={Competition} />
+          <Route exact path="/category" component={CategoryCompetition} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/goacademy" component={GoAcademy} />
         </Switch>
         <Footer />
       </>
