@@ -79,16 +79,16 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  padding: 10% 10% 0;
+  padding: 20% 10% 0;
   background-color: #090a21;
   @include respon(phone-pot) {
-    padding: 30% 10% 0;
+    padding: 40% 10% 0;
   }
   @include respon(phone-land) {
-    padding: 20% 10% 0;
+    padding: 30% 10% 0;
   }
   @include respon(tb-pot) {
-    padding: 15% 10% 0;
+    padding: 20% 10% 0;
   }
 
   .title {
@@ -146,19 +146,22 @@
 .section-home-full-3 {
   min-height: 100vh;
   position: relative;
-  padding: 10% 10%;
+  padding: 0% 10%;
   background: #0f1029;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   @include respon(phone-pot) {
+    padding: 20% 10%;
     flex-direction: column;
   }
   @include respon(phone-land) {
+    padding: 20% 10%;
     flex-direction: column;
   }
   @include respon(tb-pot) {
+    padding: 20% 10%;
     flex-direction: column;
   }
 
@@ -195,6 +198,9 @@
   position: relative;
   background: #090a21;
   overflow: hidden;
+  @include respon(phone-pot) {
+    padding: 20% 10% 0;
+  }
 
   .title {
     position: relative;
@@ -299,11 +305,16 @@
 
 .section-home-full-5 {
   min-height: 100vh;
-  padding: 5% 10%;
+  padding: 10% 10% 5%;
   overflow: hidden;
   position: relative;
   background-image: linear-gradient(140deg, #030207 0%, #111339 100%);
-
+  @include respon(phone-pot) {
+    padding: 20% 10% 5%;
+  }
+  @include respon(phone-land) {
+    padding: 20% 10% 5%;
+  }
   .title {
     margin-bottom: 2rem;
     text-align: center;
@@ -387,6 +398,12 @@
   overflow: hidden;
   position: relative;
   background-color: #090a21;
+  @include respon(phone-pot) {
+    padding: 20% 10% 0;
+  }
+  @include respon(phone-land) {
+    padding: 20% 10% 0;
+  }
 
   .title {
     margin-left: 50%;
@@ -514,12 +531,15 @@
 
 .section-home-full-7 {
   height: 100vh;
-  padding: 10% 10% 0;
+  padding: 20% 10% 0;
   overflow: hidden;
   position: relative;
   background-color: #0f1029;
   @include respon(phone-pot) {
-    padding: 20% 10% 0;
+    padding: 45% 10% 0;
+  }
+  @include respon(phone-land) {
+    padding: 35% 10% 0;
   }
 
   .title {
@@ -572,17 +592,17 @@
   justify-content: space-between;
   align-items: center;
   @include respon(phone-pot) {
-    padding: 10% 10% 0;
+    padding: 25% 10% 0;
     flex-direction: column;
     align-items: flex-start;
   }
   @include respon(phone-land) {
-    padding: 10% 10% 0;
+    padding: 20% 10% 0;
     flex-direction: column;
     align-items: flex-start;
   }
   @include respon(tb-pot) {
-    padding: 10% 10% 0;
+    padding: 15% 10% 0;
     flex-direction: column;
     align-items: flex-start;
   }
