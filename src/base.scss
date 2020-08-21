@@ -1,12 +1,25 @@
-$primaryColor: #3d57f4;
-$secondaryColor: #bc2280;
+// DEFAULT THEMING
+// $primaryColor: #3d57f4;
+// $secondaryColor: #bc2280;
+// $backgroundBase1: #090a21;
+// $backgroundBase2: #0f1029;
+// $backgroundLinear: linear-gradient(140deg, #030207 0%, #111339 100%);
+// $backgroundFooterLinear: linear-gradient(0deg, #1c143b 0%, #111339 100%);
+// $circleLinear1: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+// $circleLinear2: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+// $circleBigLinear: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+
+//LOGO THEMING
+$primaryColor: #00638a;
+$secondaryColor: #d2b0aa;
+$terneryColor: #22abba;
 $backgroundBase1: #090a21;
 $backgroundBase2: #0f1029;
 $backgroundLinear: linear-gradient(140deg, #030207 0%, #111339 100%);
 $backgroundFooterLinear: linear-gradient(0deg, #1c143b 0%, #111339 100%);
-$circleLinear1: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
-$circleLinear2: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
-$circleBigLinear: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+$circleLinear1: linear-gradient(140deg, #290a59 0%, #41cddc 100%);
+$circleLinear2: linear-gradient(140deg, #3c0f73 0%, #d5b3af 100%);
+$circleBigLinear: linear-gradient(-90deg, #290a59 0%, #41cddc 100%);
 
 $thin: 100;
 $extra-light: 200;
