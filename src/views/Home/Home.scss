@@ -5,7 +5,7 @@
   padding: 15% 10% 0;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(140deg, #030207 0%, #111339 100%);
+  background-image: $backgroundLinear;
   @include respon(phone-pot) {
     padding: 60% 10% 0;
   }
@@ -38,7 +38,7 @@
   }
 
   .square-box-1 {
-    background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+    background-image: $circleLinear1;
     width: 482px;
     height: 482px;
     top: -50px;
@@ -56,7 +56,7 @@
     }
   }
   .square-box-2 {
-    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    background-image: $circleLinear2;
     width: 435px;
     height: 435px;
     bottom: 20px;
@@ -80,7 +80,7 @@
   position: relative;
   overflow: hidden;
   padding: 20% 10% 0;
-  background-color: #090a21;
+  background-color: $backgroundBase1;
   @include respon(phone-pot) {
     padding: 40% 10% 0;
   }
@@ -114,7 +114,7 @@
   }
 
   .square-box-1 {
-    background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+    background-image: $circleLinear1;
     width: 382px;
     height: 382px;
     bottom: -191px;
@@ -128,7 +128,7 @@
     }
   }
   .square-box-2 {
-    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    background-image: $circleLinear2;
     width: 235px;
     height: 235px;
     bottom: -116px;
@@ -147,7 +147,7 @@
   min-height: 100vh;
   position: relative;
   padding: 0% 10%;
-  background: #0f1029;
+  background: $backgroundBase2;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -196,7 +196,7 @@
   min-height: 100vh;
   padding: 10% 10% 0;
   position: relative;
-  background: #090a21;
+  background: $backgroundBase1;
   overflow: hidden;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
@@ -280,7 +280,7 @@
   }
 
   .square-box-1 {
-    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    background-image: $circleBigLinear;
     opacity: 0.059;
     left: -80px;
     top: -60px;
@@ -291,7 +291,7 @@
     transform: rotate(45deg);
   }
   .square-box-2 {
-    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    background-image: $circleBigLinear;
     opacity: 0.059;
     left: 150px;
     top: -25px;
@@ -308,7 +308,7 @@
   padding: 10% 10% 5%;
   overflow: hidden;
   position: relative;
-  background-image: linear-gradient(140deg, #030207 0%, #111339 100%);
+  background-image: $backgroundLinear;
   @include respon(phone-pot) {
     padding: 20% 10% 5%;
   }
@@ -363,7 +363,7 @@
   }
 
   .square-box-1 {
-    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    background-image: $circleLinear2;
     width: 435px;
     height: 435px;
     bottom: -116px;
@@ -377,7 +377,7 @@
     }
   }
   .square-box-2 {
-    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    background-image: $circleLinear1;
     width: 435px;
     height: 435px;
     top: -116px;
@@ -397,7 +397,7 @@
   padding: 10% 10% 0;
   overflow: hidden;
   position: relative;
-  background-color: #090a21;
+  background-color: $backgroundBase1;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
   }
@@ -500,7 +500,7 @@
   }
 
   .square-box-1 {
-    background-image: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
+    background-image: $circleLinear1;
     width: 382px;
     height: 382px;
     bottom: -191px;
@@ -514,7 +514,7 @@
     }
   }
   .square-box-2 {
-    background-image: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
+    background-image: $circleLinear2;
     width: 235px;
     height: 235px;
     bottom: -116px;
@@ -534,7 +534,7 @@
   padding: 20% 10% 0;
   overflow: hidden;
   position: relative;
-  background-color: #0f1029;
+  background-color: $backgroundBase2;
   @include respon(phone-pot) {
     padding: 45% 10% 0;
   }
@@ -561,7 +561,7 @@
     }
   }
   .square-box-1 {
-    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    background-image: $circleBigLinear;
     opacity: 0.059;
     left: -80px;
     top: -60px;
@@ -572,7 +572,7 @@
     transform: rotate(45deg);
   }
   .square-box-2 {
-    background-image: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
+    background-image: $circleBigLinear;
     opacity: 0.059;
     left: 150px;
     top: -25px;
@@ -588,7 +588,7 @@
   min-height: 100vh;
   padding: 0% 10% 0;
   display: flex;
-  background-image: linear-gradient(140deg, #030207 0%, #111339 100%);
+  background-image: $backgroundLinear;
   justify-content: space-between;
   align-items: center;
   @include respon(phone-pot) {
@@ -622,9 +622,6 @@
     .title {
       width: 100%;
       margin-bottom: 2rem;
-    }
-
-    .description {
     }
   }
 
