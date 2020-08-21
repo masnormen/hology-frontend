@@ -8,6 +8,9 @@ import "./Home.scss";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  let title = useRef(null);
+  const description = useRef(null);
+  let tl = new TimelineLite({ delay: 0.8 });
   const sectionRef1 = useRef(null);
   const sectionRef2 = useRef(null);
   const sectionRef3 = useRef(null);
@@ -16,10 +19,12 @@ const Home = () => {
   const sectionRef6 = useRef(null);
   const sectionRef7 = useRef(null);
 
+  useEffect(() => {}, [tl]);
+
   const intersection1 = useIntersection(sectionRef1, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.7,
+    threshold: 0.6,
   });
   const intersection2 = useIntersection(sectionRef2, {
     root: null,
@@ -85,12 +90,12 @@ const Home = () => {
   const imageOut = (element) => {
     gsap.to(element, 1, {
       opacity: 0,
-      y: -50,
+      y: -20,
       ease: "power3.out",
     });
   };
 
-  intersection1 && intersection1.intersectionRatio < 0.7
+  intersection1 && intersection1.intersectionRatio < 0.6
     ? fadeOut(".fadeIn1")
     : fadeIn(".fadeIn1");
 
@@ -123,7 +128,7 @@ const Home = () => {
         <div className="title">
           <Header size="xl">HOLOGY 3.0</Header>
         </div>
-        <div className="description">
+        <div className="description" ref={description}>
           <Paragraph>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
