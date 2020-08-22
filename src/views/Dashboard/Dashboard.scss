@@ -1,0 +1,21 @@
+@import "../../base.scss";
+
+.dashboard-container-full {
+  min-height: 100vh;
+  padding: 7% 10% 0;
+
+  .dashboard {
+    background-color: $circleLinear1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .sidebar {
+      width: 40%;
+
+      &_link {
+        color: white;
+      }
+    }
+  }
+}

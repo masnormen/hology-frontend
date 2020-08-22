@@ -4,6 +4,9 @@
   padding: 5% 10% 3%;
   border-top: 2px solid #192161;
   background-image: $backgroundFooterLinear;
+  @include respon(phone-pot) {
+    padding: 10% 10% 5%;
+  }
 
   .flexbox {
     display: flex;

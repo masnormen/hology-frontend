@@ -30,9 +30,7 @@ const Footer = () => {
         </div>
 
         <div className="social-media">
-          <Paragraph large header>
-            Find Us On Social Media
-          </Paragraph>
+          <Paragraph header>Find Us On Social Media</Paragraph>
           <div className="icons-container">
             <div className="media">
               <FaTwitterSquare className="icon" />

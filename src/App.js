@@ -13,6 +13,8 @@ import Register from "./views/Register/Register";
 import Footer from "./components/Footer/Footer";
 import GoAcademy from "./views/GoAcademy/GoAcademy";
 import Login from "./views/Login/Login";
+import Dashboard from "./views/Dashboard/Dashboard";
+import Navbar from "./components/Navbar/Navbar";
 
 ReactGA.initialize("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", {
   debug: false,
@@ -27,6 +29,7 @@ const App = () => {
       />
       <>
         <ScrollToTop />
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/competition" component={Competition} />
@@ -34,6 +37,7 @@ const App = () => {
           <Route exact path="/register" component={Register} />
           <Route exact path="/goacademy" component={GoAcademy} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
         <Footer />
       </>
