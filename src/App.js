@@ -12,6 +12,7 @@ import CategoryCompetition from "./views/Category-Competition/CategoryCompetitio
 import Register from "./views/Register/Register";
 import Footer from "./components/Footer/Footer";
 import GoAcademy from "./views/GoAcademy/GoAcademy";
+import Login from "./views/Login/Login";
 
 ReactGA.initialize("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", {
   debug: false,
@@ -32,6 +33,7 @@ const App = () => {
           <Route exact path="/category" component={CategoryCompetition} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/goacademy" component={GoAcademy} />
+          <Route exact path="/login" component={Login} />
         </Switch>
         <Footer />
       </>

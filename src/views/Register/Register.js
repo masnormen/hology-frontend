@@ -16,7 +16,7 @@ const Register = () => {
   const onPrevious = () => onChange(step - 1);
   return (
     <>
-      <div className="form-container">
+      <div className="form-register-container">
         <div className="title">
           <Header size="r" center>
             Personal Info
