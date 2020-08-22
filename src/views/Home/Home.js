@@ -24,7 +24,7 @@ const Home = () => {
   const intersection1 = useIntersection(sectionRef1, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.6,
+    threshold: 0.5,
   });
   const intersection2 = useIntersection(sectionRef2, {
     root: null,
@@ -94,8 +94,7 @@ const Home = () => {
       ease: "power3.out",
     });
   };
-
-  intersection1 && intersection1.intersectionRatio < 0.6
+  intersection1 && intersection1.intersectionRatio < 0.5
     ? fadeOut(".fadeIn1")
     : fadeIn(".fadeIn1");
 
