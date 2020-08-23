@@ -6,8 +6,11 @@
   white-space: nowrap;
   .text {
     font-weight: $medium;
+    font-family: "Titillium Web", sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
     margin-left: 0.2rem;
-    margin-bottom: 0rem;
+    margin-bottom: 0.25em;
     margin-right: 2rem;
     @include respon(phone-pot) {
       margin-right: 1rem;
@@ -26,7 +29,7 @@
     padding: 0;
     border: 3px solid $terneryColor;
     background-color: $terneryColor;
-    border-radius: 5px;
+    border-radius: 3px;
   }
 
   .line-white {

@@ -16,14 +16,14 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react"],
-  "rules": {
-    "indent": ["warn", "tab"],
-    //        "linebreak-style": [
-    //            "error",
-    //            "unix"
-    //        ],
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"]
-  }
+  "plugins": ["react"]
+//  "rules": {
+//    "indent": ["warn", "tab"],
+//    //        "linebreak-style": [
+//    //            "error",
+//    //            "unix"
+//    //        ],
+//    "quotes": ["error", "double"],
+//    "semi": ["error", "always"]
+//  }
 }

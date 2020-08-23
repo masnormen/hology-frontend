@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   let title = useRef(null);
   const description = useRef(null);
-  let tl = new TimelineLite({ delay: 0.8 });
+  let tl = new TimelineLite({ delay: 0.1 });
   const sectionRef1 = useRef(null);
   const sectionRef2 = useRef(null);
   const sectionRef3 = useRef(null);

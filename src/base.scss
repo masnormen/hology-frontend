@@ -10,16 +10,16 @@
 // $circleBigLinear: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
 
 //LOGO THEMING
-$primaryColor: #00638a;
-$secondaryColor: #d2b0aa;
-$terneryColor: #22abba;
-$backgroundBase1: #090a21;
-$backgroundBase2: #0f1029;
-$backgroundLinear: linear-gradient(140deg, #030207 0%, #111339 100%);
-$backgroundFooterLinear: linear-gradient(0deg, #1c143b 0%, #111339 100%);
-$circleLinear1: linear-gradient(140deg, #290a59 0%, #41cddc 100%);
-$circleLinear2: linear-gradient(140deg, #3c0f73 0%, #d5b3af 100%);
-$circleBigLinear: linear-gradient(-90deg, #290a59 0%, #41cddc 100%);
+$primaryColor: #1f81a0;
+$secondaryColor: #1e474c;
+$terneryColor: #57beea;
+$backgroundBase1: #0f3034;
+$backgroundBase2: #022131;
+$backgroundLinear: linear-gradient(140deg, #011826 0%, #01101a 100%);
+$backgroundFooterLinear: linear-gradient(90deg, #022030 0%, #0f2f32 100%);
+$circleLinear1: linear-gradient(140deg, #ffffff 0%, #ffffff 100%);
+$circleLinear2: linear-gradient(140deg, #78ebfb 0%, #1aa9b4 100%);
+$circleBigLinear: linear-gradient(-90deg, #ffffff 0%, #1d8fa9 100%);
 
 $thin: 100;
 $extra-light: 200;
@@ -29,13 +29,13 @@ $medium: 500;
 $semi-bold: 600;
 $bold: 700;
 
-$header-xl: 4.5rem;
+$header-xl: 6rem;
 $header-l: 4rem;
-$header-r: 2.25rem;
-$header-s: 1.25rem;
+$header-r: 2.5rem;
+$header-s: 1.5rem;
 $paragraph-header: 1.5rem;
 $paragraph-large: 2rem;
-$paragraph: 1.15rem;
+$paragraph: 1.30rem;
 
 @mixin respon($breakpoint) {
   @if $breakpoint == phone-pot {
