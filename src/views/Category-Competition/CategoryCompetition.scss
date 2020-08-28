@@ -203,8 +203,8 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      border: 2px solid $primaryColor;
-      background: $primaryColor;
+      border: 2px solid $terneryColor;
+      background: $terneryColor;
       margin-top: 10px;
       z-index: 9999;
     }
@@ -212,7 +212,6 @@
     .timeline-content {
       width: 95%;
       padding: 0 15px;
-      color: $primaryColor;
     }
 
     .timeline-content h3 {
@@ -220,6 +219,7 @@
       margin-bottom: 1rem;
       font-size: 25px;
       font-weight: $bold;
+      color: $terneryColor;
     }
 
     .timeline-content span {

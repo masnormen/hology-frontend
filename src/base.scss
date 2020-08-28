@@ -13,11 +13,11 @@
 $primaryColor: #1f81a0;
 $secondaryColor: #1e474c;
 $terneryColor: #57beea;
-$backgroundBase1: #0f3034;
+$backgroundBase1: #041a25;
 $backgroundBase2: #022131;
 $backgroundLinear: linear-gradient(140deg, #011826 0%, #01101a 100%);
 $backgroundFooterLinear: linear-gradient(90deg, #022030 0%, #0f2f32 100%);
-$circleLinear1: linear-gradient(140deg, #ffffff 0%, #ffffff 100%);
+$circleLinear1: linear-gradient(140deg, #f1c5c5 0%, #fab7b7 100%);
 $circleLinear2: linear-gradient(140deg, #78ebfb 0%, #1aa9b4 100%);
 $circleBigLinear: linear-gradient(-90deg, #ffffff 0%, #1d8fa9 100%);
 
@@ -33,9 +33,10 @@ $header-xl: 6rem;
 $header-l: 4rem;
 $header-r: 2.5rem;
 $header-s: 1.5rem;
+$header-xs: 1rem;
 $paragraph-header: 1.5rem;
 $paragraph-large: 2rem;
-$paragraph: 1.30rem;
+$paragraph: 1.3rem;
 
 @mixin respon($breakpoint) {
   @if $breakpoint == phone-pot {
