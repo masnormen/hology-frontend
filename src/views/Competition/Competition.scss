@@ -3,7 +3,7 @@
 .section-competition-full-1 {
   min-height: 100vh;
   padding: 15% 10% 0;
-  background-color: $backgroundBase1;
+  background-image: $backgroundLinear;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -35,7 +35,7 @@
     margin-bottom: 2rem;
   }
   .square-box-1 {
-    background-image: $circleLinear1;
+    background-image: $circleLinear2;
     width: 402px;
     height: 402px;
     top: 15%;

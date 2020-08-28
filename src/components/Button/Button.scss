@@ -5,7 +5,7 @@
   outline: none;
   border: none;
   border-radius: 5px;
-  font-size: $header-s;
+  font-size: $header-xs;
   font-family: "Titillium Web", sans-serif;
   text-transform: uppercase;
   border-bottom: 5px solid #265c6b;
@@ -14,6 +14,7 @@
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 25px 0 #173e49;
+  min-width: 200px;
 }
 
 .margin-right {
@@ -26,20 +27,20 @@
   &:hover,
   :active {
     color: white;
-    background-color: $secondaryColor;
+    background-color: $terneryColor;
     border-bottom: 5px solid rgb(64, 128, 156);
     box-shadow: none;
   }
 }
 
 .secondary {
-  border: 5px solid $primaryColor;
+  border: 5px solid $terneryColor;
   background-color: transparent;
   color: white;
   &:hover,
   :active {
     color: white;
     background-color: transparent;
-    border-bottom: 5px solid rgb(105, 105, 105);
+    border: 5px solid white;
   }
 }

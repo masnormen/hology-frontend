@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
 import Paragraph from "../../components/Paragraph/Paragraph";
+import Logo from "../../assets/logo.png";
+
 import "./Home.scss";
 import { Link } from "react-router-dom";
 
@@ -9,21 +11,24 @@ const Home = () => {
   return (
     <>
       <div className="section-home-full-1">
-        <div className="title">
-          <Header size="xl">HOLOGY 3.0</Header>
+        <div className="text">
+          <div className="title">
+            <Header size="xl">HOLOGY 3.0</Header>
+          </div>
+          <div className="description">
+            <Paragraph>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </Paragraph>
+          </div>
         </div>
-        <div className="description">
-          <Paragraph>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
-          </Paragraph>
+        <div className="logo-container">
+          <img src={Logo} alt="logo hology" className="logo" />
         </div>
-        <div className="square-box-1"></div>
-        <div className="square-box-2"></div>
       </div>
 
       <div className="section-home-full-2">

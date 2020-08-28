@@ -2,30 +2,29 @@
 
 .section-home-full-1 {
   min-height: 100vh;
-  padding: 15% 10% 0;
+  padding: 0% 10% 0;
   position: relative;
+  align-items: center;
+  width: 100%;
   overflow: hidden;
   background-image: $backgroundLinear;
+  display: flex;
+  justify-content: space-between;
   @include respon(phone-pot) {
-    padding: 60% 10% 0;
+    padding: 40% 10% 0;
+    flex-direction: column;
   }
   @include respon(phone-land) {
     padding: 30% 10% 0;
+    flex-direction: column;
   }
   @include respon(tb-pot) {
     padding: 20% 10% 0;
-  }
-  .title {
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    margin-bottom: 1rem;
+    flex-direction: column;
   }
 
-  .description {
-    position: relative;
-    z-index: 2;
-    width: 60%;
+  .text {
+    width: 70%;
     @include respon(phone-pot) {
       width: 100%;
     }
@@ -34,6 +33,46 @@
     }
     @include respon(tb-pot) {
       width: 100%;
+    }
+    .title {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      position: relative;
+      z-index: 2;
+      width: 80%;
+      @include respon(phone-pot) {
+        width: 100%;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+      }
+      @include respon(tb-pot) {
+        width: 100%;
+      }
+    }
+  }
+
+  .logo-container {
+    width: 25%;
+    text-align: center;
+    @include respon(phone-pot) {
+      display: none;
+    }
+    @include respon(phone-land) {
+      display: none;
+    }
+    @include respon(tb-pot) {
+      display: none;
+    }
+
+    .logo {
+      object-fit: contain;
+      width: 300px;
     }
   }
 
@@ -46,7 +85,7 @@
     position: absolute;
     transform: rotate(45deg);
     border-radius: 45px;
-    opacity: 0.302;
+    opacity: 0.352;
     @include respon(phone-pot) {
       opacity: 0.15;
       width: 382px;
@@ -122,7 +161,7 @@
     position: absolute;
     transform: rotate(45deg);
     border-top-left-radius: 45px;
-    opacity: 0.302;
+    opacity: 0.352;
     @include respon(phone-pot) {
       opacity: 0.25;
     }
