@@ -2,18 +2,18 @@
 
 .section-competition-category-full-1 {
   min-height: 100vh;
-  padding: 10% 10% 0;
+  padding: 20% 10% 0;
   overflow: hidden;
   background-image: $backgroundLinear;
   position: relative;
   @include respon(phone-pot) {
-    padding: 30% 10% 0;
+    padding: 40% 10% 0;
   }
   @include respon(phone-land) {
-    padding: 20% 10% 0;
+    padding: 30% 10% 0;
   }
   @include respon(tb-pot) {
-    padding: 15% 10% 0;
+    padding: 20% 10% 0;
   }
   .title {
     display: inline-block;
@@ -56,14 +56,14 @@
       justify-content: space-between;
       height: 150px;
       width: 100%;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
     @include respon(phone-land) {
       flex-direction: column;
       height: 150px;
       justify-content: space-between;
       width: 100%;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
   }
   .square-box-1 {
@@ -103,13 +103,13 @@
   background-color: $backgroundBase1;
   position: relative;
   @include respon(phone-pot) {
-    padding: 5% 10% 0;
+    padding: 15% 10% 0;
   }
   @include respon(phone-land) {
-    padding: 5% 10% 0;
+    padding: 15% 10% 0;
   }
   @include respon(tb-pot) {
-    padding: 5% 10% 0;
+    padding: 10% 10% 0;
   }
   .title {
     margin-bottom: 2rem;

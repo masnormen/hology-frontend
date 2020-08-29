@@ -1,6 +1,7 @@
 import "./Footer.scss";
 import React from "react";
 import Paragraph from "../Paragraph/Paragraph";
+import Logo from "../../assets/logotext.png";
 import {
   FaYoutube,
   FaLine,
@@ -14,9 +15,7 @@ const Footer = () => {
     <div className="footer">
       <div className="flexbox">
         <div className="description">
-          <Paragraph large header>
-            Hology
-          </Paragraph>
+          <img src={Logo} alt="Hology Logo" className="logo" />
           <div className="location">
             <Paragraph>
               Fakultas Ilmu Komputer Jalan Veteran No.8, Kecamatan Lowokwaru,
