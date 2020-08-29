@@ -1,3 +1,3 @@
-## BEM FILKOM 2020
+## HOLOGY 3.0
 
-Website Resmi Elaborasi Makna.
+Website resmi Hology 3.0

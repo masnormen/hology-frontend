@@ -5,6 +5,8 @@ import ReactGA from "react-ga";
 
 import "normalize.css";
 import "./style.css";
+
+// Import Components and Views
 import Home from "./views/Home/Home";
 import Competition from "./views/Competition/Competition";
 import ScrollToTop from "./components/ScrollToTop";
@@ -16,15 +18,15 @@ import Login from "./views/Login/Login";
 import Dashboard from "./views/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 
-ReactGA.initialize("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", {
-  debug: false,
+ReactGA.initialize("UA-38735593-5", {
+  debug: true,
 });
 
 const App = () => {
   return (
     <>
       <Helmet
-        titleTemplate="%s | BEM FILKOM UB 2020"
+        titleTemplate="%s | HOLOGY 3.0"
         defaultTitle="HOLOGY 3.0"
       />
       <>

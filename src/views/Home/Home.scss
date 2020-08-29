@@ -118,7 +118,7 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  padding: 19% 10% 0;
+  padding: 15% 10% 0;
   background-color: $backgroundBase1;
   @include respon(phone-pot) {
     padding: 40% 10% 0;
@@ -233,9 +233,9 @@
 
 .section-home-full-4 {
   min-height: 100vh;
-  padding: 10% 10% 0;
+  padding: 15% 10% 0;
   position: relative;
-  background: $backgroundBase1;
+  background: $backgroundBase2;
   overflow: hidden;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
@@ -345,7 +345,7 @@
 
 .section-home-full-5 {
   min-height: 100vh;
-  padding: 10% 10% 5%;
+  padding: 15% 10% 5%;
   overflow: hidden;
   position: relative;
   background-image: $backgroundLinear;

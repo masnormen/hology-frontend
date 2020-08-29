@@ -40,7 +40,7 @@ function Navbar() {
       } else setIsTrasnparent(false);
     });
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", null);
     };
   }, []);
 
