@@ -26,7 +26,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: ftp://hology.ub.ac.id:21/testing/
+          ftp-server: ftp://hology.ub.ac.id:21/
           ftp-username: hology
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          git-ftp-args: --dry-run --insecure
+          git-ftp-args: --dry-run
