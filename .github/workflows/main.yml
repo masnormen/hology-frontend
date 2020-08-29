@@ -20,7 +20,7 @@ jobs:
         env:
           CI: false
 
-      - name: Reset lockfile
+      - name: 📂 Reset lockfile
         run: git checkout yarn.lock
 
       - name: 📂 Sync files
