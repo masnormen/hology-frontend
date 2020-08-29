@@ -2,7 +2,17 @@
 
 .dashboard-container-full {
   min-height: 100vh;
-  padding: 7% 10% 0;
+  padding: 10% 10% 5%;
+  background-image: $backgroundLinear;
+  @include respon(phone-pot) {
+    padding: 35% 10% 5%;
+  }
+  @include respon(phone-land) {
+    padding: 30% 10% 5%;
+  }
+  @include respon(tb-pot) {
+    padding: 25% 10% 5%;
+  }
 
   .dashboard {
     background-color: $circleLinear1;
@@ -12,9 +22,32 @@
     flex-direction: column;
     .sidebar {
       width: 40%;
+      margin: 2.5rem 0;
+      @include respon(phone-pot) {
+        width: 100%;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+      }
 
       &_link {
         color: white;
+        font-size: 1.75rem;
+        padding: 0 1.5rem;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        @include respon(phone-pot) {
+          font-size: 1.25rem;
+          padding: 0 1rem;
+        }
+        @include respon(phone-land) {
+          font-size: 1.5rem;
+          padding: 0 1.25rem;
+        }
+
+        &--active {
+          border-bottom: 5px solid $terneryColor;
+        }
       }
     }
   }

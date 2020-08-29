@@ -25,21 +25,18 @@ ReactGA.initialize("UA-38735593-5", {
 const App = () => {
   return (
     <>
-      <Helmet
-        titleTemplate="%s | HOLOGY 3.0"
-        defaultTitle="HOLOGY 3.0"
-      />
+      <Helmet titleTemplate="%s | HOLOGY 3.0" defaultTitle="HOLOGY 3.0" />
       <>
         <ScrollToTop />
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/competition" component={Competition} />
-          <Route exact path="/category" component={CategoryCompetition} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/goacademy" component={GoAcademy} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route path="/competition" component={Competition} />
+          <Route path="/category" component={CategoryCompetition} />
+          <Route path="/register" component={Register} />
+          <Route path="/goacademy" component={GoAcademy} />
+          <Route path="/login" component={Login} />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
         <Footer />
       </>
