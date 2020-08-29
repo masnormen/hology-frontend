@@ -118,11 +118,7 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-<<<<<<< HEAD
   padding: 15% 10% 0;
-=======
-  padding: 10% 10% 0;
->>>>>>> 10781fee2ac8c3cb72e88b627d7d94ac8bd7515c
   background-color: $backgroundBase1;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
