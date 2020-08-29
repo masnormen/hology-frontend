@@ -19,7 +19,7 @@
     flex-direction: column;
   }
   @include respon(tb-pot) {
-    padding: 20% 10% 0;
+    padding: 25% 10% 0;
     flex-direction: column;
   }
 
@@ -118,13 +118,13 @@
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  padding: 19% 10% 0;
+  padding: 10% 10% 0;
   background-color: $backgroundBase1;
   @include respon(phone-pot) {
-    padding: 40% 10% 0;
+    padding: 20% 10% 0;
   }
   @include respon(phone-land) {
-    padding: 30% 10% 0;
+    padding: 20% 10% 0;
   }
   @include respon(tb-pot) {
     padding: 20% 10% 0;
@@ -193,15 +193,15 @@
   align-items: center;
   @include respon(phone-pot) {
     padding: 20% 10%;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   @include respon(phone-land) {
     padding: 20% 10%;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   @include respon(tb-pot) {
     padding: 20% 10%;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .mascot-container {
@@ -214,15 +214,15 @@
     width: 55%;
     @include respon(phone-pot) {
       width: 100%;
-      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
     @include respon(phone-land) {
       width: 100%;
-      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
     @include respon(tb-pot) {
       width: 100%;
-      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
     .title {
       display: inline-block;
@@ -571,15 +571,15 @@
 
 .section-home-full-7 {
   height: 100vh;
-  padding: 20% 10% 0;
+  padding: 10% 10% 0;
   overflow: hidden;
   position: relative;
   background-color: $backgroundBase2;
   @include respon(phone-pot) {
-    padding: 45% 10% 0;
+    padding: 20% 10% 0;
   }
   @include respon(phone-land) {
-    padding: 35% 10% 0;
+    padding: 15% 10% 0;
   }
 
   .title {
@@ -658,7 +658,7 @@
     @include respon(tb-pot) {
       width: 100%;
     }
-    width: 50%;
+    width: 45%;
     .title {
       width: 100%;
       margin-bottom: 2rem;
@@ -667,21 +667,23 @@
 
   .gallery-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 50%;
-    padding: 0.5rem;
     @include respon(phone-pot) {
       width: 100%;
       margin-bottom: 3rem;
+      margin-top: 2rem;
     }
     @include respon(phone-land) {
       width: 100%;
       margin-bottom: 3rem;
+      margin-top: 2rem;
     }
     @include respon(tb-pot) {
       width: 100%;
       margin-bottom: 3rem;
+      margin-top: 2rem;
     }
 
     .gallery-image-1 {
@@ -689,11 +691,11 @@
       height: 200px;
       background-color: white;
       opacity: 0.24;
-      margin: 0.5rem;
+      margin-bottom: 0.5rem;
     }
 
     .gallery-image-2 {
-      width: 48%;
+      width: 49%;
       height: 200px;
       background-color: white;
       opacity: 0.24;
