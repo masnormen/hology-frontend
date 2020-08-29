@@ -28,5 +28,5 @@ jobs:
         with:
           ftp-server: ftp://hology.ub.ac.id:21/testing/
           ftp-username: hology
-          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          ftp-password: ${{secrets.FTP_PASSWORD}}
           local-dir: build/
