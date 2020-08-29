@@ -8,13 +8,13 @@
   position: relative;
   text-align: center;
   @include respon(phone-pot) {
-    padding: 20% 10% 0;
+    padding: 30% 10% 0;
   }
   @include respon(phone-land) {
-    padding: 15% 10% 0;
+    padding: 25% 10% 0;
   }
   @include respon(tb-pot) {
-    padding: 10% 10% 0;
+    padding: 20% 10% 0;
   }
   .title {
     position: relative;
@@ -37,7 +37,7 @@
 
   .buttons-container {
     display: flex;
-    flex-direction: flex-start;
+    flex-direction: row;
     justify-content: space-between;
     position: relative;
     z-index: 2;
@@ -46,16 +46,16 @@
     @include respon(phone-pot) {
       flex-direction: column;
       justify-content: space-between;
-      height: 150px;
+      height: 140px;
       width: 100%;
-      margin-bottom: 2rem;
+      margin: 2rem 0 2rem;
     }
     @include respon(phone-land) {
       flex-direction: column;
       height: 150px;
       justify-content: space-between;
       width: 100%;
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
     }
   }
   .square-box-1 {
@@ -240,6 +240,7 @@
       margin-bottom: 1rem;
       font-size: 25px;
       font-weight: $bold;
+      color: $terneryColor;
     }
 
     .timeline-content span {
