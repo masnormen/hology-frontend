@@ -1,7 +1,10 @@
 import React from "react";
 import "./Dashboard.scss";
 import Header from "../../components/Header/Header";
-import Paragraph from "../../components/Paragraph/Paragraph";
+import { Route, Switch, Redirect, NavLink } from "react-router-dom";
+import DashboardWebinar from "./DashboardWebinar";
+import DashboardAcademy from "./DashboardAcademy";
+import DashboardCompetition from "./DashboardCompetition";
 
 const Dashboard = () => {
   const username = "Participant Hology";
@@ -11,19 +14,48 @@ const Dashboard = () => {
         <Header>Hi, {username}</Header>
         <div className="dashboard">
           <div className="sidebar">
-            <a className="sidebar_link">Competition</a>
-            <a className="sidebar_link">Academy</a>
-            <a className="sidebar_link">Webinar</a>
+            <NavLink
+              className="sidebar_link"
+              activeClassName="sidebar_link--active"
+              to="/dashboard/competition"
+            >
+              Competition
+            </NavLink>
+            <NavLink
+              className="sidebar_link"
+              activeClassName="sidebar_link--active"
+              to="/dashboard/academy"
+            >
+              Academy
+            </NavLink>
+            <NavLink
+              className="sidebar_link"
+              activeClassName="sidebar_link--active"
+              to="/dashboard/webinar"
+            >
+              Webinar
+            </NavLink>
           </div>
           <div className="content">
-            <Paragraph>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.{" "}
-            </Paragraph>
+            <Switch>
+              <Route
+                exact
+                path="/dashboard"
+                render={() => <Redirect to="/dashboard/competition" />}
+              />
+              <Route
+                path="/dashboard/webinar"
+                render={() => <DashboardWebinar />}
+              />
+              <Route
+                path="/dashboard/academy"
+                render={() => <DashboardAcademy />}
+              />
+              <Route
+                path="/dashboard/competition"
+                render={() => <DashboardCompetition />}
+              />
+            </Switch>
           </div>
         </div>
       </div>

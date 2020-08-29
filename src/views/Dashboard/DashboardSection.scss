@@ -1,0 +1,70 @@
+@import "../../base.scss";
+
+.dashboard-section-academy {
+  width: 100%;
+  min-height: 350px;
+  background-color: $backgroundBase1;
+  border: 1.5px solid $terneryColor;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .academy {
+    text-align: center;
+
+    .header {
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      margin-bottom: 1.75rem;
+    }
+  }
+}
+
+.dashboard-section-webinar {
+  width: 100%;
+  min-height: 350px;
+  background-color: $backgroundBase1;
+  border: 1.5px solid $terneryColor;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .academy {
+    text-align: center;
+
+    .header {
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      margin-bottom: 1.75rem;
+    }
+  }
+}
+
+.dashboard-section-competition {
+  width: 100%;
+  min-height: 350px;
+  background-color: $backgroundBase1;
+  border: 1.5px solid $terneryColor;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .academy {
+    text-align: center;
+
+    .header {
+      margin-bottom: 1rem;
+    }
+
+    .selection {
+      margin-top: 1.75rem;
+    }
+  }
+}
