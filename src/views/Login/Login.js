@@ -33,7 +33,7 @@ const Login = () => {
       if (res["success"]) {
         localStorage.setItem('hology_user_session', res.data.access_token);
         localStorage.setItem('hology_user_ref', res.data.refresh_token);
-        localStorage.setItem('hology_user_data', res.data.user);
+        localStorage.setItem('hology_user_data', JSON.stringify(res.data.user));
         setIsValid(true);
       } else {
         console.log("gagal!")
