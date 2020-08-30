@@ -1,7 +1,7 @@
 {
   "name": "hology3",
   "version": "1.0.0",
-  "homepage": "https://hology.ub.ac.id/testing/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@babel/compat-data": "7.8.0",

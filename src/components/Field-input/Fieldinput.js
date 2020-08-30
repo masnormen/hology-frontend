@@ -12,7 +12,7 @@ const Fieldinput = ({
       <label className="label">{label}</label>
       <input
         className="input"
-        placeholder="Type here"
+        placeholder="Ketik di sini..."
         onChange={handleChange}
         {...otherProps}
       />

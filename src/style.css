@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Alata&family=Rubik:wght@600&family=Titillium+Web:ital,wght@0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Titillium+Web:ital,wght@0,700;1,700&display=swap");
 
 * {
   margin: 0;
@@ -133,7 +133,7 @@ table {
 
 html,
 body {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   /*background-image: linear-gradient(140deg, #030207 0%, #111339 100%);*/
   line-height: 1;
   scroll-padding-top: 100px;
