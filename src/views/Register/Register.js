@@ -40,6 +40,19 @@ const Register = () => {
           required
           marbott
         />
+        <div className="gender-container">
+          <span className="label">Gender</span>
+          <div className="flexbox">
+            <div className="option">
+              <label htmlFor="male">Male</label>
+              <input type="radio" name="gender" id="male" value={0} />
+            </div>
+            <div className="option">
+              <label htmlFor="female">Female</label>
+              <input type="radio" name="gender" id="female" value={1} />
+            </div>
+          </div>
+        </div>
         <div className="select-container">
           <span className="label">Universitas</span>
           <Select

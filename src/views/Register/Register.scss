@@ -38,4 +38,32 @@
       font-size: 1.2rem;
     }
   }
+
+  .gender-container {
+    margin-bottom: 2rem;
+
+    .label {
+      display: block;
+      color: white;
+      font-weight: $medium;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+    .flexbox {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+    }
+
+    .option {
+      border: 1.5px solid rgba($color: white, $alpha: 0.16);
+      padding: 0.5rem 0.75rem;
+      background-color: rgba($color: white, $alpha: 0.16);
+      label {
+        font-size: 1.15rem;
+        color: white;
+        margin-right: 0.75rem;
+      }
+    }
+  }
 }
