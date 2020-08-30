@@ -46,9 +46,10 @@
   }
 }
 
-.dashboard-section-competition {
+.dashboard-section-competition-selection {
   width: 100%;
   min-height: 350px;
+  padding: 5% 0;
   background-color: $backgroundBase1;
   border: 1.5px solid $terneryColor;
   border-radius: 10px;
@@ -64,7 +65,92 @@
     }
 
     .selection {
-      margin-top: 1.75rem;
+      width: 300px;
+      margin: 2.5rem 0 1.75rem;
+
+      .label {
+        display: block;
+        color: white;
+        font-weight: $medium;
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+        text-align: left;
+      }
+    }
+    .input-option {
+      text-align: left;
+    }
+  }
+}
+
+.dashboard-section-competition-data {
+  width: 100%;
+  min-height: 350px;
+  padding: 5% 5%;
+  background-color: $backgroundBase1;
+  border: 1.5px solid $terneryColor;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+
+  .view {
+    width: 100%;
+  }
+  .link-team-container {
+    width: 100%;
+    margin: 2rem 0 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    .link-container {
+      margin-top: 1.25rem;
+      background-color: $terneryColor;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &--link {
+        font-size: 1.25rem;
+      }
+
+      .icon-container {
+        padding: 0.75rem;
+        border-radius: 999px;
+        &:hover {
+          background-color: $primaryColor;
+        }
+      }
+
+      .copy-icon {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  .data-container {
+    .kartu-mahasiswa-container {
+      width: 40%;
+      margin-bottom: 2rem;
+      .subtitle {
+        margin-bottom: 1.25rem;
+      }
+    }
+    .surat-keterangan-container {
+      width: 40%;
+      margin-bottom: 2rem;
+      .subtitle {
+        margin-bottom: 1.25rem;
+      }
+    }
+    .bukti-bayar-container {
+      width: 40%;
+      margin-bottom: 2rem;
+      .subtitle {
+        margin-bottom: 1.25rem;
+      }
     }
   }
 }
