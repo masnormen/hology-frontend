@@ -41,6 +41,7 @@ const Register = () => {
           marbott
         />
         <div className="select-container">
+          <span className="label">Universitas</span>
           <Select
             theme={(theme) => ({
               ...theme,
@@ -59,13 +60,43 @@ const Register = () => {
             options={institutions}
           />
         </div>
+        <Fieldinput
+          label="Jurusan"
+          name="jurusan"
+          type="text"
+          marbott
+          required
+        />
         <Fieldinput label="Email" name="email" type="email" marbott required />
+        <Fieldinput
+          label="No. HP"
+          name="nomor"
+          type="number"
+          marbott
+          required
+        />
+        <Fieldinput
+          label="Password"
+          name="password"
+          type="password"
+          marbott
+          required
+        />
+        <Fieldinput
+          label="Verfication Password"
+          name="verification_password"
+          type="password"
+          marbott
+          required
+        />
+
         <Button>Register</Button>
-      </div>
-      <div className="login-text">
-        <Paragraph>
-          If you have an account login <Link className="link-login">here</Link>
-        </Paragraph>
+        <div className="login-text">
+          <Paragraph>
+            If you have an account login{" "}
+            <Link className="link-login">here</Link>
+          </Paragraph>
+        </div>
       </div>
     </>
   );

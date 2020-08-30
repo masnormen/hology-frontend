@@ -1,0 +1,87 @@
+@import "../../base.scss";
+
+.section-webinar-full-1 {
+  min-height: 100vh;
+  padding: 15% 10% 0;
+  background-image: $backgroundLinear;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  @include respon(phone-pot) {
+    padding: 60% 10% 0;
+  }
+  @include respon(phone-land) {
+    padding: 30% 10% 0;
+  }
+  @include respon(tb-pot) {
+    padding: 20% 10% 0;
+  }
+  .title {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: 3rem;
+  }
+
+  .description {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .tagline {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 2rem;
+  }
+  .square-box-1 {
+    background-image: $circleLinear2;
+    width: 402px;
+    height: 402px;
+    bottom: -222px;
+    right: -102px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.15;
+      width: 282px;
+      height: 282px;
+      top: 175px;
+      right: -180px;
+    }
+    @include respon(phone-land) {
+      opacity: 0.3;
+      width: 342px;
+      height: 342px;
+      top: 175px;
+      right: -220px;
+    }
+  }
+  .square-box-2 {
+    background-image: $circleLinear2;
+    width: 402px;
+    height: 402px;
+    bottom: -222px;
+    left: -102px;
+    position: absolute;
+    transform: rotate(45deg);
+    border-radius: 45px;
+    opacity: 0.302;
+    @include respon(phone-pot) {
+      opacity: 0.15;
+      width: 282px;
+      height: 282px;
+      top: 175px;
+      left: -180px;
+    }
+    @include respon(phone-land) {
+      opacity: 0.3;
+      width: 342px;
+      height: 342px;
+      top: 175px;
+      left: -220px;
+    }
+  }
+}

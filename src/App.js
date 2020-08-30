@@ -17,6 +17,7 @@ import GoAcademy from "./views/GoAcademy/GoAcademy";
 import Login from "./views/Login/Login";
 import Dashboard from "./views/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
+import Webinar from "./views/Webinar/Webinar";
 
 ReactGA.initialize("UA-38735593-5", {
   debug: true,
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/category" component={CategoryCompetition} />
           <Route path="/register" component={Register} />
           <Route path="/goacademy" component={GoAcademy} />
+          <Route path="/event" component={Webinar} />
           <Route path="/login" component={Login} />
           <Route path="/dashboard" component={Dashboard} />
         </Switch>
