@@ -60,17 +60,12 @@ const Competition = () => {
             subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
           industry."
           />
-          <Card
-            variant="purple-light"
-            title="Smart Device"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
-          />
         </div>
 
         <div className="competition-category-container-2">
           <Card
-            title="App Innovation"
+            variant="purple-light"
+            title="Smart Device"
             subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
           industry."
           />
@@ -83,12 +78,6 @@ const Competition = () => {
           <Card
             variant="blue-light"
             title="Game Development"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
-          />
-          <Card
-            variant="purple-light"
-            title="App Innovation"
             subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
           industry."
           />

@@ -11,15 +11,16 @@
 
 //LOGO THEMING
 $primaryColor: #1f81a0;
-$secondaryColor: #1e474c;
+$secondaryColor: #142438;
 $terneryColor: #519a9e;
 $backgroundBase1: #09121e;
 $backgroundBase2: #031d32EB;
 $backgroundLinear: linear-gradient(145deg, #011826D1 20%, #0b4066 100%);
-$backgroundFooterLinear: linear-gradient(145deg, rgba(9, 29, 42, 0.82) 60%, #164e76 100%);
-$circleLinear1: linear-gradient(140deg, #ffffffEB 0%, #fab7b7 100%);
-$circleLinear2: linear-gradient(140deg, #78ebfbEB 0%, #1aa9b4 100%);
-$circleBigLinear: linear-gradient(-90deg, #ffffffEB 0%, #1d8fa9 100%);
+$backgroundLinear2: linear-gradient(145deg, #1a5b78EB 0%, #062841DF 60%);
+$backgroundFooterLinear: linear-gradient(145deg, #050e13 40%, rgba(19, 57, 92, 0.85) 100%);
+$circleLinear1: linear-gradient(140deg, #1f4f6b 0%, #5580a0 100%);
+$circleLinear2: linear-gradient(140deg, #78ebfbEB 0%, #1a6fb4 100%);
+$circleBigLinear: linear-gradient(-90deg, #34476c 0%, #1d8fa9 100%);
 
 $thin: 100;
 $extra-light: 200;
@@ -36,7 +37,7 @@ $header-s: 1.5rem;
 $header-xs: 1rem;
 $paragraph-header: 1.5rem;
 $paragraph-large: 2rem;
-$paragraph: 1.3rem;
+$paragraph: 1.2rem;
 
 @mixin respon($breakpoint) {
   @if $breakpoint == phone-pot {
@@ -56,4 +57,10 @@ $paragraph: 1.3rem;
       @content;
     }
   }
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  50%  { transform: translate(0, -15px); }
+  to   { transform: translate(0, 0px); }
 }

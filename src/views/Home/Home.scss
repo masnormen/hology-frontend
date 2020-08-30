@@ -8,7 +8,7 @@
 .section-home-full-1 {
   min-height: 500px;
   height: 100vh;
-  padding: 0% 10% 0;
+  padding: 4% 10% 0;
   position: relative;
   align-items: center;
   width: 100%;
@@ -16,6 +16,11 @@
   background-image: $backgroundLinear;
   display: flex;
   justify-content: space-between;
+  .line {
+    margin-left: 5px;
+    margin-top: -10px;
+    width: calc(100% - 20px);
+  }
   @include respon(phone-pot) {
     padding: 40% 10% 0;
     flex-direction: column;
@@ -30,7 +35,7 @@
   }
 
   .text {
-    width: 70%;
+    width: 75%;
     @include respon(phone-pot) {
       width: 100%;
     }
@@ -45,11 +50,13 @@
       z-index: 2;
       display: inline-block;
       margin-bottom: 1rem;
+      margin-left: -5px;
     }
 
     .description {
       position: relative;
       z-index: 2;
+      margin-top: 10px;
       width: 80%;
       @include respon(phone-pot) {
         width: 100%;
@@ -64,7 +71,7 @@
   }
 
   .logo-container {
-    width: 25%;
+    width: max-content;
     text-align: center;
     @include respon(phone-pot) {
       display: none;
@@ -79,6 +86,11 @@
     .logo {
       object-fit: contain;
       width: 300px;
+      filter: drop-shadow(10px 4px 20px rgba(32, 32, 32, 0.5));
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
     }
   }
 
@@ -124,8 +136,8 @@
   @include heightMinusNavbar;
   position: relative;
   overflow: hidden;
-  padding: 15% 10% 0;
-  background-color: $backgroundBase1;
+  padding: 12% 10% 0;
+  background: $backgroundLinear2;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
   }
@@ -239,9 +251,9 @@
 
 .section-home-full-4 {
   @include heightMinusNavbar;
-  padding: 15% 10% 0;
+  padding: 12% 10% 0;
   position: relative;
-  background: $backgroundBase2;
+  background: $backgroundBase1;
   overflow: hidden;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
@@ -251,7 +263,7 @@
     position: relative;
     z-index: 2;
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .description {
@@ -288,10 +300,11 @@
       }
     }
     .image-container {
-      width: 435px;
-      height: 240px;
-      background-color: white;
-      opacity: 0.24;
+      width: 30%;
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
       @include respon(phone-pot) {
         width: 100%;
         margin-bottom: 3rem;
@@ -327,7 +340,7 @@
 
   .square-box-1 {
     background-image: $circleBigLinear;
-    opacity: 0.059;
+    opacity: 0.2;
     left: -80px;
     top: -60px;
     width: 500px;
@@ -337,8 +350,8 @@
     transform: rotate(45deg);
   }
   .square-box-2 {
-    background-image: $circleBigLinear;
-    opacity: 0.059;
+    background-image: $circleLinear1;
+    opacity: 0.05;
     left: 150px;
     top: -25px;
     width: 550px;
@@ -351,7 +364,7 @@
 
 .section-home-full-5 {
   @include heightMinusNavbar;
-  padding: 15% 10% 5%;
+  padding: 13% 10% 5%;
   overflow: hidden;
   position: relative;
   background-image: $backgroundLinear;
@@ -440,7 +453,7 @@
 
 .section-home-full-6 {
   @include heightMinusNavbar;
-  padding: 10% 10% 0;
+  padding: 13% 10% 0;
   overflow: hidden;
   position: relative;
   background-color: $backgroundBase1;
@@ -454,7 +467,7 @@
   .title {
     margin-left: 50%;
     display: inline-block;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     position: relative;
     z-index: 2;
     @include respon(phone-pot) {
@@ -503,12 +516,12 @@
       }
     }
     .image-container {
-      position: relative;
-      z-index: 2;
-      width: 435px;
-      height: 240px;
-      background-color: white;
-      opacity: 0.24;
+      width: 30%;
+      //background: cadetblue;
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
       @include respon(phone-pot) {
         width: 100%;
       }
@@ -577,10 +590,10 @@
 
 .section-home-full-7 {
   @include heightMinusNavbar;
-  padding: 10% 10% 0;
+  padding: 9% 10% 0;
   overflow: hidden;
   position: relative;
-  background-color: $backgroundBase2;
+  background: $backgroundBase1;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
   }
@@ -592,7 +605,7 @@
     position: relative;
     z-index: 2;
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .description {

@@ -22,43 +22,55 @@ const Footer = () => {
               Ketawanggede, Kota Malang, Jawa Timur 65145
             </Paragraph>
           </div>
-          <div className="email">
-            <FaEnvelope className="icon-email" />
-            <Paragraph>hology.filkomub@gmail.com</Paragraph>
+          <div className="copyright">
+            <Paragraph>Made with ❤️ by IT DEV HOLOGY 2020</Paragraph>
           </div>
         </div>
 
         <div className="social-media">
-          <Paragraph header>Find Us On Social Media</Paragraph>
+          <Paragraph header>Connect with us:</Paragraph>
           <div className="icons-container">
+            {/*<div className="media">*/}
+            {/*  <FaTwitterSquare className="icon" color="#1DA1F2" />*/}
+            {/*  <a*/}
+            {/*    href="https://www.youtube.com/channel/UCmpZJv7Kk1TUoOLSSgZQaWg/"*/}
+            {/*    target="blank"*/}
+            {/*  >*/}
+            {/*    @Hology_UB*/}
+            {/*  </a>*/}
+            {/*</div>*/}
             <div className="media">
-              <FaTwitterSquare className="icon" />
-              <a>@Hology_UB</a>
+              <FaLine className="icon" color="#00b900"/>
+              <a
+                href="https://line.me/R/ti/p/@qqf2710x"
+                target="blank"
+              >
+                @qqf2710x
+              </a>
             </div>
             <div className="media">
-              <FaLine className="icon" />
-              <a>@Hology_UB</a>
-            </div>
-            <div className="media">
-              <FaYoutube className="icon" />
+              <FaYoutube className="icon" color="red"/>
               <a
                 href="https://www.youtube.com/channel/UCmpZJv7Kk1TUoOLSSgZQaWg/"
                 target="blank"
               >
-                @Hology_UB
+                HOLOGY UB
               </a>
             </div>
             <div className="media">
-              <FaInstagram className="icon" />
+              <FaInstagram className="icon" color="#5851DB"/>
               <a href="https://www.instagram.com/hology_ub/" target="blank">
-                @Hology_UB
+                hology_ub
+              </a>
+            </div>
+            <div className="media">
+              <FaEnvelope className="icon icon-email"  />
+              <a href="mailto:hology.filkomub@gmail.com" target="blank">
+                hology.filkomub@gmail.com
               </a>
             </div>
           </div>
         </div>
-      </div>
-      <div className="copyright">
-        <Paragraph>Made by IT HOLOGY 2020</Paragraph>
       </div>
     </div>
   );

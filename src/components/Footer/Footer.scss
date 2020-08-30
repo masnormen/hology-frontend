@@ -1,11 +1,13 @@
 @import "../../base.scss";
 
 .footer {
-  padding: 5% 10% 3%;
+  height: calc(100vh - 75px);
+  min-height: 500px;
+  padding: 10% 10%;
   border-top: 5px solid #000;
   background-image: $backgroundFooterLinear;
   @include respon(phone-pot) {
-    padding: 10% 10% 5%;
+    padding: 10% 10%;
   }
 
   .flexbox {
@@ -21,7 +23,7 @@
       flex-direction: column;
     }
     .description {
-      width: 40%;
+      width: 50%;
       @include respon(phone-pot) {
         width: 100%;
         margin-bottom: 2rem;
@@ -41,7 +43,7 @@
       }
 
       .location {
-        margin-top: 1rem;
+        margin-top: 2rem;
         margin-bottom: 1.25rem;
       }
 
@@ -51,15 +53,14 @@
 
         .icon-email {
           color: white;
-          width: 25px;
-          height: 25px;
+          width: 35px;
           margin-right: 1rem;
         }
       }
     }
 
     .social-media {
-      width: 55%;
+      width: 30%;
       @include respon(phone-pot) {
         width: 100%;
       }
@@ -71,16 +72,17 @@
       }
 
       .icons-container {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: start;
+        flex-direction: column;
         @include respon(phone-pot) {
-          flex-direction: column;
+          flex-direction: row;
           align-items: flex-start;
         }
         @include respon(phone-land) {
-          flex-direction: column;
+          flex-direction: row;
           align-items: flex-start;
         }
 
@@ -88,6 +90,18 @@
           display: flex;
           align-items: center;
           cursor: pointer;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          font-weight: bold;
+
+          a {
+            text-decoration: none!important;
+          }
+
+          .icon-email {
+            color: white;
+            height: 27px !important;
+          }
 
           @include respon(phone-pot) {
             margin-bottom: 0.75rem;
@@ -107,7 +121,7 @@
               transform: rotate(360deg);
             }
             a {
-              text-decoration: underline;
+              color: $terneryColor;
             }
           }
 
@@ -130,7 +144,7 @@
   }
 
   .copyright {
-    margin-top: 5rem;
-    text-align: center;
+    margin-top: 2rem;
+    //text-align: center;
   }
 }

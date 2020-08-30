@@ -25,11 +25,13 @@
   }
 
   .line {
-    margin: 0 0 0 0.25rem;
+    margin: 0 0 0 0rem;
     padding: 0;
-    border: 3px solid $terneryColor;
+    border: transparent;
+    width: 100%;
+    height: 8px;
     background-color: $terneryColor;
-    border-radius: 3px;
+    border-radius: 2px;
   }
 
   .line-white {

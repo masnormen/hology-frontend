@@ -102,13 +102,15 @@
     padding: 15% 5% 0;
   }
   .title {
-    display: inline-block;
-    margin-bottom: 2rem;
+    width: 100%;
+    padding: 0 6%;
+    margin: 0 auto 2rem !important;
   }
 
   .description {
-    width: 70%;
-    margin-bottom: 2rem;
+    width: 100%;
+    padding: 0 6%;
+    margin: 0 auto 5rem;
     @include respon(phone-pot) {
       width: 100%;
     }
@@ -123,7 +125,7 @@
   .competition-category-container-1 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding-bottom: 1.5rem;
     @include respon(phone-pot) {
@@ -140,7 +142,7 @@
   .competition-category-container-2 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-bottom: 3rem;
   }
 
