@@ -20,7 +20,7 @@ const Login = () => {
   useEffect(() => {
     if (!isFetching) return;
     
-    fetch("http://multazamgsd.com/hology/api/login", {
+    fetch("https://multazamgsd.com/hology/api/login", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({

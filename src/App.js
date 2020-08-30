@@ -15,6 +15,7 @@ import Register from "./views/Register/Register";
 import Footer from "./components/Footer/Footer";
 import GoAcademy from "./views/GoAcademy/GoAcademy";
 import Login from "./views/Login/Login";
+import Logout from "./views/Logout/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Webinar from "./views/Webinar/Webinar";
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/goacademy" component={GoAcademy} />
           <Route path="/event" component={Webinar} />
           <Route path="/login" component={Login} />
+          <Route path="/logout" component={Logout} />
           <Route path="/dashboard" component={Dashboard} />
         </Switch>
         <Footer />

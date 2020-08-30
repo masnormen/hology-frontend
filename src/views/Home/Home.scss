@@ -1,7 +1,13 @@
 @import "../../base.scss";
 
+@mixin heightMinusNavbar {
+  min-height: 500px;
+  height: calc(100vh - 70px);
+}
+
 .section-home-full-1 {
-  min-height: 100vh;
+  min-height: 500px;
+  height: 100vh;
   padding: 0% 10% 0;
   position: relative;
   align-items: center;
@@ -115,7 +121,7 @@
 }
 
 .section-home-full-2 {
-  min-height: 100vh;
+  @include heightMinusNavbar;
   position: relative;
   overflow: hidden;
   padding: 15% 10% 0;
@@ -183,7 +189,7 @@
 }
 
 .section-home-full-3 {
-  min-height: 100vh;
+  @include heightMinusNavbar;
   position: relative;
   padding: 10% 10% 0;
   background: $backgroundBase2;
@@ -232,7 +238,7 @@
 }
 
 .section-home-full-4 {
-  min-height: 100vh;
+  @include heightMinusNavbar;
   padding: 15% 10% 0;
   position: relative;
   background: $backgroundBase2;
@@ -344,7 +350,7 @@
 }
 
 .section-home-full-5 {
-  min-height: 100vh;
+  @include heightMinusNavbar;
   padding: 15% 10% 5%;
   overflow: hidden;
   position: relative;
@@ -433,7 +439,7 @@
 }
 
 .section-home-full-6 {
-  min-height: 100vh;
+  @include heightMinusNavbar;
   padding: 10% 10% 0;
   overflow: hidden;
   position: relative;
@@ -570,7 +576,7 @@
 }
 
 .section-home-full-7 {
-  height: 100vh;
+  @include heightMinusNavbar;
   padding: 10% 10% 0;
   overflow: hidden;
   position: relative;
@@ -625,7 +631,7 @@
 }
 
 .section-home-full-8 {
-  min-height: 100vh;
+  @include heightMinusNavbar;
   padding: 0% 10% 0;
   display: flex;
   background-image: $backgroundLinear;
