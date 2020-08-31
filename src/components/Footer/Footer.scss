@@ -78,11 +78,9 @@
         align-items: start;
         flex-direction: column;
         @include respon(phone-pot) {
-          flex-direction: row;
           align-items: flex-start;
         }
         @include respon(phone-land) {
-          flex-direction: row;
           align-items: flex-start;
         }
 
