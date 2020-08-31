@@ -6,11 +6,19 @@ const Logout = () => {
   const [hasCleared, setHasCleared] = useState(false);
   
   useEffect(() => {
-    const ready = async () => await localStorage.clear();
-    ready().then(()=> setHasCleared(true));
+    let hasToken = localStorage.getItem("ho_dXNlcl9zZXNzaW9u")
+      && localStorage.getItem("ho_dXNlcl9yZWZyZXNo")
+      && localStorage.getItem("ho_dXNlcl9kYXRh");
+    
+    if (hasToken) {
+      const ready = async () => await localStorage.clear();
+      ready().then(() => setHasCleared(true));
+      window.location.reload();
+    }
+    setHasCleared(true)
   }, []);
   
-  return hasCleared && <CheckSession redirect/>
+  return hasCleared && <CheckSession redirect/>;
 };
 
 export default Logout;

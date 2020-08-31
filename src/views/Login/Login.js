@@ -8,6 +8,7 @@ import Header from "../../components/Header/Header";
 import Logo from "../../assets/logo.png";
 import {Redirect} from "react-router";
 
+import {setUserData} from "../../components/SessionHelper";
 import CheckSession from "../../components/CheckSession";
 
 const Login = () => {
@@ -30,17 +31,17 @@ const Login = () => {
     }).then(raw => {
       return raw.json();
     }).then(res => {
-      if (res["success"]) {
-        localStorage.setItem('hology_user_session', res.data.access_token);
-        localStorage.setItem('hology_user_ref', res.data.refresh_token);
-        localStorage.setItem('hology_user_data', JSON.stringify(res.data.user));
-        setIsValid(true);
+      if (res.data !== null) {
+        // user_id, team_id user_fullname user_email institution_id
+        setUserData(res.data.user, res.data.access_token, res.data.refresh_token);
+        window.location.reload();
       } else {
-        console.log("gagal!")
+        alert("Email/Password yang dimasukkan salah!")
         setIsFetching(false);
       }
     }).catch(err => {
-      console.log("error!")
+      alert("Email/Password yang dimasukkan salah!")
+      setIsFetching(false);
     });
   }, [isFetching]);
 
@@ -56,7 +57,7 @@ const Login = () => {
           <div className="form-login-container">
             <div className="title">
               <Header size="r" center>
-                Login Hology
+                Account Login
               </Header>
             </div>
             <Fieldinput

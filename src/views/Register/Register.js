@@ -7,6 +7,14 @@ import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import Select from "react-select";
 
+function checkValid(obj) {
+	for (let key in obj) {
+		if (obj[key] == null && obj[key] === "")
+			return false;
+	}
+	return true;
+}
+
 const Register = () => {
 	const [isSuccess, setIsSuccess] = useState("maybe");
 	const [isSending, setIsSending] = useState(false);
@@ -48,6 +56,11 @@ const Register = () => {
 	useEffect(() => {
 		if (!isSending) return;
 		if ((confirmPassword !== "") && (confirmPassword !== payload.password)) return;
+		if (!checkValid(payload)) {
+			alert("Registration failed! Please check your inputed data!");
+			setIsSuccess("no");
+			return;
+		}
 		console.log(payload);
 		fetch("https://multazamgsd.com/hology/api/register", {
 			method: "POST",
@@ -57,13 +70,17 @@ const Register = () => {
 			return raw.json();
 		}).then(res => {
 			if (res["success"]) {
+				alert("Your account has been succesfully registered!")
 				setIsSuccess("yes");
 			} else {
-				alert("Registration failed!")
+				alert("Registration failed! Please check your inputed data!")
 				setIsSuccess("no");
 			}
+			setIsSending(false);
 		}).catch(err => {
-			console.log("error!");
+			alert("Registration failed! Please check your inputed data!")
+			setIsSuccess("no");
+			setIsSending(false);
 		});
 	}, [isSending]);
 	
@@ -72,9 +89,9 @@ const Register = () => {
 			{isSuccess === "yes" && (
 				<Redirect to="/login"/>
 			)}
-			{isSuccess === "no" && (
-				<Redirect to="/"/>
-			)}
+			{isSuccess === "no" &&
+				window.location.reload()
+			}
 			<div className="form-register-container">
 				<div className="title">
 					<Header size="r" center>
@@ -124,7 +141,6 @@ const Register = () => {
 						})}
 						className="basic-single"
 						classNamePrefix="select"
-						isClearable
 						name="gender"
 						options={[
 							{value: 0, label: "Male"},
@@ -152,7 +168,6 @@ const Register = () => {
 							})}
 							className="basic-single"
 							classNamePrefix="select"
-							isClearable
 							isSearchable
 							name="competition"
 							options={institutions}

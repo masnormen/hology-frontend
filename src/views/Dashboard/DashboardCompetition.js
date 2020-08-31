@@ -1,61 +1,158 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Select from "react-select";
-import { copy } from "copy-to-clipboard";
+import copy from "copy-to-clipboard";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./DashboardSection.scss";
 import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
 import Fieldinput from "../../components/Field-input/Fieldinput";
-import { FilePond, registerPlugin } from "react-filepond";
-import { MdContentCopy } from "react-icons/md";
+import {FilePond, registerPlugin} from "react-filepond";
+import {MdContentCopy} from "react-icons/md";
 import "filepond/dist/filepond.min.css";
 import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+import {getUserData, getAccessToken, getInstitutionName, invalidateSession} from "../../components/SessionHelper";
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
+
+function checkValid(obj) {
+  for (let key in obj) {
+    if (obj[key] == null && obj[key] === "")
+      return false;
+  }
+  return true;
+}
+
 const DashboardCompetition = () => {
-  const [sectionSelect, setsectionSelect] = useState(false);
-  const [sectionData, setsectionData] = useState(true);
+  // stage 1: Daftar tim
+  // stage 2: Biodata tim
+  // stage 3: pembayaran tim
+  const [registrationStage, setRegistrationStage] = useState(2);
+  
+  // For stage 1
+  const [institutionName, setInstitutionName] = useState("");
+  const [payload, setPayload] = useState({
+    competition_id: "",
+    institution_id: getUserData.institution_id,
+    lead: getUserData.user_id,
+    name: ""
+  });
+  const [isFailed, setIsFailed] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  
+  // For stage 2
+  const [teamData, setTeamData] = useState({});
   const [kartuMahasiswwa, setKartuMahasiswa] = useState([]);
   const [suratKeterangan, setSuratKeterangan] = useState([]);
   const [buktiBayar, setBuktiBayar] = useState([]);
-  const [linkTeam, setLinkTeam] = useState("https://hology.ub.ac.id/");
-  const [copy, setCopy] = useState(false);
+  
   const competitionData = [
-    { value: "app innovation", label: "App Innovation" },
-    { value: "business IT case", label: "Business IT Case" },
-    { value: "programming", label: "Programming" },
-    { value: "smart device", label: "Smart Device" },
-    { value: "capture the flag", label: "Capture the Flag" },
-    { value: "game development", label: "Game Development" },
+    {value: 1, label: "App Innovation"},
+    {value: 2, label: "Business IT Case"},
+    {value: 3, label: "Programming"},
+    {value: 4, label: "Smart Device"},
+    {value: 5, label: "Capture the Flag"},
+    {value: 6, label: "Game Development"},
   ];
-
-  const gotoData = () => {
-    setsectionSelect(false);
-    setsectionData(true);
-  };
-
-  const copytoclipboard = () => {
-    copy(linkTeam.toString());
-    setCopy(true);
-  };
+  
+  useEffect(() => {
+    if (registrationStage === 1) {
+      const getInstitutionName = async () => {
+        await fetch("https://multazamgsd.com/hology/api/institutions", {
+          method: "GET"
+        }).then(raw =>
+          raw.json()
+        ).then(res => {
+          let name = res.data.find(x => x["institution_id"] === getUserData["institution_id"]);
+          if (name != null) return name.institution_name.replace(/\\r\\n/g, "");
+          return "There's some problem";
+        }).then(name => {
+          setInstitutionName(name);
+        }).catch(e => {
+          alert("Error!");
+        });
+      };
+      getInstitutionName();
+    }
+    if (registrationStage === 2) {
+      const getTeamData = async () => {
+        await fetch("https://multazamgsd.com/hology/api/teams", {
+          method: "GET",
+          headers: {
+            "Authorization": "Bearer " + getAccessToken,
+            "Content-Type": "application/json"
+          },
+        }).then(raw =>
+          raw.json()
+        ).then(res => {
+          setTeamData(res.data[0]);
+        }).catch(e => {
+          invalidateSession();
+          alert("Error occurred. Please log in again.");
+        });
+      };
+      getTeamData();
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (!isSending) return;
+    
+    if (!checkValid(payload)) {
+      alert("Registration failed! Please check your inputed data!");
+      setIsFailed(true);
+      return;
+    }
+    
+    fetch("https://multazamgsd.com/hology/api/teams", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + getAccessToken,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    }).then(raw => {
+      return raw.json();
+    }).then(res => {
+      if (res["success"]) {
+        alert("Your team has been succesfully registered!");
+        setIsFailed(false);
+      } else {
+        alert("Registration failed! You can't create another team or your inputed data is wrong!");
+        setIsFailed(true);
+      }
+      setIsSending(false);
+    }).catch(err => {
+      alert("Registration failed! You can't create another team or your inputed data is wrong!");
+      setIsFailed(true);
+      setIsSending(false);
+    });
+  }, [isSending]);
+  
+  useEffect(() => {
+    console.log(payload);
+  }, [payload]);
+  
+  
   return (
     <>
-      {sectionSelect ? (
+      {registrationStage === 1 && (
         <div className="dashboard-section-competition-selection">
           <div className="academy">
             <div className="header">
               <Header center size="r">
-                Competition
+                Team Registration
               </Header>
             </div>
+            <br/><br/>
+            <Paragraph style={{maxWidth: "200px"}}>
+              Ketua tim medaftarkan tim di sini.<br/>
+              Anggota tim cukup mengakses link invitation untuk join ke tim.
+            </Paragraph>
             <div className="description">
-              <Paragraph header large>
-                Join The Online Competition
-              </Paragraph>
               <div className="selection">
-                <label className="label">Competition Category</label>
+                <label className="label">Kategori Competition</label>
                 <Select
                   theme={(theme) => ({
                     ...theme,
@@ -68,50 +165,74 @@ const DashboardCompetition = () => {
                   })}
                   className="basic-single"
                   classNamePrefix="select"
-                  isClearable
-                  isSearchable
                   name="competition"
                   options={competitionData}
+                  onChange={(e) => setPayload({...payload, competition_id: e.value})}
                 />
               </div>
               <div className="input-option">
                 <Fieldinput
-                  label="Team Name"
+                  label="Nama Tim"
                   name="name_team"
                   type="text"
                   required
                   marbott
+                  value={payload.name}
+                  onChange={(e) => setPayload({...payload, name: e.target.value})}
                 />
               </div>
               <div className="input-option">
                 <Fieldinput
-                  label="Team Captain"
+                  disabled
+                  label="Ketua Tim (Anda)"
                   name="team_captain"
                   type="text"
+                  value={getUserData.user_fullname}
                   required
                   marbott
                 />
               </div>
-              <Button onClicked={gotoData}>Register Competition</Button>
+              <div className="input-option">
+                <Fieldinput
+                  disabled
+                  label="Institusi"
+                  name="institution"
+                  type="text"
+                  value={institutionName}
+                  required
+                  marbott
+                />
+              </div>
+              <br/>
+              <br/>
+              <Button onClicked={() => setIsSending(true)}>Register Team</Button>
             </div>
           </div>
         </div>
-      ) : null}
-      {sectionData ? (
+      )}
+      {registrationStage === 2 && (
         <div className="dashboard-section-competition-data">
           <div className="view">
             <div className="data">
               <div className="header">
                 <Header center size="r">
-                  Team Name
+                  Data for team: {teamData.team_name}
                 </Header>
               </div>
+              <div className="team-member">
+                <div className="header">
+                  <Paragraph header>Team Member</Paragraph>
+                </div>
+                <Paragraph>1. John Doe</Paragraph>
+                <Paragraph>2. John Doe</Paragraph>
+                <Paragraph>3. John Doe</Paragraph>
+              </div>
               <div className="link-team-container">
-                <Paragraph header>Link Join This Team</Paragraph>
+                <Paragraph header>Join Link (psstt, jaga baik-baik!)</Paragraph>
                 <span className="link-container">
-                  <span className="link-container--link">{linkTeam}</span>
-                  <span className="icon-container" onClick={copytoclipboard}>
-                    <MdContentCopy className="copy-icon" />
+                  <span className="link-container--link">{teamData.team_join_link}</span>
+                  <span className="icon-container" onClick={() => copy(teamData.team_join_link)}>
+                    <MdContentCopy className="copy-icon"/>
                   </span>
                 </span>
               </div>
@@ -164,7 +285,7 @@ const DashboardCompetition = () => {
             </div>
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 };
