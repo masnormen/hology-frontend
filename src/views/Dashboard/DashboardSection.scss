@@ -121,7 +121,10 @@
       align-items: center;
 
       &--link {
-        font-size: 1.25rem;
+        font-size: 1rem;
+        word-break: break-all;
+        max-width: 90%;
+        padding: 10px;
       }
 
       .icon-container {
@@ -143,25 +146,26 @@
 
   .data-container {
     .kartu-mahasiswa-container {
-      width: 40%;
       margin-bottom: 2rem;
       .subtitle {
         margin-bottom: 1.25rem;
       }
     }
     .surat-keterangan-container {
-      width: 40%;
       margin-bottom: 2rem;
       .subtitle {
         margin-bottom: 1.25rem;
       }
     }
     .bukti-bayar-container {
-      width: 40%;
       margin-bottom: 2rem;
       .subtitle {
         margin-bottom: 1.25rem;
       }
+    }
+    .filepond--wrapper {
+      width: 90%;
+      max-width: 400px;
     }
   }
 }

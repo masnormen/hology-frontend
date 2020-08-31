@@ -13,6 +13,7 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 import {getUserData, getAccessToken, getInstitutionName, invalidateSession} from "../../components/SessionHelper";
+import {FaCheckCircle} from "react-icons/fa";
 
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
@@ -40,12 +41,14 @@ const DashboardCompetition = () => {
   });
   const [isFailed, setIsFailed] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   // For stage 2
   const [teamData, setTeamData] = useState({});
-  const [kartuMahasiswwa, setKartuMahasiswa] = useState([]);
-  const [suratKeterangan, setSuratKeterangan] = useState([]);
-  const [buktiBayar, setBuktiBayar] = useState([]);
+  
+  const [kartuMahasiswwa, setKartuMahasiswa] = useState(false);
+  const [suratKeterangan, setSuratKeterangan] = useState(false);
+  const [buktiBayar, setBuktiBayar] = useState(false);
   
   const competitionData = [
     {value: 1, label: "App Innovation"},
@@ -86,7 +89,30 @@ const DashboardCompetition = () => {
         }).then(raw =>
           raw.json()
         ).then(res => {
+          if (res.data[0].team_payment_proof !== "") setBuktiBayar(true);
+          // if (res.data[0].team_payment_proof !== "") {
+          //   const getBuktiBayar = async () => {
+          //     await fetch(`https://multazamgsd.com/hology/api/teams/${res.data[0].team_id}/payment-proof`, {
+          //       method: "GET",
+          //       headers: {
+          //         "Authorization": "Bearer " + getAccessToken,
+          //         "Content-Type": "application/json"
+          //       },
+          //     }).then(raw => {
+          //       raw.blob()
+          //     }).then(image => {
+          //       console.log("sasasasas")
+          //       console.log(image);
+          //       setBuktiBayar(image)
+          //     }).catch(e => {
+          //       alert("Error!");
+          //     });
+          //   };
+          //   getBuktiBayar();
+          // }
           setTeamData(res.data[0]);
+          setIsLoading(false);
+          console.log(res.data[0]);
         }).catch(e => {
           invalidateSession();
           alert("Error occurred. Please log in again.");
@@ -118,6 +144,7 @@ const DashboardCompetition = () => {
       if (res["success"]) {
         alert("Your team has been succesfully registered!");
         setIsFailed(false);
+        window.location.reload();
       } else {
         alert("Registration failed! You can't create another team or your inputed data is wrong!");
         setIsFailed(true);
@@ -216,72 +243,193 @@ const DashboardCompetition = () => {
             <div className="data">
               <div className="header">
                 <Header center size="r">
-                  Data for team: {teamData.team_name}
+                  Team: {teamData.team_name}
                 </Header>
               </div>
-              <div className="team-member">
-                <div className="header">
-                  <Paragraph header>Team Member</Paragraph>
-                </div>
-                <Paragraph>1. John Doe</Paragraph>
-                <Paragraph>2. John Doe</Paragraph>
-                <Paragraph>3. John Doe</Paragraph>
-              </div>
               <div className="link-team-container">
-                <Paragraph header>Join Link (psstt, jaga baik-baik!)</Paragraph>
+                <Paragraph header>Secret invitation link:</Paragraph>
                 <span className="link-container">
-                  <span className="link-container--link">{teamData.team_join_link}</span>
-                  <span className="icon-container" onClick={() => copy(teamData.team_join_link)}>
+                  <span className="link-container--link">{teamData.team_join_url}</span>
+                  <span className="icon-container" onClick={() => copy(teamData.team_join_url)}>
                     <MdContentCopy className="copy-icon"/>
                   </span>
                 </span>
               </div>
+              <div className="team-member">
+                <div className="header">
+                  <Paragraph header>Anggota Tim:</Paragraph>
+                </div>
+                {!isLoading && teamData.members.map((item, index) =>
+                  <Paragraph key={index}>{index + 1}. {item.user_id}</Paragraph>
+                )}
+              </div>
+              <div className="data-container">
+                <div className="bukti-bayar-container">
+                  <div className="subtitle">
+                    <Paragraph header>Upload Bukti Pembayaran:</Paragraph>
+                  </div>
+                  {buktiBayar && (
+                    <>
+                      <Paragraph><FaCheckCircle height="14px" color="#00b900"/> File telah diupload. Tunggu verifikasi atau
+                        perbaiki file Anda:</Paragraph>
+                      <br/><br/>
+                    </>
+                  )}
+                  <FilePond
+                    maxFiles="2MB"
+                    name="payment_proof"
+                    server={{
+                      process: {
+                        withCredentials: false,
+                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/payment-proof`,
+                        headers: {
+                          "Authorization": "Bearer " + getAccessToken
+                        }
+                      }
+                    }}
+                    acceptedFileTypes={["image/png", "image/jpeg"]}
+                    labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.jpg/.png max 2MB)'
+                  />
+                </div>
+              </div>
+              <br/><br/>
+              <div className="header">
+                <Header center size="r">
+                  Account: {getUserData.user_fullname}
+                </Header>
+              </div>
+              <br/><br/>
               <div className="data-container">
                 <div className="kartu-mahasiswa-container">
                   <div className="subtitle">
-                    <Paragraph header>Upload Kartu Mahasiswa</Paragraph>
+                    <Paragraph header>Upload Kartu Mahasiswa:</Paragraph>
                   </div>
+                  {kartuMahasiswwa && (
+                    <>
+                      <Paragraph><FaCheckCircle height="14px" color="#00b900"/> File telah diupload. Tunggu verifikasi atau
+                        perbaiki file Anda:</Paragraph>
+                      <br/><br/>
+                    </>
+                  )}
                   <FilePond
-                    files={kartuMahasiswwa}
-                    maxFiles="5MB"
-                    server="http://192.168.33.10"
-                    allowImageCrop
-                    acceptedFileTypes={["application/csv", "text/csv"]}
-                    onupdatefiles={setKartuMahasiswa}
-                    dropValidation
-                    labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+                    maxFiles="2MB"
+                    name="proof"
+                    server={{
+                      process: {
+                        withCredentials: false,
+                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/identity-pics`,
+                        headers: {
+                          "Authorization": "Bearer " + getAccessToken
+                        }
+                      }
+                    }}
+                    acceptedFileTypes={["image/png", "image/jpeg"]}
+                    labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.jpg/.png max 2MB)'
                   />
                 </div>
                 <div className="surat-keterangan-container">
                   <div className="subtitle">
                     <Paragraph header>
-                      Upload Surat Keterangan Mahasiswa Aktif
+                      Upload Surat Keterangan Mahasiswa Aktif:
                     </Paragraph>
                   </div>
+                  {suratKeterangan && (
+                    <>
+                      <Paragraph><FaCheckCircle height="14px" color="#00b900"/> File telah diupload. Tunggu verifikasi atau
+                        perbaiki file Anda:</Paragraph>
+                      <br/><br/>
+                    </>
+                  )}
                   <FilePond
-                    files={suratKeterangan}
-                    server="http://192.168.33.10"
-                    acceptedFileTypes
-                    onupdatefiles={setSuratKeterangan}
-                    labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-                  />
-                </div>
-                <div className="bukti-bayar-container">
-                  <div className="subtitle">
-                    <Paragraph header>Upload Bukti Pembayaran</Paragraph>
-                  </div>
-                  <FilePond
-                    files={buktiBayar}
-                    maxFiles="5MB"
-                    server="http://192.168.33.10"
-                    allowImageCrop
-                    acceptedFileTypes={["application/csv", "text/csv"]}
-                    onupdatefiles={setBuktiBayar}
-                    dropValidation
-                    labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+                    maxFiles="2MB"
+                    name="proof"
+                    server={{
+                      process: {
+                        withCredentials: false,
+                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/proofs`,
+                        headers: {
+                          "Authorization": "Bearer " + getAccessToken
+                        }
+                      }
+                    }}
+                    acceptedFileTypes={["image/png", "image/jpeg"]}
+                    labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.jpg/.png/.pdf max 2MB)'
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {registrationStage === 3 && (
+        <div className="dashboard-section-competition-selection">
+          <div className="academy">
+            <div className="header">
+              <Header center size="r">
+                Anda telah terverifikasi!
+              </Header>
+            </div>
+            <br/><br/>
+            <Paragraph style={{maxWidth: "200px"}}>
+              Ketua tim medaftarkan tim di sini.<br/>
+              Anggota tim cukup mengakses link invitation untuk join ke tim.
+            </Paragraph>
+            <div className="description">
+              <div className="selection">
+                <label className="label">Kategori Competition</label>
+                <Select
+                  theme={(theme) => ({
+                    ...theme,
+                    borderRadius: 0,
+                    colors: {
+                      ...theme.colors,
+                      primary25: "#519a9e",
+                      primary: "#1f81a0",
+                    },
+                  })}
+                  className="basic-single"
+                  classNamePrefix="select"
+                  name="competition"
+                  options={competitionData}
+                  onChange={(e) => setPayload({...payload, competition_id: e.value})}
+                />
+              </div>
+              <div className="input-option">
+                <Fieldinput
+                  label="Nama Tim"
+                  name="name_team"
+                  type="text"
+                  required
+                  marbott
+                  value={payload.name}
+                  onChange={(e) => setPayload({...payload, name: e.target.value})}
+                />
+              </div>
+              <div className="input-option">
+                <Fieldinput
+                  disabled
+                  label="Ketua Tim (Anda)"
+                  name="team_captain"
+                  type="text"
+                  value={getUserData.user_fullname}
+                  required
+                  marbott
+                />
+              </div>
+              <div className="input-option">
+                <Fieldinput
+                  disabled
+                  label="Institusi"
+                  name="institution"
+                  type="text"
+                  value={institutionName}
+                  required
+                  marbott
+                />
+              </div>
+              <br/>
+              <br/>
+              <Button onClicked={() => setIsSending(true)}>Register Team</Button>
             </div>
           </div>
         </div>
