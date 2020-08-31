@@ -41,14 +41,13 @@
     }
 
     .description {
-      margin-bottom: 1.75rem;
+      margin: 0 auto 1.75rem;
     }
   }
 }
 
 .dashboard-section-competition-selection {
   width: 100%;
-  min-height: 350px;
   padding: 5% 0;
   background-color: $backgroundBase1;
   border: 1.5px solid $terneryColor;
@@ -63,9 +62,12 @@
     .header {
       margin-bottom: 1rem;
     }
+    .description {
+      max-width: 300px;
+      margin: auto;
+    }
 
     .selection {
-      width: 300px;
       margin: 2.5rem 0 1.75rem;
 
       .label {
@@ -118,12 +120,17 @@
       align-items: center;
 
       &--link {
-        font-size: 1.25rem;
+        font-size: 1rem;
+        word-break: break-all;
+        max-width: 90%;
+        padding: 10px;
       }
 
       .icon-container {
         padding: 0.75rem;
         border-radius: 999px;
+        vertical-align: top;
+        line-height: 12px;
         &:hover {
           background-color: $primaryColor;
         }
@@ -138,25 +145,26 @@
 
   .data-container {
     .kartu-mahasiswa-container {
-      width: 40%;
       margin-bottom: 2rem;
       .subtitle {
         margin-bottom: 1.25rem;
       }
     }
     .surat-keterangan-container {
-      width: 40%;
       margin-bottom: 2rem;
       .subtitle {
         margin-bottom: 1.25rem;
       }
     }
     .bukti-bayar-container {
-      width: 40%;
       margin-bottom: 2rem;
       .subtitle {
         margin-bottom: 1.25rem;
       }
+    }
+    .filepond--wrapper {
+      width: 90%;
+      max-width: 400px;
     }
   }
 }

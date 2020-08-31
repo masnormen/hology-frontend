@@ -5,13 +5,14 @@ import { Route, Switch, Redirect, NavLink } from "react-router-dom";
 import DashboardWebinar from "./DashboardWebinar";
 import DashboardAcademy from "./DashboardAcademy";
 import DashboardCompetition from "./DashboardCompetition";
+import {getUserData} from "../../components/SessionHelper";
+import CheckSession from "../../components/CheckSession";
 
 const Dashboard = () => {
-  const username = "Participant Hology";
   return (
-    <>
+    <CheckSession redirect>
       <div className="dashboard-container-full">
-        <Header>Hi, {username}</Header>
+        <Header>Halo, {getUserData.user_fullname}!</Header>
         <div className="dashboard">
           <div className="sidebar">
             <NavLink
@@ -59,7 +60,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-    </>
+    </CheckSession>
   );
 };
 

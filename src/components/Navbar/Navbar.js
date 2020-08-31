@@ -108,6 +108,13 @@ function Navbar() {
 							<NavLink
 								activeClassName="navbar__link--active"
 								className="navbar__link"
+								to="/dashboard"
+							>
+								Dashboard
+							</NavLink>
+							<NavLink
+								activeClassName="navbar__link--active"
+								className="navbar__link"
 								to="/logout"
 							>
 								Logout
