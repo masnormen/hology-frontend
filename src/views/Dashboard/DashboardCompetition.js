@@ -106,6 +106,14 @@ const DashboardCompetition = () => {
                   Team Name
                 </Header>
               </div>
+              <div className="team-member">
+                <div className="header">
+                  <Paragraph header>Team Member</Paragraph>
+                </div>
+                <Paragraph>1. John Doe</Paragraph>
+                <Paragraph>2. John Doe</Paragraph>
+                <Paragraph>3. John Doe</Paragraph>
+              </div>
               <div className="link-team-container">
                 <Paragraph header>Link Join This Team</Paragraph>
                 <span className="link-container">
@@ -123,6 +131,7 @@ const DashboardCompetition = () => {
                   <FilePond
                     files={kartuMahasiswwa}
                     maxFiles="5MB"
+                    allowMultiple
                     server="http://192.168.33.10"
                     allowImageCrop
                     acceptedFileTypes={["application/csv", "text/csv"]}

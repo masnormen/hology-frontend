@@ -93,6 +93,12 @@
   display: flex;
   justify-content: flex-start;
 
+  .team-member {
+    margin: 2.5rem 0;
+    .header {
+      margin-bottom: 0.75rem;
+    }
+  }
   .view {
     width: 100%;
   }

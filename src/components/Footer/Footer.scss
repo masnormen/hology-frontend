@@ -1,8 +1,8 @@
 @import "../../base.scss";
 
 .footer {
-  height: calc(100vh - 75px);
-  min-height: 500px;
+  // height: calc(100vh - 75px);
+  // min-height: 500px;
   padding: 10% 10%;
   border-top: 5px solid #000;
   background-image: $backgroundFooterLinear;
@@ -93,7 +93,7 @@
           font-weight: bold;
 
           a {
-            text-decoration: none!important;
+            text-decoration: none !important;
           }
 
           .icon-email {
