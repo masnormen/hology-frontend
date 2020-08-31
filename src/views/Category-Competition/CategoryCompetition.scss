@@ -2,8 +2,12 @@
 
 .section-competition-category-full-1 {
   min-height: 100vh;
-  padding: 20% 10% 0;
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   overflow: hidden;
+  flex-direction: column;
   background-image: $backgroundLinear;
   position: relative;
   @include respon(phone-pot) {

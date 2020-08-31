@@ -77,7 +77,7 @@
 
 .s {
   font-size: $header-s;
-  line-height: 2.5rem; //r = 2.25rem;
+  // line-height: 2.5rem; //r = 2.25rem;
   @include respon(phone-pot) {
     font-size: 1.75rem;
     line-height: 2.75rem;

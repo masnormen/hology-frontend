@@ -162,17 +162,60 @@ const Home = () => {
         <div className="title fadeIn6">
           <Header size="r">Our Values</Header>
         </div>
-        <div className="description fadeIn6">
-          <div className="header fadeIn5">
-            <Paragraph header>
-              <ol>
-                <li>1. PROGRESSIVE</li>
-                <li>2. RESPONSIVE</li>
-                <li>3. SOPHISTICATED</li>
-                <li>4. IMPACTFUL</li>
-                <li>5. ADAPTIVE</li>
-              </ol>
-            </Paragraph>
+        <div className="content">
+          <div className="container  margin-bottom">
+            <div className="value-container">
+              <Header size="s">Progressive</Header>
+              <div className="description">
+                <Paragraph>
+                  Melalui Hology, kami menciptakan ide-ide baru secara progresif
+                  dan hadir dengan solusi baru
+                </Paragraph>
+              </div>
+            </div>
+            <div className="value-container">
+              <Header size="s">Responsive</Header>
+              <div className="description">
+                <Paragraph>
+                  Hology selalu responsif dalam situasi terbaru mengenai
+                  perkembangan teknologi
+                </Paragraph>
+              </div>
+            </div>
+          </div>
+
+          <div className="container  margin-bottom">
+            <div className="value-container">
+              <Header size="s">Sophisticated</Header>
+              <div className="description">
+                <Paragraph>
+                  Dari acara Hology, kami akan menemukan teknologi canggih di
+                  era industri digital
+                </Paragraph>
+              </div>
+            </div>
+            <div className="value-container">
+              <Header size="s">Impactful</Header>
+              <div className="description">
+                <Paragraph>
+                  Dari Hology, kami percaya hal tersebut akan menghasilkan
+                  dampak yang besar bagi sebuah negara yang lebih majuu
+                </Paragraph>
+              </div>
+            </div>
+          </div>
+
+          <div className="container">
+            <div className="value-container">
+              <Header size="s">Adaptive</Header>
+              <div className="description">
+                <Paragraph>
+                  Sebagai generasi muda, kita harus selalu adaptif terhadap
+                  perubahan yang terjadi di dalam lingkungan kita. Khususnya
+                  teknologi
+                </Paragraph>
+              </div>
+            </div>
           </div>
         </div>
         <div className="square-box-1"></div>
