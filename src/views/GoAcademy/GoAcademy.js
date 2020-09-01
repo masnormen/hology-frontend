@@ -3,10 +3,14 @@ import Header from "../../components/Header/Header";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./GoAcademy.scss";
 import Button from "../../components/Button/Button";
+import Helmet from "react-helmet";
 
 const GoAcademy = () => {
   return (
     <>
+      <Helmet>
+        <title>Go Academy</title>
+      </Helmet>
       <div className="section-go-academy-full-1">
         <div className="title">
           <Header size="xl" center>

@@ -5,7 +5,6 @@ import Logo from "../../assets/logotext.png";
 import {
   FaYoutube,
   FaLine,
-  FaTwitterSquare,
   FaInstagram,
   FaEnvelope,
 } from "react-icons/fa";
@@ -42,10 +41,10 @@ const Footer = () => {
             <div className="media">
               <FaLine className="icon" color="#00b900"/>
               <a
-                href="https://line.me/R/ti/p/@qqf2710x"
+                href="https://line.me/R/ti/p/@hology"
                 target="blank"
               >
-                @qqf2710x
+                @hology
               </a>
             </div>
             <div className="media">

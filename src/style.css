@@ -140,9 +140,19 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #011826;
 }
 
 #root {
   background: url("/assets/homepage.png") repeat center !important;
   background-size: cover !important;
+  opacity: 1;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#root.hidden {
+  opacity: 0 !important;
+  -webkit-transition: opacity 20ms ease-in-out;
+  transition: opacity 20ms ease-in-out;
 }

@@ -10,15 +10,15 @@ const DashboardAcademy = () => {
       <div className="academy">
         <div className="header">
           <Header center size="r">
-            GO Academy
+            Academy
           </Header>
         </div>
         <div className="description">
           <Paragraph header large>
-            Join The Online Academy
+            COMING SOON
           </Paragraph>
         </div>
-        <Button>Register</Button>
+        {/*<Button>Register</Button>*/}
       </div>
     </div>
   );

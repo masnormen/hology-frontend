@@ -24,9 +24,10 @@ import Logout from "./views/Logout/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Webinar from "./views/Webinar/Webinar";
+import Invitation from "./views/Invitation/Invitation";
 
 ReactGA.initialize("UA-38735593-5", {
-  debug: true,
+  debug: false,
 });
 
 const App = () => {
@@ -38,18 +39,23 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/competition" component={Competition} />
-          <Route path="/businessitcase" component={BusinessITCase} />
-          <Route path="/appinnovation" component={AppInnovation} />
-          <Route path="/programming" component={Programming} />
-          <Route path="/smartdevice" component={SmartDevice} />
-          <Route path="/capturetheflag" component={CaptureTheFlag} />
-          <Route path="/gamedevelopment" component={GameDevelopment} />
-          <Route path="/register" component={Register} />
+          
+          <Route exact path="/competition" component={Competition} />
+          <Route path="/competition/businessitcase" component={BusinessITCase} />
+          <Route path="/competition/appinnovation" component={AppInnovation} />
+          <Route path="/competition/programming" component={Programming} />
+          <Route path="/competition/smartdevice" component={SmartDevice} />
+          <Route path="/competition/capturetheflag" component={CaptureTheFlag} />
+          <Route path="/competition/gamedevelopment" component={GameDevelopment} />
+          
+          <Route path="/webinar" component={Webinar} />
           <Route path="/goacademy" component={GoAcademy} />
-          <Route path="/event" component={Webinar} />
+  
+          <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/logout" component={Logout} />
+  
+          <Route path="/invitation/:token" component={Invitation} />
           <Route path="/dashboard" component={Dashboard} />
         </Switch>
         <Footer />

@@ -6,7 +6,6 @@ import {CSSTransition} from "react-transition-group";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {IoMdClose} from "react-icons/io";
 import CheckSession from "../CheckSession";
-import {getUserData} from "../SessionHelper";
 
 function Navbar() {
   const [isTransparent, setIsTrasnparent] = useState(false);
@@ -56,7 +55,7 @@ function Navbar() {
         unmountOnExit
       >
         <div className="options">
-          <div className="section-1">
+          <div className="section-1" onClick={toggleNav}>
             <NavLink
               exact
               activeClassName="navbar__link--active"
@@ -74,21 +73,21 @@ function Navbar() {
             </NavLink>
             <NavLink
               activeClassName="navbar__link--active"
-              className="navbar__link"
+              className="navbar__link disabled"
               to="/goacademy"
             >
               Academy
             </NavLink>
             <NavLink
               activeClassName="navbar__link--active"
-              className="navbar__link"
-              to="/event"
+              className="navbar__link disabled"
+              to="/webinar"
             >
-              Event
+              Webinar
             </NavLink>
           </div>
           <div className="line"></div>
-          <div className="section-2">
+          <div className="section-2" onClick={toggleNav}>
             <CheckSession loggedOut>
               <NavLink
                 activeClassName="navbar__link--active"

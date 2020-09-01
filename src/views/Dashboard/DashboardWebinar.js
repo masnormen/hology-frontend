@@ -16,10 +16,10 @@ const DashboardWebinar = () => {
           </div>
           <div className="description">
             <Paragraph header large>
-              Join The Online Webinar
+              COMING SOON
             </Paragraph>
           </div>
-          <Button>Register</Button>
+          {/*<Button>Register</Button>*/}
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@ import {Link, Redirect} from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import Select from "react-select";
+import Helmet from "react-helmet";
+import CheckSession from "../../components/CheckSession";
 
 function checkValid(obj) {
 	for (let key in obj) {
@@ -87,6 +89,10 @@ const Register = () => {
 	
 	return (
 		<>
+			<Helmet>
+				<title>Register</title>
+			</Helmet>
+			<CheckSession loggedOut redirect/>
 			{isSuccess === "yes" && (
 				<Redirect to="/login"/>
 			)}

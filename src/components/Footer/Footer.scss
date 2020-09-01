@@ -75,7 +75,7 @@
         margin-top: 1.5rem;
         display: flex;
         justify-content: space-between;
-        align-items: start;
+        align-items: flex-start;
         flex-direction: column;
         @include respon(phone-pot) {
           align-items: flex-start;

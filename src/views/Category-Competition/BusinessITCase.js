@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "../../components/Header/Header";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./CategoryCompetition.scss";
 import Button from "../../components/Button/Button";
+import Helmet from "react-helmet";
+import {Link} from "react-router-dom";
 
 const data = {
-  title: "BUSINESS IT CASE",
+  title: "Business IT Case",
   tagline: "“Solving Business Problems”",
   routeName: "business-it-case",
   description:
@@ -29,6 +31,9 @@ const data = {
 const CategoryCompetition = ({ category }) => {
   return (
     <>
+      <Helmet>
+        <title>{data.title}</title>
+      </Helmet>
       <div className="section-competition-category-full-1">
         <div className="title">
           <Header size="l">{data.title}</Header>
@@ -43,8 +48,8 @@ const CategoryCompetition = ({ category }) => {
         </div>
 
         <div className="buttons-container">
-          <Button>Register Now</Button>
-          <Button variant="secondary">Download Guidebook</Button>
+          <Link to="/register"><Button >Register Now</Button></Link>
+          <a rel="noopener noreferrer" href="https://drive.google.com/drive/folders/17uBh0tIwc4jUbQ0qDhjMrrtLillnlPvD?usp=sharing" target="_blank"><Button variant="secondary">Download Guidebook</Button></a>
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>

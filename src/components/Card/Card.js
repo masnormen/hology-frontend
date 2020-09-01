@@ -8,7 +8,7 @@ import Button from "../Button/Button";
 const Card = ({ title, subtitle, variant = "purple", link }) => {
   return (
     <div className={`card-category-container ${variant}`}>
-      <div className="icon"></div>
+      {/*<div className="icon"></div>*/}
       <div className="title">
         <Header size="s" center lineWhite>
           {title}

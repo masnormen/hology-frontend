@@ -7,10 +7,14 @@ import DashboardAcademy from "./DashboardAcademy";
 import DashboardCompetition from "./DashboardCompetition";
 import {getUserData} from "../../components/SessionHelper";
 import CheckSession from "../../components/CheckSession";
+import Helmet from "react-helmet";
 
 const Dashboard = () => {
   return (
     <CheckSession redirect>
+      <Helmet>
+        <title>Competition</title>
+      </Helmet>
       <div className="dashboard-container-full">
         <Header>Halo, {getUserData.user_fullname}!</Header>
         <div className="dashboard">

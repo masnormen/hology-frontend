@@ -6,16 +6,15 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
 import Logo from "../../assets/logo.png";
-import {Redirect} from "react-router";
 
 import {setUserData} from "../../components/SessionHelper";
 import CheckSession from "../../components/CheckSession";
+import Helmet from "react-helmet";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
-  const [isValid, setIsValid] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
   
   useEffect(() => {
@@ -47,8 +46,10 @@ const Login = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Log In</title>
+      </Helmet>
       <CheckSession loggedOut redirect/>
-      
       <div className="login-container-full">
         <div className="flexbox-login">
           <div className="logo-container">

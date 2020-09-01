@@ -2,12 +2,15 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./Competition.scss";
-import { Link } from "react-router-dom";
 import Card from "../../components/Card/Card";
+import Helmet from "react-helmet";
 
 const Competition = () => {
   return (
     <>
+      <Helmet>
+        <title>Competition</title>
+      </Helmet>
       <div className="section-competition-full-1">
         <div className="title">
           <Header size="xl" center>
@@ -21,9 +24,7 @@ const Competition = () => {
         </div>
         <div className="description">
           <Paragraph>
-            "But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual”
+            Jelajahi dan temukan minatmu di antara 6 cabang kompetisi IT.
           </Paragraph>
         </div>
         <div className="square-box-1"></div>
@@ -36,9 +37,7 @@ const Competition = () => {
         </div>
         <div className="description">
           <Paragraph>
-            "But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual”
+            Jelajahi dan temukan minatmu di antara 6 cabang kompetisi IT.
           </Paragraph>
         </div>
 
@@ -46,13 +45,13 @@ const Competition = () => {
           <Card
             variant="blue-light"
             title="App Innovation"
-            link="/appinnovation"
+            link="/competition/appinnovation"
             subtitle="App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth"
           />
           <Card
             variant="blue-light"
             title="Business IT Case"
-            link="/businessitcase"
+            link="/competition/businessitcase"
             subtitle="Business IT Case adalah cabang lomba yang bertujuan
             untuk mengembangkan dan melatih pengetahuan dan kemampuan
             dalam memecahkan masalah bisnis yang ada di lingkungan kerja
@@ -62,7 +61,7 @@ const Competition = () => {
           <Card
             variant="blue-light"
             title="Programming"
-            link="/programming"
+            link="/competition/programming"
             subtitle="Programming adalah sebuah kontes pemrograman tingkat nasional. Kompetisi ini merupakan ajang untuk menguji kemampuan dan nalar peserta dalam menyelesaikan berbagai permasalahan komputasional yang diberikan."
           />
         </div>
@@ -70,20 +69,20 @@ const Competition = () => {
         <div className="competition-category-container-2">
           <Card
             variant="blue-light"
-            link="/smartdevice"
+            link="/competition/smartdevice"
             title="Smart Device"
             subtitle="Smart Device adalah sebuah karya cipta piranti teknologi tepat guna yang bekerja secara interaktif dan otomatis serta mampu memberikan solusi untuk permasalahan yang ada di dalam masyarakat."
           />
           <Card
             variant="blue-light"
             title="Capture the Flag"
-            link="/capturetheflag"
+            link="/competition/capturetheflag"
             subtitle="Capture the Flag adalah sebuah kompetisi di bidang jaringan dan keamanan informasi yang mengangkat isu berkaitan dengan implementasi pemecahan masalah yang dikaji sistem keamanan jaringan dan komputer serta keamanan informasi."
           />
           <Card
             variant="blue-light"
             title="Game Development"
-            link="/gamedevelopment"
+            link="/competition/gamedevelopment"
             subtitle="Game Development Competition adalah lomba yang ditujukan untuk mengasah kemampuan dalam bidang game developing dan juga sebagai ajang berkompetisi dalam bidang game developing."
           />
         </div>

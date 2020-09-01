@@ -6,10 +6,14 @@ import Logo from "../../assets/logo.png";
 
 import "./Home.scss";
 import { Link } from "react-router-dom";
+import Helmet from "react-helmet";
 
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <div className="section-home-full-1">
         <div className="text">
           <div className="title">
@@ -142,7 +146,7 @@ const Home = () => {
         <div className="description">
           <div className="tagline">
             <Paragraph>
-              Empowering IT enthusiasts through online courses.
+              Memberdayakan IT enthusiast melalui online courses. Stay tuned!
             </Paragraph>
           </div>
           <div className="sub-header fadeIn5">
@@ -213,29 +217,29 @@ const Home = () => {
         <div className="square-box-2"></div>
       </div>
 
-      <div className="section-home-full-8">
-        <div className="text">
-          <div className="title fadeIn7">
-            <Header size="r">Gallery Hology 2.0</Header>
-          </div>
-          <div className="description fadeIn7">
-            <Paragraph>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </Paragraph>
-          </div>
-        </div>
-        <div className="gallery-container">
-          <div className="gallery-image-1 fadeIn7"></div>
-          <div className="gallery-image-2 fadeIn7"></div>
-          <div className="gallery-image-2 fadeIn7"></div>
-        </div>
-      </div>
+      {/*<div className="section-home-full-8">*/}
+      {/*  <div className="text">*/}
+      {/*    <div className="title fadeIn7">*/}
+      {/*      <Header size="r">Gallery Hology 2.0</Header>*/}
+      {/*    </div>*/}
+      {/*    <div className="description fadeIn7">*/}
+      {/*      <Paragraph>*/}
+      {/*        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do*/}
+      {/*        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut*/}
+      {/*        enim ad minim veniam, quis nostrud exercitation ullamco laboris*/}
+      {/*        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in*/}
+      {/*        reprehenderit in voluptate velit esse cillum dolore eu fugiat*/}
+      {/*        nulla pariatur. Excepteur sint occaecat cupidatat non proident,*/}
+      {/*        sunt in culpa qui officia deserunt mollit anim id est laborum."*/}
+      {/*      </Paragraph>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*  <div className="gallery-container">*/}
+      {/*    <div className="gallery-image-1 fadeIn7"></div>*/}
+      {/*    <div className="gallery-image-2 fadeIn7"></div>*/}
+      {/*    <div className="gallery-image-2 fadeIn7"></div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
     </>
   );
 };
