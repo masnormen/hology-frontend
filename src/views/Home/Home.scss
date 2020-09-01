@@ -136,17 +136,12 @@
   @include heightMinusNavbar;
   position: relative;
   overflow: hidden;
-  padding: 12% 10% 0;
+  padding: 0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
   background: $backgroundLinear2;
-  @include respon(phone-pot) {
-    padding: 20% 10% 0;
-  }
-  @include respon(phone-land) {
-    padding: 20% 10% 0;
-  }
-  @include respon(tb-pot) {
-    padding: 20% 10% 0;
-  }
 
   .title {
     position: relative;
@@ -251,9 +246,13 @@
 
 .section-home-full-4 {
   @include heightMinusNavbar;
-  padding: 12% 10% 0;
+  padding: 0 10%;
   position: relative;
   background: $backgroundBase1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   overflow: hidden;
   @include respon(phone-pot) {
     padding: 20% 10% 0;
@@ -264,12 +263,14 @@
     z-index: 2;
     display: inline-block;
     margin-bottom: 1rem;
+    align-self: flex-start;
   }
 
   .description {
     position: relative;
     z-index: 2;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     @include respon(phone-pot) {
       flex-direction: column;
@@ -297,6 +298,7 @@
       }
       .header {
         margin-bottom: 1rem;
+        width: 100%;
       }
     }
     .image-container {
@@ -307,6 +309,8 @@
       animation-timing-function: ease-in-out;
       @include respon(phone-pot) {
         width: 100%;
+        display: flex;
+        justify-content: center;
         margin-bottom: 3rem;
       }
       @include respon(phone-land) {
@@ -364,16 +368,14 @@
 
 .section-home-full-5 {
   @include heightMinusNavbar;
-  padding: 13% 10% 5%;
+  padding: 0 10%;
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-image: $backgroundLinear;
-  @include respon(phone-pot) {
-    padding: 20% 10% 5%;
-  }
-  @include respon(phone-land) {
-    padding: 20% 10% 5%;
-  }
   .title {
     margin-bottom: 2rem;
     text-align: center;
@@ -453,7 +455,7 @@
 
 .section-home-full-6 {
   @include heightMinusNavbar;
-  padding: 13% 10% 0;
+  padding: 0 10% 0;
   overflow: hidden;
   position: relative;
   background-color: $backgroundBase1;
@@ -589,17 +591,16 @@
 }
 
 .section-home-full-7 {
-  @include heightMinusNavbar;
-  padding: 9% 10% 0;
+  // @include heightMinusNavbar;
+  padding: 10% 10%;
   overflow: hidden;
   position: relative;
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   background: $backgroundBase1;
-  @include respon(phone-pot) {
-    padding: 20% 10% 0;
-  }
-  @include respon(phone-land) {
-    padding: 15% 10% 0;
-  }
 
   .title {
     position: relative;
@@ -608,15 +609,51 @@
     margin-bottom: 1rem;
   }
 
-  .description {
-    position: relative;
-    z-index: 2;
-    width: 60%;
-    @include respon(phone-pot) {
-      width: 100%;
+  .content {
+    margin-top: 2rem;
+
+    .margin-bottom {
+      margin-bottom: 2rem;
+      @include respon(phone-pot) {
+        margin-bottom: 0rem;
+      }
+      @include respon(phone-land) {
+        margin-bottom: 0rem;
+      }
     }
-    @include respon(phone-land) {
-      width: 100%;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      @include respon(phone-pot) {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      @include respon(phone-land) {
+        flex-direction: column;
+        width: inherit;
+        justify-content: flex-start;
+      }
+    }
+
+    .value-container {
+      padding: 24px 16px;
+      background-color: $backgroundBase2;
+      border: 1.5px solid $terneryColor;
+      border-radius: 10px;
+      width: 47%;
+      @include respon(phone-pot) {
+        margin-bottom: 2rem;
+        width: 47%;
+      }
+      @include respon(phone-land) {
+        width: 65%;
+        margin-bottom: 2rem;
+      }
+      .description {
+        margin-top: 1.25rem;
+        width: 100%;
+      }
     }
   }
   .square-box-1 {

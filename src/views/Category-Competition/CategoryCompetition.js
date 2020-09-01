@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header/Header";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./CategoryCompetition.scss";
 import Button from "../../components/Button/Button";
+import CATEGORY_COMPETITION from "./CategoryData";
 
-const CategoryCompetition = () => {
+const CategoryCompetition = ({ category }) => {
   return (
     <>
       <div className="section-competition-category-full-1">
