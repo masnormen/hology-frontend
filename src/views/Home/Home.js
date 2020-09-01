@@ -81,11 +81,9 @@ const Home = () => {
         </div>
         <div className="description">
           <div className="text">
-            <div className="header">
-              <Paragraph header>
-                Finding the best talents through competitions.
-              </Paragraph>
-            </div>
+            <Paragraph header>
+              Finding the best talents through competitions.
+            </Paragraph>
             <div className="sub-header">
               <Paragraph>
                 Bergabung dan memecahkan tantangan di dalam kompetisi skala
@@ -135,23 +133,20 @@ const Home = () => {
       </div>
 
       {/*<div className="section-home-full-6">*/}
-      <div className="section-home-full-5">
+      <div className="section-home-full-6">
         <div className="title fadeIn5">
           <Header size="r" center>
             Academy
           </Header>
         </div>
         <div className="description">
-          <div className="image-container fadeIn5"></div>
-          <div className="text">
-            <div className="header fadeIn5">
-              <Paragraph header>
-                Empowering IT enthusiasts through online courses.
-              </Paragraph>
-            </div>
-            <div className="sub-header fadeIn5">
-              <Paragraph>COMING SOON.</Paragraph>
-            </div>
+          <div className="tagline">
+            <Paragraph>
+              Empowering IT enthusiasts through online courses.
+            </Paragraph>
+          </div>
+          <div className="sub-header fadeIn5">
+            <Paragraph>COMING SOON.</Paragraph>
           </div>
         </div>
         <div className="square-box-1"></div>
@@ -159,62 +154,58 @@ const Home = () => {
       </div>
 
       <div className="section-home-full-7">
-        <div className="title fadeIn6">
+        <div className="title ">
           <Header size="r">Our Values</Header>
         </div>
-        <div className="content">
-          <div className="container  margin-bottom">
-            <div className="value-container">
-              <Header size="s">Progressive</Header>
-              <div className="description">
-                <Paragraph>
-                  Melalui Hology, kami menciptakan ide-ide baru secara progresif
-                  dan hadir dengan solusi baru
-                </Paragraph>
-              </div>
-            </div>
-            <div className="value-container">
-              <Header size="s">Responsive</Header>
-              <div className="description">
-                <Paragraph>
-                  Hology selalu responsif dalam situasi terbaru mengenai
-                  perkembangan teknologi
-                </Paragraph>
-              </div>
-            </div>
-          </div>
-
-          <div className="container  margin-bottom">
-            <div className="value-container">
-              <Header size="s">Sophisticated</Header>
-              <div className="description">
-                <Paragraph>
-                  Dari acara Hology, kami akan menemukan teknologi canggih di
-                  era industri digital
-                </Paragraph>
-              </div>
-            </div>
-            <div className="value-container">
-              <Header size="s">Impactful</Header>
-              <div className="description">
-                <Paragraph>
-                  Dari Hology, kami percaya hal tersebut akan menghasilkan
-                  dampak yang besar bagi sebuah negara yang lebih majuu
-                </Paragraph>
-              </div>
+        <div className="data">
+          <div className="container">
+            <Header size="s">Progressive</Header>
+            <div className="description">
+              <Paragraph>
+                Melalui Hology, kami menciptakan ide-ide baru secara progresif
+                dan hadir dengan solusi baru
+              </Paragraph>
             </div>
           </div>
 
           <div className="container">
-            <div className="value-container">
-              <Header size="s">Adaptive</Header>
-              <div className="description">
-                <Paragraph>
-                  Sebagai generasi muda, kita harus selalu adaptif terhadap
-                  perubahan yang terjadi di dalam lingkungan kita. Khususnya
-                  teknologi
-                </Paragraph>
-              </div>
+            <Header size="s">Responsive</Header>
+            <div className="description">
+              <Paragraph>
+                Hology selalu responsif dalam situasi terbaru mengenai
+                perkembangan teknologi
+              </Paragraph>
+            </div>
+          </div>
+
+          <div className="container">
+            <Header size="s">Sophisticated</Header>
+            <div className="description">
+              <Paragraph>
+                Dari acara Hology, kami akan menemukan teknologi canggih di era
+                industri digital
+              </Paragraph>
+            </div>
+          </div>
+
+          <div className="container">
+            <Header size="s">Impactful</Header>
+            <div className="description">
+              <Paragraph>
+                Dari Hology, kami percaya hal tersebut akan menghasilkan dampak
+                yang besar bagi sebuah negara yang lebih majuu
+              </Paragraph>
+            </div>
+          </div>
+
+          <div className="container">
+            <Header size="s">Adaptive</Header>
+            <div className="description">
+              <Paragraph>
+                Sebagai generasi muda, kita harus selalu adaptif terhadap
+                perubahan yang terjadi di dalam lingkungan kita. Khususnya
+                teknologi
+              </Paragraph>
             </div>
           </div>
         </div>

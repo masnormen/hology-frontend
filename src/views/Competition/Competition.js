@@ -44,42 +44,47 @@ const Competition = () => {
 
         <div className="competition-category-container-1">
           <Card
+            variant="blue-light"
             title="App Innovation"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
+            link="/appinnovation"
+            subtitle="App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth"
           />
           <Card
-            variant="blue"
+            variant="blue-light"
             title="Business IT Case"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
+            link="/businessitcase"
+            subtitle="Business IT Case adalah cabang lomba yang bertujuan
+            untuk mengembangkan dan melatih pengetahuan dan kemampuan
+            dalam memecahkan masalah bisnis yang ada di lingkungan kerja
+            sebenarnya dengan pendekatan teknologi informasi.
+            "
           />
           <Card
             variant="blue-light"
             title="Programming"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
+            link="/programming"
+            subtitle="Programming adalah sebuah kontes pemrograman tingkat nasional. Kompetisi ini merupakan ajang untuk menguji kemampuan dan nalar peserta dalam menyelesaikan berbagai permasalahan komputasional yang diberikan."
           />
         </div>
 
         <div className="competition-category-container-2">
           <Card
-            variant="purple-light"
+            variant="blue-light"
+            link="/smartdevice"
             title="Smart Device"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
+            subtitle="Smart Device adalah sebuah karya cipta piranti teknologi tepat guna yang bekerja secara interaktif dan otomatis serta mampu memberikan solusi untuk permasalahan yang ada di dalam masyarakat."
           />
           <Card
-            variant="blue"
+            variant="blue-light"
             title="Capture the Flag"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
+            link="/capturetheflag"
+            subtitle="Capture the Flag adalah sebuah kompetisi di bidang jaringan dan keamanan informasi yang mengangkat isu berkaitan dengan implementasi pemecahan masalah yang dikaji sistem keamanan jaringan dan komputer serta keamanan informasi."
           />
           <Card
             variant="blue-light"
             title="Game Development"
-            subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry."
+            link="/gamedevelopment"
+            subtitle="Game Development Competition adalah lomba yang ditujukan untuk mengasah kemampuan dalam bidang game developing dan juga sebagai ajang berkompetisi dalam bidang game developing."
           />
         </div>
         <div className="square-box-1"></div>

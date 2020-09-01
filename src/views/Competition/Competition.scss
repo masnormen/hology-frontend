@@ -103,13 +103,11 @@
   }
   .title {
     width: 100%;
-    padding: 0 6%;
     margin: 0 auto 2rem !important;
   }
 
   .description {
     width: 100%;
-    padding: 0 6%;
     margin: 0 auto 5rem;
     @include respon(phone-pot) {
       width: 100%;
@@ -125,7 +123,7 @@
   .competition-category-container-1 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 1.5rem;
     @include respon(phone-pot) {
@@ -142,7 +140,7 @@
   .competition-category-container-2 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding-bottom: 3rem;
   }
 
