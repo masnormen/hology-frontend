@@ -7,7 +7,8 @@ import {invalidateSession} from "./SessionHelper";
 const CheckSession = ({loggedOut = false, redirect = false, children = null}) => {
   let hasToken = localStorage.getItem("ho_dXNlcl9zZXNzaW9u")
     && localStorage.getItem("ho_dXNlcl9yZWZyZXNo")
-    && localStorage.getItem("ho_dXNlcl9kYXRh");
+    && localStorage.getItem("ho_dXNlcl9kYXRh")
+    && Date.now() > localStorage.getItem("ho_dGltZXN0YW1w");
   
   if (!loggedOut && !hasToken) {
     if (redirect) {
