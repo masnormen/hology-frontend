@@ -245,21 +245,18 @@
 }
 
 .section-home-full-4 {
-  @include heightMinusNavbar;
+  width: 100%;
   padding: 0 10%;
   position: relative;
   background: $backgroundBase1;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  @include respon(phone-pot) {
-    padding: 20% 10% 0;
-  }
 
   .title {
-    position: relative;
     z-index: 2;
     display: inline-block;
     margin-bottom: 1rem;
@@ -267,23 +264,27 @@
   }
 
   .description {
-    position: relative;
     z-index: 2;
-    display: flex;
+    display: inline-flex;
     width: 100%;
     justify-content: space-between;
     @include respon(phone-pot) {
       flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 3rem;
     }
     @include respon(phone-land) {
       flex-direction: column;
+      margin-bottom: 3rem;
     }
     @include respon(tb-pot) {
       flex-direction: column;
+      margin-bottom: 3rem;
     }
 
     .text {
-      width: 50%;
+      width: 60%;
+      margin-bottom: 2rem;
       @include respon(phone-pot) {
         width: 100%;
         margin-bottom: 2rem;
@@ -296,8 +297,8 @@
         width: 100%;
         margin-bottom: 2rem;
       }
-      .header {
-        margin-bottom: 1rem;
+      .sub-header {
+        margin-top: 1rem;
         width: 100%;
       }
     }
@@ -454,20 +455,18 @@
 }
 
 .section-home-full-6 {
-  @include heightMinusNavbar;
+  // @include heightMinusNavbar;
   padding: 0 10% 0;
   overflow: hidden;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: $backgroundBase1;
-  @include respon(phone-pot) {
-    padding: 20% 10% 0;
-  }
-  @include respon(phone-land) {
-    padding: 20% 10% 0;
-  }
 
   .title {
-    margin-left: 50%;
     display: inline-block;
     margin-bottom: 1rem;
     position: relative;
@@ -484,80 +483,13 @@
   }
 
   .description {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
-    @include respon(phone-pot) {
-      flex-direction: column;
-    }
-    @include respon(phone-land) {
-      flex-direction: column;
-    }
-    @include respon(tb-pot) {
-      flex-direction: column;
-    }
-
-    .text {
-      width: 50%;
-      @include respon(phone-pot) {
-        margin-top: 2rem;
-        width: 100%;
-      }
-      @include respon(phone-land) {
-        margin-top: 2rem;
-        width: 100%;
-      }
-      @include respon(tb-pot) {
-        margin-top: 2rem;
-        width: 100%;
-      }
-
-      .header {
-        margin-bottom: 1rem;
-      }
-    }
-    .image-container {
-      width: 30%;
-      //background: cadetblue;
-      animation-name: floating;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-      @include respon(phone-pot) {
-        width: 100%;
-      }
-      @include respon(phone-land) {
-        width: 100%;
-      }
-      @include respon(tb-pot) {
-        width: 100%;
-      }
-    }
+    text-align: center;
   }
 
-  .button-container {
-    position: relative;
-    z-index: 2;
-    margin-left: 50%;
-    @include respon(phone-pot) {
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-      margin-left: 0;
-      text-align: center;
-    }
-    @include respon(phone-land) {
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-      margin-left: 0;
-      text-align: left;
-    }
-    @include respon(tb-pot) {
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-      margin-left: 0;
-      text-align: left;
-    }
+  .tagline {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
   }
 
   .square-box-1 {
@@ -595,7 +527,7 @@
   padding: 10% 10%;
   overflow: hidden;
   position: relative;
-  min-width: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -609,53 +541,17 @@
     margin-bottom: 1rem;
   }
 
-  .content {
-    margin-top: 2rem;
-
-    .margin-bottom {
-      margin-bottom: 2rem;
-      @include respon(phone-pot) {
-        margin-bottom: 0rem;
-      }
-      @include respon(phone-land) {
-        margin-bottom: 0rem;
-      }
-    }
+  .data {
+    margin-top: 1.75rem;
 
     .container {
-      display: flex;
-      justify-content: space-between;
-      @include respon(phone-pot) {
-        flex-direction: column;
-        justify-content: flex-start;
-      }
-      @include respon(phone-land) {
-        flex-direction: column;
-        width: inherit;
-        justify-content: flex-start;
-      }
-    }
-
-    .value-container {
-      padding: 24px 16px;
-      background-color: $backgroundBase2;
-      border: 1.5px solid $terneryColor;
-      border-radius: 10px;
-      width: 47%;
-      @include respon(phone-pot) {
-        margin-bottom: 2rem;
-        width: 47%;
-      }
-      @include respon(phone-land) {
-        width: 65%;
-        margin-bottom: 2rem;
-      }
+      margin-bottom: 1.25rem;
       .description {
-        margin-top: 1.25rem;
-        width: 100%;
+        margin-top: 0.55rem;
       }
     }
   }
+
   .square-box-1 {
     background-image: $circleBigLinear;
     opacity: 0.059;
@@ -681,8 +577,7 @@
 }
 
 .section-home-full-8 {
-  @include heightMinusNavbar;
-  padding: 0% 10% 0;
+  padding: 10% 10%;
   display: flex;
   background-image: $backgroundLinear;
   justify-content: space-between;

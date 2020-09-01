@@ -10,7 +10,12 @@ import "./style.css";
 import Home from "./views/Home/Home";
 import Competition from "./views/Competition/Competition";
 import ScrollToTop from "./components/ScrollToTop";
-import CategoryCompetition from "./views/Category-Competition/CategoryCompetition";
+import BusinessITCase from "./views/Category-Competition/BusinessITCase";
+import AppInnovation from "./views/Category-Competition/AppInnovation";
+import Programming from "./views/Category-Competition/Programming";
+import SmartDevice from "./views/Category-Competition/SmartDevice";
+import CaptureTheFlag from "./views/Category-Competition/CaptureTheFlag";
+import GameDevelopment from "./views/Category-Competition/GameDevelopment";
 import Register from "./views/Register/Register";
 import Footer from "./components/Footer/Footer";
 import GoAcademy from "./views/GoAcademy/GoAcademy";
@@ -34,7 +39,12 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/competition" component={Competition} />
-          <Route path="/category" component={CategoryCompetition} />
+          <Route path="/businessitcase" component={BusinessITCase} />
+          <Route path="/appinnovation" component={AppInnovation} />
+          <Route path="/programming" component={Programming} />
+          <Route path="/smartdevice" component={SmartDevice} />
+          <Route path="/capturetheflag" component={CaptureTheFlag} />
+          <Route path="/gamedevelopment" component={GameDevelopment} />
           <Route path="/register" component={Register} />
           <Route path="/goacademy" component={GoAcademy} />
           <Route path="/event" component={Webinar} />
