@@ -75,7 +75,7 @@ const DashboardCompetition = () => {
       return;
     }
 
-    fetch("http://localhost/hology-api/public/api/teams/", {
+    fetch("https://multazamgsd.com/hology/api/teams/", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + getAccessToken,
@@ -130,7 +130,7 @@ const DashboardCompetition = () => {
     if (registrationStage === 1) {
       if (institutionName !== "") return;
       const getInstitutionName = async () => {
-        await fetch("http://localhost/hology-api/public/api/institutions", {
+        await fetch("https://multazamgsd.com/hology/api/institutions", {
           method: "GET",
         })
           .then((raw) => raw.json())
@@ -153,7 +153,7 @@ const DashboardCompetition = () => {
     }
     if (registrationStage === 2) {
       const getTeamData = async () => {
-        await fetch("http://localhost/hology-api/public/api/teams/" + currentTeam.team_id, {
+        await fetch("https://multazamgsd.com/hology/api/teams/" + currentTeam.team_id, {
           method: "GET",
           headers: {
             Authorization: "Bearer " + getAccessToken,
@@ -345,7 +345,7 @@ const DashboardCompetition = () => {
                     server={{
                       process: {
                         withCredentials: false,
-                        url: `http://localhost/hology-api/public/api/teams/${teamData.team_id}/payment-proof`,
+                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/payment-proof`,
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },
@@ -390,7 +390,7 @@ const DashboardCompetition = () => {
                     server={{
                       process: {
                         withCredentials: false,
-                        url: `http://localhost/hology-api/public/api/teams/${teamData.team_id}/identity-pics`,
+                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/identity-pics`,
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },
@@ -426,7 +426,7 @@ const DashboardCompetition = () => {
                     server={{
                       process: {
                         withCredentials: false,
-                        url: `http://localhost/hology-api/public/api/teams/${teamData.team_id}/proofs`,
+                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/proofs`,
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },

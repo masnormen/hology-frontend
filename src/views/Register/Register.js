@@ -33,7 +33,7 @@ const Register = () => {
 	useEffect(() => {
 		console.log(payload)
 		if (!isLoading) return;
-		fetch("http://localhost/hology-api/public/api/institutions", {
+		fetch("https://multazamgsd.com/hology/api/institutions", {
 			method: "GET"
 		}).then(raw =>
 			raw.json()
@@ -63,7 +63,7 @@ const Register = () => {
 			return;
 		}
 		console.log(payload);
-		fetch("http://localhost/hology-api/public/api/register", {
+		fetch("https://multazamgsd.com/hology/api/register", {
 			method: "POST",
 			headers: {"Content-Type": "application/json"},
 			body: JSON.stringify(payload)
