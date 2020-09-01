@@ -9,18 +9,18 @@ import Fieldinput from "../../components/Field-input/Fieldinput";
 import { FilePond, registerPlugin } from "react-filepond";
 import { MdContentCopy } from "react-icons/md";
 import "filepond/dist/filepond.min.css";
-import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orientation";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+
 import {
   getUserData,
   getAccessToken,
-  getInstitutionName,
   invalidateSession,
 } from "../../components/SessionHelper";
 import { FaCheckCircle } from "react-icons/fa";
 
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
+registerPlugin(FilePondPluginImagePreview, FilePondPluginFileValidateType);
 
 function checkValid(obj) {
   for (let key in obj) {
@@ -33,12 +33,15 @@ const DashboardCompetition = () => {
   // stage 1: Daftar tim
   // stage 2: Biodata tim
   // stage 3: pembayaran tim
-  const [registrationStage, setRegistrationStage] = useState(2);
+  const [currentCompetition, setCurrentCompetition] = useState(0);
+  const [currentTeam, setCurrentTeam] = useState(0);
+  
+  const [registrationStage, setRegistrationStage] = useState(1);
 
   // For stage 1
   const [institutionName, setInstitutionName] = useState("");
   const [payload, setPayload] = useState({
-    competition_id: "",
+    competition_id: currentCompetition,
     institution_id: getUserData.institution_id,
     lead: getUserData.user_id,
     name: "",
@@ -55,82 +58,13 @@ const DashboardCompetition = () => {
   const [buktiBayar, setBuktiBayar] = useState(false);
 
   const competitionData = [
-    { value: 1, label: "App Innovation" },
-    { value: 2, label: "Business IT Case" },
-    { value: 3, label: "Programming" },
-    { value: 4, label: "Smart Device" },
-    { value: 5, label: "Capture the Flag" },
-    { value: 6, label: "Game Development" },
+    { value: 1, label: "Business IT Case" },
+    { value: 2, label: "Game Development" },
+    { value: 3, label: "App Innovation" },
+    { value: 4, label: "Programming" },
+    { value: 5, label: "Smart Device" },
+    { value: 6, label: "Capture the Flag" },
   ];
-
-  useEffect(() => {
-    if (registrationStage === 1) {
-      const getInstitutionName = async () => {
-        await fetch("https://multazamgsd.com/hology/api/institutions", {
-          method: "GET",
-        })
-          .then((raw) => raw.json())
-          .then((res) => {
-            let name = res.data.find(
-              (x) => x["institution_id"] === getUserData["institution_id"]
-            );
-            if (name != null)
-              return name.institution_name.replace(/\\r\\n/g, "");
-            return "There's some problem";
-          })
-          .then((name) => {
-            setInstitutionName(name);
-          })
-          .catch((e) => {
-            alert("Error!");
-          });
-      };
-      getInstitutionName();
-    }
-    if (registrationStage === 2) {
-      const getTeamData = async () => {
-        await fetch("https://multazamgsd.com/hology/api/teams", {
-          method: "GET",
-          headers: {
-            Authorization: "Bearer " + getAccessToken,
-            "Content-Type": "application/json",
-          },
-        })
-          .then((raw) => raw.json())
-          .then((res) => {
-            if (res.data[0].team_payment_proof !== "") setBuktiBayar(true);
-            // if (res.data[0].team_payment_proof !== "") {
-            //   const getBuktiBayar = async () => {
-            //     await fetch(`https://multazamgsd.com/hology/api/teams/${res.data[0].team_id}/payment-proof`, {
-            //       method: "GET",
-            //       headers: {
-            //         "Authorization": "Bearer " + getAccessToken,
-            //         "Content-Type": "application/json"
-            //       },
-            //     }).then(raw => {
-            //       raw.blob()
-            //     }).then(image => {
-            //       console.log("sasasasas")
-            //       console.log(image);
-            //       setBuktiBayar(image)
-            //     }).catch(e => {
-            //       alert("Error!");
-            //     });
-            //   };
-            //   getBuktiBayar();
-            // }
-            setTeamData(res.data[0]);
-            setIsLoading(false);
-            console.log(res.data[0]);
-          })
-          .catch((e) => {
-            invalidateSession();
-            alert("Error occurred. Please log in again.");
-          });
-      };
-      getTeamData();
-    }
-  }, []);
 
   useEffect(() => {
     if (!isSending) return;
@@ -141,7 +75,7 @@ const DashboardCompetition = () => {
       return;
     }
 
-    fetch("https://multazamgsd.com/hology/api/teams", {
+    fetch("http://localhost/hology-api/public/api/teams/", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + getAccessToken,
@@ -165,7 +99,7 @@ const DashboardCompetition = () => {
         }
         setIsSending(false);
       })
-      .catch((err) => {
+      .catch(e => {
         alert(
           "Registration failed! You can't create another team or your inputed data is wrong!"
         );
@@ -177,27 +111,86 @@ const DashboardCompetition = () => {
   useEffect(() => {
     console.log(payload);
   }, [payload]);
+  
+  useEffect(() => {
+    if (currentCompetition === 0) return;
+    setPayload({ ...payload, competition_id: currentCompetition });
+    
+    let currentTeam = getUserData.teams.find(x => x.competition_id === currentCompetition);
+  
+    setCurrentTeam(currentTeam);
+    if (currentTeam != null) {
+      setRegistrationStage(2)
+    } else {
+      setRegistrationStage(1)
+    }
+  }, [currentCompetition]);
+  
+  useEffect(() => {
+    if (registrationStage === 1) {
+      if (institutionName !== "") return;
+      const getInstitutionName = async () => {
+        await fetch("http://localhost/hology-api/public/api/institutions", {
+          method: "GET",
+        })
+          .then((raw) => raw.json())
+          .then((res) => {
+            let name = res.data.find(
+              (x) => x["institution_id"] === getUserData["institution_id"]
+            );
+            if (name != null)
+              return name.institution_name.replace(/\\r\\n/g, "");
+            return "There's some problem";
+          })
+          .then((name) => {
+            setInstitutionName(name);
+          })
+          .catch((e) => {
+            console.log("Failed fetching institution. Reload page.")
+          });
+      };
+      getInstitutionName();
+    }
+    if (registrationStage === 2) {
+      const getTeamData = async () => {
+        await fetch("http://localhost/hology-api/public/api/teams/" + currentTeam.team_id, {
+          method: "GET",
+          headers: {
+            Authorization: "Bearer " + getAccessToken,
+            "Content-Type": "application/json",
+          },
+        })
+          .then((raw) => raw.json())
+          .then((res) => {
+            if (res.data.team_payment_proof !== "") setBuktiBayar(true);
+            let myTeamData = res.data.members.find(x => x.user_id === getUserData.user_id)
+            if (myTeamData.user_identity_pic !== "") setKartuMahasiswa(true);
+            if (myTeamData.user_proof !== "") setSuratKeterangan(true);
+            setTeamData(res.data);
+            setIsLoading(false);
+          })
+          .catch((e) => {
+            invalidateSession();
+            alert("Error occurred. Please log in again.");
+          });
+      };
+      getTeamData();
+    }
+  }, [registrationStage]);
 
   return (
     <>
-      {registrationStage === 1 && (
+      {currentCompetition === 0 && (
         <div className="dashboard-section-competition-selection">
           <div className="academy">
             <div className="header">
               <Header center size="r">
-                Team Registration
+                Dashboard
               </Header>
             </div>
-            <br />
-            <br />
-            <Paragraph style={{ maxWidth: "200px" }}>
-              Ketua tim medaftarkan tim di sini.
-              <br />
-              Anggota tim cukup mengakses link invitation untuk join ke tim.
-            </Paragraph>
             <div className="description">
               <div className="selection">
-                <label className="label">Kategori Competition</label>
+                <label className="label">Pilih jenis competition</label>
                 <Select
                   theme={(theme) => ({
                     ...theme,
@@ -213,10 +206,37 @@ const DashboardCompetition = () => {
                   name="competition"
                   options={competitionData}
                   onChange={(e) =>
-                    setPayload({ ...payload, competition_id: e.value })
+                    setCurrentCompetition(e.value)
                   }
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      
+      {currentCompetition !== 0 && registrationStage === 1 && (
+        <div className="dashboard-section-competition-selection">
+          <div className="academy">
+            <Button variant="secondary" onClicked={() => {setCurrentCompetition(0); setRegistrationStage(0)}}>
+              &larr; Back
+            </Button>
+            <br/><br/><br/><br/>
+            <div className="header">
+              <Header center size="r">
+                {competitionData.find(x => x.value === currentCompetition).label}
+              </Header>
+            </div>
+            <br />
+            <br />
+            <Paragraph style={{ maxWidth: "200px" }}>
+              Ketua tim medaftarkan tim di sini.
+              <br />
+              Anggota tim cukup mengakses link invitation untuk join ke tim.
+            </Paragraph>
+            <br/><br/><br/>
+            <div className="description">
               <div className="input-option">
                 <Fieldinput
                   label="Nama Tim"
@@ -261,28 +281,26 @@ const DashboardCompetition = () => {
           </div>
         </div>
       )}
-      {registrationStage === 2 && (
+      {teamData.members != null && registrationStage === 2 && (
         <div className="dashboard-section-competition-data">
           <div className="view">
             <div className="data">
+              <Button variant="secondary" onClicked={() => {setCurrentCompetition(0); setRegistrationStage(0)}}>
+                &larr; Back
+              </Button>
+              <br/><br/><br/><br/>
               <div className="header">
                 <Header center size="r">
-                  Team: {teamData.team_name}
+                  Berkas Team: {teamData.team_name}
                 </Header>
-              </div>
-              <div className="team-member">
-                <div className="header">
-                  <Paragraph header>Team Member</Paragraph>
-                </div>
-                <Paragraph>1. John Doe</Paragraph>
-                <Paragraph>2. John Doe</Paragraph>
-                <Paragraph>3. John Doe</Paragraph>
+                <br/>
+                <Paragraph>Competition:  {competitionData.find(x => x.value === currentCompetition).label}</Paragraph>
               </div>
               <div className="link-team-container">
                 <Paragraph header>Secret invitation link:</Paragraph>
                 <span className="link-container">
                   <span className="link-container--link">
-                    {teamData.team_join_url}
+                    {teamData.team_join_url}<br/><br/>Keep this secret!
                   </span>
                   <span
                     className="icon-container"
@@ -299,7 +317,7 @@ const DashboardCompetition = () => {
                 {!isLoading &&
                   teamData.members.map((item, index) => (
                     <Paragraph key={index}>
-                      {index + 1}. {item.user_id}
+                      {index + 1}. {item.user_fullname}
                     </Paragraph>
                   ))}
               </div>
@@ -313,7 +331,7 @@ const DashboardCompetition = () => {
                       <Paragraph>
                         <FaCheckCircle height="14px" color="#00b900" /> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
-                        Anda:
+                        Anda jika salah:
                       </Paragraph>
                       <br />
                       <br />
@@ -322,13 +340,16 @@ const DashboardCompetition = () => {
                   <FilePond
                     maxFiles="2MB"
                     name="payment_proof"
+                    checkValidity
+                    dropValidation
                     server={{
                       process: {
                         withCredentials: false,
-                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/payment-proof`,
+                        url: `http://localhost/hology-api/public/api/teams/${teamData.team_id}/payment-proof`,
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },
+                        onerror: (res) => alert(JSON.parse(res).message.payment_proof[0])
                       },
                     }}
                     acceptedFileTypes={["image/png", "image/jpeg"]}
@@ -340,7 +361,7 @@ const DashboardCompetition = () => {
               <br />
               <div className="header">
                 <Header center size="r">
-                  Account: {getUserData.user_fullname}
+                  Berkas Account: {getUserData.user_fullname}
                 </Header>
               </div>
               <br />
@@ -355,7 +376,7 @@ const DashboardCompetition = () => {
                       <Paragraph>
                         <FaCheckCircle height="14px" color="#00b900" /> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
-                        Anda:
+                        Anda jika salah:
                       </Paragraph>
                       <br />
                       <br />
@@ -363,14 +384,17 @@ const DashboardCompetition = () => {
                   )}
                   <FilePond
                     maxFiles="2MB"
-                    name="proof"
+                    name="identity"
+                    checkValidity
+                    dropValidation
                     server={{
                       process: {
                         withCredentials: false,
-                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/identity-pics`,
+                        url: `http://localhost/hology-api/public/api/teams/${teamData.team_id}/identity-pics`,
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },
+                        onerror: (res) => alert(JSON.parse(res).message.payment_proof[0])
                       },
                     }}
                     acceptedFileTypes={["image/png", "image/jpeg"]}
@@ -388,7 +412,7 @@ const DashboardCompetition = () => {
                       <Paragraph>
                         <FaCheckCircle height="14px" color="#00b900" /> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
-                        Anda:
+                        Anda jika salah:
                       </Paragraph>
                       <br />
                       <br />
@@ -397,101 +421,23 @@ const DashboardCompetition = () => {
                   <FilePond
                     maxFiles="2MB"
                     name="proof"
+                    checkValidity
+                    dropValidation
                     server={{
                       process: {
                         withCredentials: false,
-                        url: `https://multazamgsd.com/hology/api/teams/${teamData.team_id}/proofs`,
+                        url: `http://localhost/hology-api/public/api/teams/${teamData.team_id}/proofs`,
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },
+                        onerror: (res) => alert(JSON.parse(res).message.payment_proof[0])
                       },
                     }}
-                    acceptedFileTypes={["image/png", "image/jpeg"]}
-                    labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.jpg/.png/.pdf max 2MB)'
+                    acceptedFileTypes={["application/pdf"]}
+                    labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.pdf max 2MB)'
                   />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
-      {registrationStage === 3 && (
-        <div className="dashboard-section-competition-selection">
-          <div className="academy">
-            <div className="header">
-              <Header center size="r">
-                Anda telah terverifikasi!
-              </Header>
-            </div>
-            <br />
-            <br />
-            <Paragraph style={{ maxWidth: "200px" }}>
-              Ketua tim medaftarkan tim di sini.
-              <br />
-              Anggota tim cukup mengakses link invitation untuk join ke tim.
-            </Paragraph>
-            <div className="description">
-              <div className="selection">
-                <label className="label">Kategori Competition</label>
-                <Select
-                  theme={(theme) => ({
-                    ...theme,
-                    borderRadius: 0,
-                    colors: {
-                      ...theme.colors,
-                      primary25: "#519a9e",
-                      primary: "#1f81a0",
-                    },
-                  })}
-                  className="basic-single"
-                  classNamePrefix="select"
-                  name="competition"
-                  options={competitionData}
-                  onChange={(e) =>
-                    setPayload({ ...payload, competition_id: e.value })
-                  }
-                />
-              </div>
-              <div className="input-option">
-                <Fieldinput
-                  label="Nama Tim"
-                  name="name_team"
-                  type="text"
-                  required
-                  marbott
-                  value={payload.name}
-                  onChange={(e) =>
-                    setPayload({ ...payload, name: e.target.value })
-                  }
-                />
-              </div>
-              <div className="input-option">
-                <Fieldinput
-                  disabled
-                  label="Ketua Tim (Anda)"
-                  name="team_captain"
-                  type="text"
-                  value={getUserData.user_fullname}
-                  required
-                  marbott
-                />
-              </div>
-              <div className="input-option">
-                <Fieldinput
-                  disabled
-                  label="Institusi"
-                  name="institution"
-                  type="text"
-                  value={institutionName}
-                  required
-                  marbott
-                />
-              </div>
-              <br />
-              <br />
-              <Button onClicked={() => setIsSending(true)}>
-                Register Team
-              </Button>
             </div>
           </div>
         </div>

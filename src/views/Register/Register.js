@@ -31,8 +31,9 @@ const Register = () => {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	
 	useEffect(() => {
+		console.log(payload)
 		if (!isLoading) return;
-		fetch("https://multazamgsd.com/hology/api/institutions", {
+		fetch("http://localhost/hology-api/public/api/institutions", {
 			method: "GET"
 		}).then(raw =>
 			raw.json()
@@ -62,7 +63,7 @@ const Register = () => {
 			return;
 		}
 		console.log(payload);
-		fetch("https://multazamgsd.com/hology/api/register", {
+		fetch("http://localhost/hology-api/public/api/register", {
 			method: "POST",
 			headers: {"Content-Type": "application/json"},
 			body: JSON.stringify(payload)
