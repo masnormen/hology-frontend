@@ -18,12 +18,12 @@ import CaptureTheFlag from "./views/Category-Competition/CaptureTheFlag";
 import GameDevelopment from "./views/Category-Competition/GameDevelopment";
 import Register from "./views/Register/Register";
 import Footer from "./components/Footer/Footer";
-import GoAcademy from "./views/GoAcademy/GoAcademy";
+// import GoAcademy from "./views/GoAcademy/GoAcademy";
 import Login from "./views/Login/Login";
 import Logout from "./views/Logout/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
-import Webinar from "./views/Webinar/Webinar";
+// import Webinar from "./views/Webinar/Webinar";
 import Invitation from "./views/Invitation/Invitation";
 
 ReactGA.initialize("UA-38735593-5", {
@@ -48,8 +48,8 @@ const App = () => {
           <Route path="/competition/capturetheflag" component={CaptureTheFlag} />
           <Route path="/competition/gamedevelopment" component={GameDevelopment} />
           
-          <Route path="/webinar" component={Webinar} />
-          <Route path="/goacademy" component={GoAcademy} />
+          {/*<Route path="/webinar" component={Webinar} />*/}
+          {/*<Route path="/goacademy" component={GoAcademy} />*/}
   
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
