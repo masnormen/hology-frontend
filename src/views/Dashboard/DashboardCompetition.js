@@ -116,14 +116,33 @@ const DashboardCompetition = () => {
     if (currentCompetition === 0) return;
     setPayload({ ...payload, competition_id: currentCompetition });
     
-    let currentTeam = getUserData.teams.find(x => x.competition_id === currentCompetition);
-  
-    setCurrentTeam(currentTeam);
-    if (currentTeam != null) {
-      setRegistrationStage(2)
-    } else {
-      setRegistrationStage(1)
+    // let currentTeam = getUserData.teams.find(x => x.competition_id === currentCompetition);
+    const getRegStage = async () => {
+      let currentTeam = await fetch("https://multazamgsd.com/hology/api/profiles", {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + getAccessToken
+        },
+      })
+        .then(raw => raw.json())
+        .then(res => {
+          let matchedTeam = res.data.teams.find(x => x.competition_id === currentCompetition);
+          console.log(matchedTeam)
+          return matchedTeam;
+        })
+        .then(team => {
+          setCurrentTeam(team);
+          if (team != null) {
+            setRegistrationStage(2)
+          } else {
+            setRegistrationStage(1)
+          }
+        })
+        .catch((e) => {
+          alert("Failed fetching user's teams. Reload page or log in again.")
+        });
     }
+    getRegStage();
   }, [currentCompetition]);
   
   useEffect(() => {

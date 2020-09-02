@@ -186,7 +186,7 @@ const Register = () => {
 					label="Password"
 					name="password"
 					type="password"
-					placeholder="Kombinasi huruf dan angka 8+ karakter"
+					placeholder="8-25 char. Upper/lowercase + digits"
 					marbott
 					required
 					value={payload.password}
@@ -196,7 +196,7 @@ const Register = () => {
 					label="Confirm Password"
 					name="confirm_password"
 					type="password"
-					placeholder="Kombinasi huruf dan angka 8+ karakter"
+					placeholder="8-25 char. Upper/lowercase + digits"
 					marbott
 					required
 					value={confirmPassword}
