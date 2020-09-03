@@ -49,7 +49,7 @@ const CategoryCompetition = ({ category }) => {
 
         <div className="buttons-container">
           <Link to="/dashboard"><Button >Register Now</Button></Link>
-          <a rel="noopener noreferrer" href="https://drive.google.com/file/d/1SPB5r56OkIoMqBZCm2PqPlnRlfx_uK8n/view?usp=sharing" target="_blank"><Button variant="secondary">Download Guidebook</Button></a>
+          <a rel="noopener noreferrer" href="https://drive.google.com/file/d/1W9Fqu3MWJ-GkoGIA_cHizcc4OGANGvAO/view?usp=sharing" target="_blank"><Button variant="secondary">Download Guidebook</Button></a>
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
