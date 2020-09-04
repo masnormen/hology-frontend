@@ -117,12 +117,12 @@ const Home = () => {
           </Header>
         </div>
         <div className="description">
-          <div className="tagline fadeIn4">
-            <Paragraph>
-              HOLOGY menyelenggarakan webinar seputar perkembangan dunia IT
-              terkini. Stay tuned!
-            </Paragraph>
-          </div>
+          {/*<div className="tagline fadeIn4">*/}
+          {/*  <Paragraph>*/}
+          {/*    HOLOGY menyelenggarakan webinar seputar perkembangan dunia IT*/}
+          {/*    terkini.*/}
+          {/*  </Paragraph>*/}
+          {/*</div>*/}
           <div className="header fadeIn4">
             <Paragraph header>COMING SOON.</Paragraph>
           </div>
@@ -144,12 +144,13 @@ const Home = () => {
           </Header>
         </div>
         <div className="description">
-          <div className="tagline">
-            <Paragraph>
-              Memberdayakan IT enthusiast melalui online courses. Stay tuned!
-            </Paragraph>
-          </div>
+          {/*<div className="tagline">*/}
+          {/*  <Paragraph>*/}
+          {/*    HOLOGY menyelenggarakan academy untuk mem para IT enthusiast.*/}
+          {/*  </Paragraph>*/}
+          {/*</div>*/}
           <div className="sub-header fadeIn5">
+            <br/><br/>
             <Paragraph>COMING SOON.</Paragraph>
           </div>
         </div>

@@ -8,6 +8,7 @@ import DashboardCompetition from "./DashboardCompetition";
 import {getUserData} from "../../components/SessionHelper";
 import CheckSession from "../../components/CheckSession";
 import Helmet from "react-helmet";
+import Paragraph from "../../components/Paragraph/Paragraph";
 
 const Dashboard = () => {
   return (
@@ -16,7 +17,23 @@ const Dashboard = () => {
         <title>Competition</title>
       </Helmet>
       <div className="dashboard-container-full">
-        <Header>Halo, {getUserData.user_fullname}!</Header>
+        <Header>Hai, {getUserData.user_fullname}</Header>
+        <br/>
+        <Paragraph>
+          Email &rarr; {getUserData.user_email}
+        </Paragraph>
+        <Paragraph>
+          Tanggal lahir &rarr; {new Date(getUserData.user_birthdate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+        </Paragraph>
+        <Paragraph>
+          Gender &rarr; {getUserData.user_gender ? "Perempuan" : "Laki-laki"}
+        </Paragraph>
+        <Paragraph>
+          Tim &rarr; {getUserData.teams.map((item, index) => {
+            if (index === 0) return item.team_name;
+            return ", " + item.team_name;
+          })}
+        </Paragraph>
         <div className="dashboard">
           <div className="sidebar">
             <NavLink

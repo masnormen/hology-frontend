@@ -157,7 +157,7 @@ const Register = () => {
 					/>
 				</div>
 				<div className="select-container">
-					<span className="label">Universitas asal</span>
+					<span className="label">Universitas asal (ketik untuk mencari)</span>
 					{isLoading ? (
 						<Paragraph>
 							Mohon tunggu... Memuat data...
@@ -180,23 +180,24 @@ const Register = () => {
 							options={institutions}
 							onChange={(e) => setPayload({...payload, institution: e.value})}
 						/>
+						<br/>
 					</>)}
 				</div>
 				<Fieldinput
 					label="Password"
 					name="password"
 					type="password"
-					placeholder="8-25 char. Upper/lowercase + digits"
+					placeholder="8-25 char upper/lowercase/digits"
 					marbott
 					required
 					value={payload.password}
 					onChange={(e) => setPayload({...payload, password: e.target.value})}
 				/>
 				<Fieldinput
-					label="Confirm Password"
+					label="Konfirmasi Password"
 					name="confirm_password"
 					type="password"
-					placeholder="8-25 char. Upper/lowercase + digits"
+					placeholder="8-25 char upper/lowercase/digits"
 					marbott
 					required
 					value={confirmPassword}
@@ -208,11 +209,11 @@ const Register = () => {
 						Konfirmasi password tidak cocok! Pastikan isian password sama.<br/><br/><br/>
 					</Paragraph>
 				)}
-				<Button onClicked={() => setIsSending(true)}>Submit</Button>
+				<Button onClicked={() => setIsSending(true)}>Daftar</Button>
 				<div className="login-text">
 					<Paragraph>
 						If you have an account,{" "}
-						<Link className="link-login">login here.</Link>
+						<Link to="/login" className="link-login">login here.</Link>
 					</Paragraph>
 				</div>
 			</div>

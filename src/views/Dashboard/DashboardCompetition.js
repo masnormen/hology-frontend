@@ -209,7 +209,8 @@ const DashboardCompetition = () => {
             </div>
             <div className="description">
               <div className="selection">
-                <label className="label">Pilih jenis competition</label>
+                <Paragraph>Pilih jenis competition untuk menuju dashboard tim.</Paragraph>
+                <br/><br/>
                 <Select
                   theme={(theme) => ({
                     ...theme,
@@ -250,9 +251,9 @@ const DashboardCompetition = () => {
             <br />
             <br />
             <Paragraph style={{ maxWidth: "200px" }}>
-              Ketua tim medaftarkan tim di sini.
+              Ketua tim mendaftarkan tim di sini.
               <br />
-              Anggota tim cukup mengakses link invitation untuk join ke tim.
+              Anggota tim cukup mengakses link invitation yang didapatkan ketua tim untuk join ke tim.
             </Paragraph>
             <br/><br/><br/>
             <div className="description">
@@ -413,7 +414,7 @@ const DashboardCompetition = () => {
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },
-                        onerror: (res) => alert(JSON.parse(res).message.payment_proof[0])
+                        onerror: (res) => alert(JSON.parse(res).message.identity[0])
                       },
                     }}
                     acceptedFileTypes={["image/png", "image/jpeg"]}
@@ -449,7 +450,7 @@ const DashboardCompetition = () => {
                         headers: {
                           Authorization: "Bearer " + getAccessToken,
                         },
-                        onerror: (res) => alert(JSON.parse(res).message.payment_proof[0])
+                        onerror: (res) => alert(JSON.parse(res).message.proof[0])
                       },
                     }}
                     acceptedFileTypes={["application/pdf"]}
