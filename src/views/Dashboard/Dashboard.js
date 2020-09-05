@@ -26,7 +26,7 @@ const Dashboard = () => {
           Tanggal lahir &rarr; {new Date(getUserData.user_birthdate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
         </Paragraph>
         <Paragraph>
-          Gender &rarr; {getUserData.user_gender === 1 ? "Perempuan" : "Laki-laki"}
+          Gender &rarr; {getUserData.user_gender === "1" ? "Perempuan" : "Laki-laki"}
         </Paragraph>
         <Paragraph>
           Tim &rarr; {getUserData.teams.map((item, index) => {
