@@ -15,7 +15,7 @@ const data = {
   event_1: "Registration Period Batch 1",
   date_1: "1 SEPTEMBER - 15 SEPTEMBER 2020",
   event_2: "Registration Period Batch 2",
-  date_2: "16 SEPTEMBER - 10 OKTOBER 2020",
+  date_2: "16 SEPTEMBER - 20 OKTOBER 2020",
   event_3: "Warming up",
   date_3: "31 OKTOBER 2020",
   event_4: "Elimination Round",
