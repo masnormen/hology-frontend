@@ -33,7 +33,6 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   useEffect(() => {
-    console.log(payload);
     if (!isLoading) return;
     fetch("https://multazamgsd.com/hology/api/institutions", {
       method: "GET",
@@ -62,11 +61,10 @@ const Register = () => {
     if (!isSending) return;
     if (confirmPassword !== "" && confirmPassword !== payload.password) return;
     if (!checkValid(payload)) {
-      alert("Registration failed! Please check your inputed data!");
+      alert("Registration failed! Check your data or try again later.");
       setIsSuccess("no");
       return;
     }
-    console.log(payload);
     fetch("https://multazamgsd.com/hology/api/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -80,13 +78,13 @@ const Register = () => {
           alert("Your account has been succesfully registered!");
           setIsSuccess("yes");
         } else {
-          alert("Registration failed! Please check your inputed data!");
+          alert("Registration failed! Check your data or try again later.");
           setIsSuccess("no");
         }
         setIsSending(false);
       })
       .catch((err) => {
-        alert("Registration failed! Please check your inputed data!");
+        alert("Registration failed! Check your data or try again later.");
         setIsSuccess("no");
         setIsSending(false);
       });
@@ -191,7 +189,7 @@ const Register = () => {
             </>
           )}
         </div>
-        {payload.institution == 9999 ? (
+        {payload.institution === 9999 && (
           <Fieldinput
             label="Nama Universitas"
             name="institution_custom"
@@ -204,7 +202,7 @@ const Register = () => {
               setPayload({ ...payload, institution_custom: e.target.value })
             }
           />
-        ) : null}
+        )}
         <Fieldinput
           label="Password"
           name="password"

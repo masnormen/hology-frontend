@@ -5,6 +5,7 @@ import { Route, Switch, Redirect, NavLink } from "react-router-dom";
 import DashboardWebinar from "./DashboardWebinar";
 import DashboardAcademy from "./DashboardAcademy";
 import DashboardCompetition from "./DashboardCompetition";
+import DashboardEditProfile from "./DashboardEditProfile";
 import {getUserData} from "../../components/SessionHelper";
 import CheckSession from "../../components/CheckSession";
 import Helmet from "react-helmet";
@@ -29,11 +30,19 @@ const Dashboard = () => {
           Gender &rarr; {getUserData.user_gender === "1" ? "Perempuan" : "Laki-laki"}
         </Paragraph>
         <Paragraph>
-          Tim &rarr; {getUserData.teams.map((item, index) => {
+          Tim &rarr; {getUserData.teams != null && getUserData.teams.map((item, index) => {
             if (index === 0) return item.team_name;
             return ", " + item.team_name;
           })}
         </Paragraph>
+        {/*<Paragraph>*/}
+        {/*  <NavLink*/}
+        {/*    style={{color: "#FFFFFF"}}*/}
+        {/*    to="/dashboard/editprofile"*/}
+        {/*  >*/}
+        {/*    Sunting Profil*/}
+        {/*  </NavLink>*/}
+        {/*</Paragraph>*/}
         <div className="dashboard">
           <div className="sidebar">
             <NavLink
@@ -76,6 +85,10 @@ const Dashboard = () => {
               <Route
                 path="/dashboard/competition"
                 render={() => <DashboardCompetition />}
+              />
+              <Route
+                path="/dashboard/editprofile"
+                render={() => <DashboardEditProfile />}
               />
             </Switch>
           </div>
