@@ -6,7 +6,7 @@ import DashboardWebinar from "./DashboardWebinar";
 import DashboardAcademy from "./DashboardAcademy";
 import DashboardCompetition from "./DashboardCompetition";
 import DashboardEditProfile from "./DashboardEditProfile";
-import {getUserData} from "../../components/SessionHelper";
+import { getUserData } from "../../components/SessionHelper";
 import CheckSession from "../../components/CheckSession";
 import Helmet from "react-helmet";
 import Paragraph from "../../components/Paragraph/Paragraph";
@@ -19,30 +19,34 @@ const Dashboard = () => {
       </Helmet>
       <div className="dashboard-container-full">
         <Header>Hai, {getUserData.user_fullname}</Header>
-        <br/>
+        <br />
+        <Paragraph>Email &rarr; {getUserData.user_email}</Paragraph>
         <Paragraph>
-          Email &rarr; {getUserData.user_email}
-        </Paragraph>
-        <Paragraph>
-          Tanggal lahir &rarr; {new Date(getUserData.user_birthdate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-        </Paragraph>
-        <Paragraph>
-          Gender &rarr; {getUserData.user_gender === "1" ? "Perempuan" : "Laki-laki"}
-        </Paragraph>
-        <Paragraph>
-          Tim &rarr; {getUserData.teams != null && getUserData.teams.map((item, index) => {
-            if (index === 0) return item.team_name;
-            return ", " + item.team_name;
+          Tanggal lahir &rarr;{" "}
+          {new Date(getUserData.user_birthdate).toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
           })}
         </Paragraph>
-        {/*<Paragraph>*/}
-        {/*  <NavLink*/}
-        {/*    style={{color: "#FFFFFF"}}*/}
-        {/*    to="/dashboard/editprofile"*/}
-        {/*  >*/}
-        {/*    Sunting Profil*/}
-        {/*  </NavLink>*/}
-        {/*</Paragraph>*/}
+        <Paragraph>
+          Gender &rarr;{" "}
+          {getUserData.user_gender === "1" ? "Perempuan" : "Laki-laki"}
+        </Paragraph>
+        <Paragraph>
+          Tim &rarr;{" "}
+          {getUserData.teams != null &&
+            getUserData.teams.map((item, index) => {
+              if (index === 0) return item.team_name;
+              return ", " + item.team_name;
+            })}
+        </Paragraph>
+        <Paragraph>
+          <NavLink style={{ color: "#FFFFFF" }} to="/dashboard/editprofile">
+            Sunting Profil
+          </NavLink>
+        </Paragraph>
         <div className="dashboard">
           <div className="sidebar">
             <NavLink
