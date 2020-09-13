@@ -4,7 +4,7 @@ import Paragraph from "../../components/Paragraph/Paragraph";
 import "./CategoryCompetition.scss";
 import Button from "../../components/Button/Button";
 import Helmet from "react-helmet";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const data = {
   title: "Business IT Case",
@@ -48,8 +48,16 @@ const CategoryCompetition = ({ category }) => {
         </div>
 
         <div className="buttons-container">
-          <Link to="/dashboard"><Button >Register Now</Button></Link>
-          <a rel="noopener noreferrer" href="https://drive.google.com/file/d/1z6308OOdYPZ5J-mW-0-7rknPy47zW5Fa/view?usp=sharing" target="_blank"><Button variant="secondary">Download Guidebook</Button></a>
+          <Link to="/dashboard">
+            <Button>Register Now</Button>
+          </Link>
+          <a
+            rel="noopener noreferrer"
+            href="https://drive.google.com/file/d/1pj2Fa6PWdLnmb4myTkY-zonaspzqP8AC/view?usp=drivesdk"
+            target="_blank"
+          >
+            <Button variant="secondary">Download Guidebook</Button>
+          </a>
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
