@@ -3,7 +3,7 @@ import Button from "../../components/Button/Button";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./DashboardSection.scss";
 import Fieldinput from "../../components/Field-input/Fieldinput";
-import {getAccessToken} from "../../components/SessionHelper";
+import {getAccessToken, invalidateSession} from "../../components/SessionHelper";
 import {Link} from "react-router-dom";
 import Select from "react-select";
 
@@ -42,7 +42,8 @@ const DashboardEditProfile = () => {
       })
       .then((res) => {
         if (res["success"]) {
-          alert("Your account data has been succesfully updated!");
+          alert("Your account data has been succesfully updated! You need to re-login to update data!");
+          invalidateSession();
           setIsSuccess("yes");
         } else {
           alert("Update data failed! Check your data or try again later.");
