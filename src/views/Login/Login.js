@@ -84,6 +84,12 @@ const Login = () => {
             </Button>
             <div className="register-text">
               <Paragraph>
+                <Link className="link-register" to="/forgot-password">
+                  Forgot your password?
+                </Link>
+              </Paragraph>
+              <br/><br/>
+              <Paragraph>
                 If you haven't yet,{" "}
                 <Link className="link-register" to="/register">
                   create an account here.

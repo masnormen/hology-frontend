@@ -25,6 +25,8 @@ import Dashboard from "./views/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 // import Webinar from "./views/Webinar/Webinar";
 import Invitation from "./views/Invitation/Invitation";
+import ForgotPass from "./views/Login/ForgotPass";
+import NewPass from "./views/Login/NewPass";
 
 ReactGA.initialize("UA-38735593-5", {
   debug: false,
@@ -53,6 +55,8 @@ const App = () => {
   
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route exact path="/forgot-password" component={ForgotPass} />
+          <Route path="/forgot-password/:token" component={NewPass} />
           <Route path="/logout" component={Logout} />
   
           <Route path="/invitation/:token" component={Invitation} />
