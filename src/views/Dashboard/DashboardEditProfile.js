@@ -6,6 +6,7 @@ import Fieldinput from "../../components/Field-input/Fieldinput";
 import {getAccessToken, invalidateSession} from "../../components/SessionHelper";
 import {Link} from "react-router-dom";
 import Select from "react-select";
+import CheckSession from "../../components/CheckSession";
 
 const DashboardEditProfile = () => {
   const [isSending, setIsSending] = useState(false);
@@ -62,6 +63,7 @@ const DashboardEditProfile = () => {
   
   return (
     <div className="dashboard-section-competition-selection">
+      {isSuccess === "yes" && <CheckSession redirect/> }
       <div className="academy">
         <Link to="/dashboard">
           <Button variant="secondary">

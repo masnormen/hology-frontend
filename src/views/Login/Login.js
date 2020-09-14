@@ -35,11 +35,11 @@ const Login = () => {
         setUserData(res.data.user, res.data.access_token, res.data.refresh_token);
         window.location.reload();
       } else {
-        alert("Email/Password yang dimasukkan salah! haheehehe")
+        alert("Email/Password yang dimasukkan salah!")
         setIsFetching(false);
       }
     }).catch(err => {
-      alert(err)
+      alert("Ada kesalahan!")
       setIsFetching(false);
     });
   }, [isFetching]);

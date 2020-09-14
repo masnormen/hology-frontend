@@ -28,7 +28,7 @@ const data = {
   date_7: "15 NOVEMBER 2020 ",
 };
 
-const CategoryCompetition = ({ category }) => {
+const CategoryCompetition = ({category}) => {
   return (
     <>
       <Helmet>
@@ -46,22 +46,27 @@ const CategoryCompetition = ({ category }) => {
         <div className="description">
           <Paragraph>{data.description}</Paragraph>
         </div>
-
+        
         <div className="buttons-container">
-          <Link to="/dashboard"><Button >Register Now</Button></Link>
-          <a rel="noopener noreferrer" href=" https://drive.google.com/file/d/1cBgKfIxcYbTi01IoqcEFEW1aOGuk1zbA/view?usp=sharing" target="_blank"><Button variant="secondary">Download Guidebook</Button></a>
+          <Link to="/dashboard"><Button>Register Now</Button></Link>
+          <a
+            rel="noopener noreferrer"
+            href="https://drive.google.com/file/d/1pj2Fa6PWdLnmb4myTkY-zonaspzqP8AC/view?usp=sharing" target="_blank"
+          >
+            <Button variant="secondary">Download Guidebook</Button>
+          </a>
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
       </div>
-
+      
       <div className="section-competition-category-full-2">
         <div className="title">
           <Header size="r" center>
             Competition Timeline
           </Header>
         </div>
-
+        
         <div className="timeline-container">
           <div className="container">
             <div className="timeline-block timeline-block-right">
@@ -71,7 +76,7 @@ const CategoryCompetition = ({ category }) => {
                 <span dir="ltr">{data.date_1}</span>
               </div>
             </div>
-
+            
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -79,7 +84,7 @@ const CategoryCompetition = ({ category }) => {
                 <span dir="ltr">{data.date_2}</span>
               </div>
             </div>
-
+            
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -87,7 +92,7 @@ const CategoryCompetition = ({ category }) => {
                 <span dir="ltr">{data.date_3}</span>
               </div>
             </div>
-
+            
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -95,7 +100,7 @@ const CategoryCompetition = ({ category }) => {
                 <span dir="ltr">{data.date_4}</span>
               </div>
             </div>
-
+            
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -103,7 +108,7 @@ const CategoryCompetition = ({ category }) => {
                 <span dir="ltr">{data.date_5}</span>
               </div>
             </div>
-
+            
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -111,7 +116,7 @@ const CategoryCompetition = ({ category }) => {
                 <span dir="ltr">{data.date_6}</span>
               </div>
             </div>
-
+            
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">

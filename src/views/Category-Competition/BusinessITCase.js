@@ -53,7 +53,7 @@ const CategoryCompetition = ({ category }) => {
           </Link>
           <a
             rel="noopener noreferrer"
-            href="https://drive.google.com/file/d/1pj2Fa6PWdLnmb4myTkY-zonaspzqP8AC/view?usp=drivesdk"
+            href="https://drive.google.com/file/d/1z6308OOdYPZ5J-mW-0-7rknPy47zW5Fa/view?usp=sharing"
             target="_blank"
           >
             <Button variant="secondary">Download Guidebook</Button>
