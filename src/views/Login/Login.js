@@ -30,16 +30,16 @@ const Login = () => {
     }).then(raw => {
       return raw.json();
     }).then(res => {
-      if (res.data !== null) {
+      if (res.data != null) {
         // user_id, team_id user_fullname user_email institution_id
         setUserData(res.data.user, res.data.access_token, res.data.refresh_token);
         window.location.reload();
       } else {
-        alert("Email/Password yang dimasukkan salah!")
+        alert("Email/Password yang dimasukkan salah! haheehehe")
         setIsFetching(false);
       }
     }).catch(err => {
-      alert("Email/Password yang dimasukkan salah!")
+      alert(err)
       setIsFetching(false);
     });
   }, [isFetching]);
