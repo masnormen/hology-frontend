@@ -30,7 +30,7 @@ const DashboardEditProfile = () => {
     }
     
     fetch("https://multazamgsd.com/hology/api/update-profile", {
-      method: "PUT",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + getAccessToken
