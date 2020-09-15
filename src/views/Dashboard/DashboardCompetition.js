@@ -133,7 +133,10 @@ const DashboardCompetition = () => {
         .then((team) => {
           setCurrentTeam(team);
           if (team != null) {
-            setRegistrationStage(2);
+            if (team.team_status === 1)
+              setRegistrationStage(3);
+            else
+              setRegistrationStage(2);
           } else {
             setRegistrationStage(1);
           }
@@ -170,7 +173,7 @@ const DashboardCompetition = () => {
       };
       getInstitutionName();
     }
-    if (registrationStage === 2) {
+    if (registrationStage === 2 || registrationStage === 3) {
       const getTeamData = async () => {
         await fetch(
           "https://multazamgsd.com/hology/api/teams/" + currentTeam.team_id,
@@ -241,6 +244,7 @@ const DashboardCompetition = () => {
         </div>
       )}
       
+      {/*TEAM NOT REGISTERED*/}
       {currentCompetition !== 0 && registrationStage === 1 && (
         <div className="dashboard-section-competition-selection">
           <div className="academy">
@@ -321,6 +325,8 @@ const DashboardCompetition = () => {
           </div>
         </div>
       )}
+      
+      {/*REGISTERED TEAM*/}
       {teamData.members != null && registrationStage === 2 && (
         <div className="dashboard-section-competition-data">
           <div className="view">
@@ -520,6 +526,37 @@ const DashboardCompetition = () => {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/*VERIFIED TEAM*/}
+      {teamData.members != null && registrationStage === 3 && (
+        <div className="dashboard-section-competition-data">
+          <div className="view">
+            <div className="data">
+              <Button
+                variant="secondary"
+                onClicked={() => {
+                  setCurrentCompetition(0);
+                  setRegistrationStage(0);
+                }}
+              >
+                &larr; Kembali
+              </Button>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <Paragraph header>
+                Tim Anda telah terverifikasi ✅
+              </Paragraph>
+              <br/>
+              <br/>
+              <Paragraph>
+                Harap tunggu info lebih lanjut untuk submission.
+              </Paragraph>
             </div>
           </div>
         </div>
