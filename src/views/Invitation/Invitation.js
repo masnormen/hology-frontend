@@ -35,7 +35,6 @@ const Invitation = () => {
         let isLoggedIn = localStorage.getItem("ho_dXNlcl9zZXNzaW9u")
           && localStorage.getItem("ho_dXNlcl9yZWZyZXNo")
           && localStorage.getItem("ho_dXNlcl9kYXRh")
-          && Date.now() > localStorage.getItem("ho_dGltZXN0YW1w");
         
         if (!isLoggedIn) {
           setStatus(2);
