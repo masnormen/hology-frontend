@@ -39,7 +39,7 @@ const Login = () => {
         setIsFetching(false);
       }
     }).catch(err => {
-      alert("Ada kesalahan!")
+      alert(err)
       setIsFetching(false);
     });
   }, [isFetching]);

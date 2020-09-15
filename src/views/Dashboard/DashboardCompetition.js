@@ -341,7 +341,7 @@ const DashboardCompetition = () => {
               <Paragraph header>
                 Untuk dapat diverifikasi, setiap tim wajib melengkapi bukti
                 pembayaran. Dan setiap anggota wajib melengkapi KTM & surat
-                aktif kuliah.
+                aktif kuliah/KRS/Riwayat studi.
               </Paragraph>
               <br />
               <br />
@@ -350,7 +350,7 @@ const DashboardCompetition = () => {
                 teamData.members.map((item, index) => (
                   <Paragraph key={index}>
                     {index + 1}. {item.user_fullname} (KTM:{" "}
-                    {item.user_identity_pic === "" ? "❌" : "✅"} Surat Aktif:{" "}
+                    {item.user_identity_pic === "" ? "❌" : "✅"} Surat Aktif/KRS/Riwayat Studi:{" "}
                     {item.user_proof === "" ? "❌" : "✅"})
                   </Paragraph>
                 ))}

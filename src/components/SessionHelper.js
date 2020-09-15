@@ -3,7 +3,7 @@ import jwt_decode from "jwt-decode";
 const invalidateSession = () => localStorage.clear();
 
 const setUserData = (userData, accessToken = null, refreshToken = null) => {
-  localStorage.setItem("ho_dXNlcl9kYXRh", btoa(JSON.stringify(userData)));
+  localStorage.setItem("ho_dXNlcl9kYXRh", btoa(encodeURIComponent(JSON.stringify(userData)).replace(/%([0-9A-F]{2})/g, function toSolidBytes(match, p1) { return String.fromCharCode('0x' + p1); })));
   if (accessToken != null) {
     localStorage.setItem("ho_dXNlcl9zZXNzaW9u", accessToken);
   }
@@ -12,7 +12,9 @@ const setUserData = (userData, accessToken = null, refreshToken = null) => {
 
 const getUser = () => {
   try {
-    return JSON.parse(atob(localStorage.getItem("ho_dXNlcl9kYXRh")));
+    return JSON.parse(decodeURIComponent(atob(localStorage.getItem("ho_dXNlcl9kYXRh")).split('').map(function (c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join('')));
   } catch (e) {
     return {};
   }
