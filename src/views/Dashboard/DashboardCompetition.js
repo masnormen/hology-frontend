@@ -221,7 +221,7 @@ const DashboardCompetition = () => {
           Authorization: "Bearer " + getAccessToken,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ link, team_id }),
+        body: JSON.stringify({ link }),
       }
     )
       .then((raw) => {
@@ -600,10 +600,10 @@ const DashboardCompetition = () => {
                 <br />
                 <br />
                 <br />
-                {/* <Paragraph header>
+                <Paragraph header>
                   Harap tunggu info lebih lanjut untuk submission.
-                </Paragraph> */}
-                <Fieldinput
+                </Paragraph>
+                {/* <Fieldinput
                   label="Submission link Google Drive"
                   name="submission"
                   type="url"
@@ -615,7 +615,7 @@ const DashboardCompetition = () => {
                 />
                 <Button onClicked={() => setIsSubmitSubmission(true)}>
                   Submit
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
