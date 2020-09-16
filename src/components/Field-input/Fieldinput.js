@@ -5,13 +5,14 @@ const Fieldinput = ({
   handleChange,
   label,
   marbott = false,
+  fullWidth = false,
   ...otherProps
 }) => {
   return (
-    <div className={`field-input  ${marbott ? "margin-bottom" : ""}`}>
+    <div className={` field-input  ${marbott ? "margin-bottom" : ""}`}>
       <label className="label">{label}</label>
       <input
-        className="input"
+        className={` ${fullWidth ? "full-width" : "normal"} input `}
         placeholder="Ketik di sini..."
         onChange={handleChange}
         {...otherProps}
