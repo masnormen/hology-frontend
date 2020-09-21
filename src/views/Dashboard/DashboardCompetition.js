@@ -674,30 +674,42 @@ const DashboardCompetition = () => {
                 </Paragraph>
                 <br/>
                 <br/>
-                <Fieldinput
-                  label="Link Google Drive submisi:"
-                  name="submission"
-                  type="url"
-                  fullWidth
-                  required
-                  marbott
-                  value={link}
-                  onChange={(e) => setLink(e.target.value)}
-                />
-                {link !== "" && isGoogleDriveURL(link) && (
+  
+                {currentTeam.submissions.length > 0 && (
                   <Paragraph>
-                    Link Google Drive valid ✅
+                    Submisi telah dilakukan ✅
                   </Paragraph>
                 )}
-                {link !== "" && !isGoogleDriveURL(link) && (
-                  <Paragraph>
-                    Link Google Drive tidak valid ❌
-                  </Paragraph>
+                
+                {currentTeam.submissions.length === 0 && (
+                  <>
+                    <Fieldinput
+                      label="Link Google Drive submisi:"
+                      name="submission"
+                      type="url"
+                      fullWidth
+                      required
+                      marbott
+                      value={link}
+                      onChange={(e) => setLink(e.target.value)}
+                    />
+                    {link !== "" && isGoogleDriveURL(link) && (
+                      <Paragraph>
+                        Link Google Drive valid ✅
+                      </Paragraph>
+                    )}
+                    {link !== "" && !isGoogleDriveURL(link) && (
+                      <Paragraph>
+                        Link Google Drive tidak valid ❌
+                      </Paragraph>
+                    )}
+                    <br/>
+                    <Button onClicked={() => setIsSubmitSubmission(true)}>
+                      Submit
+                    </Button>
+                  </>
                 )}
-                <br/>
-                <Button onClicked={() => setIsSubmitSubmission(true)}>
-                  Submit
-                </Button>
+                
               </div>
             </div>
           </div>

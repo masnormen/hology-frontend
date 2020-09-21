@@ -15,9 +15,11 @@ const setUserData = (userData, accessToken = null, refreshToken = null) => {
 };
 
 const getUser = () => {
-  if (Date.now() > localStorage.getItem("ho_dGltZXN0YW1w") * 1000) {
+  if (localStorage.getItem("ho_dGltZXN0YW1w") == null) {
+    return {};
+  } else if (Date.now() > localStorage.getItem("ho_dGltZXN0YW1w") * 1000) {
+    alert("Your session is expired. Please login again.");
     invalidateSession();
-    alert("Your session is expired. Please login again.")
     return {};
   } else {
     try {
