@@ -644,72 +644,77 @@ const DashboardCompetition = () => {
                 <br/>
                 <br/>
                 
-                <Header center size="r">
-                  Submission
-                </Header>
-                <br/>
-                <Paragraph>
-                  Competition: {competitionData.find((x) => x.value === currentCompetition).label} <br/>
-                  Team: {teamData.team_name}
-                </Paragraph>
-                <br/>
-                <Paragraph>
-                  PERHATIAN:
-                </Paragraph>
-                <br/>
-                <Paragraph>
-                  1) Link file/folder pada Google Drive harus dapat diakses oleh panitia HOLOGY 3.0 dengan cara mengeset
-                  permission ke Public atau dengan opsi "Get Shareable Link".
-                </Paragraph>
-                <br/>
-                <Paragraph>
-                  2) Pengiriman link submisi hanya bisa dilakukan SATU KALI dan TIDAK DAPAT DIUBAH KEMBALI
-                  DENGAN ALASAN APAPUN. Pastikan link yang Anda masukkan sudah BENAR dan FINAL!
-                </Paragraph>
-                <br/>
-                <Paragraph>
-                  3) Apabila peserta didapati telah memodifikasi/menambah/merevisi/mengubah apapun pada submisinya
-                  dengan alasan apapun setelah pengiriman link dilakukan, maka submisi dianggap tidak valid dan peserta
-                  akan DIDISKUALIFIKASI.
-                </Paragraph>
-                <br/>
-                <br/>
-  
-                {currentTeam.submissions.length > 0 && (
-                  <Paragraph>
-                    Submisi telah dilakukan ✅
-                  </Paragraph>
-                )}
-                
-                {currentTeam.submissions.length === 0 && (
+                {currentCompetition === 4 || currentCompetition === 6 && (
                   <>
-                    <Fieldinput
-                      label="Link Google Drive submisi:"
-                      name="submission"
-                      type="url"
-                      fullWidth
-                      required
-                      marbott
-                      value={link}
-                      onChange={(e) => setLink(e.target.value)}
-                    />
-                    {link !== "" && isGoogleDriveURL(link) && (
-                      <Paragraph>
-                        Link Google Drive valid ✅
-                      </Paragraph>
-                    )}
-                    {link !== "" && !isGoogleDriveURL(link) && (
-                      <Paragraph>
-                        Link Google Drive tidak valid ❌
-                      </Paragraph>
-                    )}
+  
+                    <Header center size="r">
+                      Submission
+                    </Header>
                     <br/>
-                    <Button onClicked={() => setIsSubmitSubmission(true)}>
-                      Submit
-                    </Button>
+                    <Paragraph>
+                      Competition: {competitionData.find((x) => x.value === currentCompetition).label} <br/>
+                      Team: {teamData.team_name}
+                    </Paragraph>
+                    <br/>
+                    <Paragraph>
+                      PERHATIAN:
+                    </Paragraph>
+                    <br/>
+                    <Paragraph>
+                      1) Link file/folder pada Google Drive harus dapat diakses oleh panitia HOLOGY 3.0 dengan cara mengeset
+                      permission ke Public atau dengan opsi "Get Shareable Link".
+                    </Paragraph>
+                    <br/>
+                    <Paragraph>
+                      2) Pengiriman link submisi hanya bisa dilakukan SATU KALI dan TIDAK DAPAT DIUBAH KEMBALI
+                      DENGAN ALASAN APAPUN. Pastikan link yang Anda masukkan sudah BENAR dan FINAL!
+                    </Paragraph>
+                    <br/>
+                    <Paragraph>
+                      3) Apabila peserta didapati telah memodifikasi/menambah/merevisi/mengubah apapun pada submisinya
+                      dengan alasan apapun setelah pengiriman link dilakukan, maka submisi dianggap tidak valid dan peserta
+                      akan DIDISKUALIFIKASI.
+                    </Paragraph>
+                    <br/>
+                    <br/>
+  
+                    {currentTeam.submissions.length > 0 && (
+                      <Paragraph>
+                        Submisi telah dilakukan ✅
+                      </Paragraph>
+                    )}
+  
+                    {currentTeam.submissions.length === 0 && (
+                      <>
+                        <Fieldinput
+                          label="Link Google Drive submisi:"
+                          name="submission"
+                          type="url"
+                          fullWidth
+                          required
+                          marbott
+                          value={link}
+                          onChange={(e) => setLink(e.target.value)}
+                        />
+                        {link !== "" && isGoogleDriveURL(link) && (
+                          <Paragraph>
+                            Link Google Drive valid ✅
+                          </Paragraph>
+                        )}
+                        {link !== "" && !isGoogleDriveURL(link) && (
+                          <Paragraph>
+                            Link Google Drive tidak valid ❌
+                          </Paragraph>
+                        )}
+                        <br/>
+                        <Button onClicked={() => setIsSubmitSubmission(true)}>
+                          Submit
+                        </Button>
+                      </>
+                    )}
+                    
                   </>
                 )}
-                
               </div>
             </div>
           </div>
