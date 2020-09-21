@@ -629,7 +629,7 @@ const DashboardCompetition = () => {
                 
                 {assignmentData.find((x) => x.value === currentCompetition).data === "email" && (
                   <Paragraph>
-                    Cek e-mail Anda untuk case/soal lomba yang bersangkutan.
+                    Silakan cek e-mail Anda untuk case/soal lomba yang bersangkutan.
                   </Paragraph>
                 )}
   
