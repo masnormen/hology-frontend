@@ -35,6 +35,7 @@ const Invitation = () => {
         let isLoggedIn = localStorage.getItem("ho_dXNlcl9zZXNzaW9u")
           && localStorage.getItem("ho_dXNlcl9yZWZyZXNo")
           && localStorage.getItem("ho_dXNlcl9kYXRh")
+          && Date.now() < localStorage.getItem("ho_dGltZXN0YW1w") * 1000;
         
         if (!isLoggedIn) {
           setStatus(2);
@@ -90,7 +91,7 @@ const Invitation = () => {
                 </div>
               </>
             )}
-            {isValid && status === 0  && (
+            {isValid && status === 0 && (
               <>
                 <div className="title">
                   <Header size="l">Siap bergabung?</Header>
@@ -100,7 +101,7 @@ const Invitation = () => {
                 </div>
               </>
             )}
-            {isValid && status === 1  && (
+            {isValid && status === 1 && (
               <>
                 <div className="title">
                   <Header size="l">Sukses!</Header>

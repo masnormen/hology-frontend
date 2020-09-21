@@ -8,7 +8,7 @@ const CheckSession = ({loggedOut = false, redirect = false, children = null}) =>
   let hasToken = localStorage.getItem("ho_dXNlcl9zZXNzaW9u")
     && localStorage.getItem("ho_dXNlcl9yZWZyZXNo")
     && localStorage.getItem("ho_dXNlcl9kYXRh")
-    && Date.now() > localStorage.getItem("&larr; Kembali");
+    && Date.now() < localStorage.getItem("ho_dGltZXN0YW1w") * 1000;
   
   if (!loggedOut && !hasToken) {
     if (redirect) {

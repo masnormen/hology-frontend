@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Select from "react-select";
 import copy from "copy-to-clipboard";
 import Paragraph from "../../components/Paragraph/Paragraph";
@@ -6,8 +6,8 @@ import "./DashboardSection.scss";
 import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
 import Fieldinput from "../../components/Field-input/Fieldinput";
-import { FilePond, registerPlugin } from "react-filepond";
-import { MdContentCopy } from "react-icons/md";
+import {FilePond, registerPlugin} from "react-filepond";
+import {MdContentCopy} from "react-icons/md";
 import "filepond/dist/filepond.min.css";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
@@ -18,7 +18,7 @@ import {
   getAccessToken,
   invalidateSession,
 } from "../../components/SessionHelper";
-import { FaCheckCircle } from "react-icons/fa";
+import {FaCheckCircle} from "react-icons/fa";
 
 registerPlugin(FilePondPluginImagePreview, FilePondPluginFileValidateType);
 
@@ -29,6 +29,12 @@ function checkValid(obj) {
   return true;
 }
 
+function isGoogleDriveURL(url) {
+  let isValidURL = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/gm;
+  let isGoogleDrive = /(drive.google.com)/g;
+  return isValidURL.test(url) && isGoogleDrive.test(url);
+}
+
 const DashboardCompetition = () => {
   // stage 1: Daftar tim
   // stage 2: Biodata tim
@@ -36,9 +42,9 @@ const DashboardCompetition = () => {
   // stage 4: submission tim
   const [currentCompetition, setCurrentCompetition] = useState(0);
   const [currentTeam, setCurrentTeam] = useState(0);
-
-  const [registrationStage, setRegistrationStage] = useState(1);
-
+  
+  const [registrationStage, setRegistrationStage] = useState(0);
+  
   // For stage 1
   const [institutionName, setInstitutionName] = useState("");
   const [payload, setPayload] = useState({
@@ -50,32 +56,41 @@ const DashboardCompetition = () => {
   const [isFailed, setIsFailed] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
+  
   // For stage 2
   const [teamData, setTeamData] = useState({});
-
+  
   const [kartuMahasiswwa, setKartuMahasiswa] = useState(false);
   const [suratKeterangan, setSuratKeterangan] = useState(false);
   const [buktiBayar, setBuktiBayar] = useState(false);
-
+  
   const competitionData = [
-    { value: 1, label: "Business IT Case" },
-    { value: 2, label: "Game Development" },
-    { value: 3, label: "App Innovation" },
-    { value: 4, label: "Programming" },
-    { value: 5, label: "Smart Device" },
-    { value: 6, label: "Capture the Flag" },
+    {value: 1, label: "Business IT Case"},
+    {value: 2, label: "Game Development"},
+    {value: 3, label: "App Innovation"},
+    {value: 4, label: "Programming"},
+    {value: 5, label: "Smart Device"},
+    {value: 6, label: "Capture the Flag"},
   ];
-
+  
+  const assignmentData = [
+    {value: 1, data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview"},
+    {value: 2, data: ""},
+    {value: 3, data: ""},
+    {value: 4, data: "email"},
+    {value: 5, data: ""},
+    {value: 6, data: "email"},
+  ];
+  
   useEffect(() => {
     if (!isSending) return;
-
+    
     if (!checkValid(payload)) {
       alert("Registration failed! Please check your inputed data!");
       setIsFailed(true);
       return;
     }
-
+    
     fetch("https://multazamgsd.com/hology/api/teams/", {
       method: "POST",
       headers: {
@@ -108,11 +123,11 @@ const DashboardCompetition = () => {
         setIsSending(false);
       });
   }, [isSending]);
-
+  
   useEffect(() => {
     if (currentCompetition === 0) return;
-    setPayload({ ...payload, competition_id: currentCompetition });
-
+    setPayload({...payload, competition_id: currentCompetition});
+    
     // let currentTeam = getUserData.teams.find(x => x.competition_id === currentCompetition);
     const getRegStage = async () => {
       let currentTeam = await fetch(
@@ -146,7 +161,7 @@ const DashboardCompetition = () => {
     };
     getRegStage();
   }, [currentCompetition]);
-
+  
   useEffect(() => {
     if (registrationStage === 1) {
       if (institutionName !== "") return;
@@ -203,16 +218,18 @@ const DashboardCompetition = () => {
       getTeamData();
     }
   }, [registrationStage]);
-
+  
   // for stage 4
   const [link, setLink] = useState("");
   const [isSubmitSubmission, setIsSubmitSubmission] = useState(false);
-
+  
   useEffect(() => {
     console.log(link);
     if (!isSubmitSubmission) return;
-    const team_id = currentTeam.team_id;
-
+    if (!isGoogleDriveURL(link)) {
+      alert("Link tidak valid!");
+      return;
+    }
     fetch(
       `https://multazamgsd.com/hology/api/teams/${currentTeam.team_id}/submissions`,
       {
@@ -221,27 +238,25 @@ const DashboardCompetition = () => {
           Authorization: "Bearer " + getAccessToken,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ link }),
+        body: JSON.stringify({link}),
       }
     )
       .then((raw) => {
-        console.log(raw);
         return raw.json();
       })
       .then((res) => {
-        if (res.status) {
-          alert("Berhasil");
+        if (res["success"]) {
+          alert("Berhasil mengirim submission!");
         } else {
-          alert(res.message);
+          alert("Pengiriman submission gagal. Silahkan cek format submission.");
         }
-        console.log(res);
       })
       .catch((err) => {
-        alert(err);
-        setIsSubmitSubmission(false);
+        alert("Ada kesalahan!");
       });
+    setIsSubmitSubmission(false);
   }, [isSubmitSubmission]);
-
+  
   return (
     <>
       {currentCompetition === 0 && (
@@ -257,8 +272,8 @@ const DashboardCompetition = () => {
                 <Paragraph>
                   Pilih jenis competition untuk menuju dashboard tim.
                 </Paragraph>
-                <br />
-                <br />
+                <br/>
+                <br/>
                 <Select
                   theme={(theme) => ({
                     ...theme,
@@ -280,7 +295,7 @@ const DashboardCompetition = () => {
           </div>
         </div>
       )}
-
+      
       {/*TEAM NOT REGISTERED*/}
       {currentCompetition !== 0 && registrationStage === 1 && (
         <div className="dashboard-section-competition-selection">
@@ -294,10 +309,10 @@ const DashboardCompetition = () => {
             >
               &larr; Kembali
             </Button>
-            <br />
-            <br />
-            <br />
-            <br />
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <div className="header">
               <Header center size="r">
                 {
@@ -306,17 +321,17 @@ const DashboardCompetition = () => {
                 }
               </Header>
             </div>
-            <br />
-            <br />
-            <Paragraph style={{ maxWidth: "200px" }}>
+            <br/>
+            <br/>
+            <Paragraph style={{maxWidth: "200px"}}>
               Ketua tim mendaftarkan tim di sini.
-              <br />
+              <br/>
               Anggota tim cukup mengakses link invitation yang didapatkan ketua
               tim untuk join ke tim.
             </Paragraph>
-            <br />
-            <br />
-            <br />
+            <br/>
+            <br/>
+            <br/>
             <div className="description">
               <div className="input-option">
                 <Fieldinput
@@ -327,7 +342,7 @@ const DashboardCompetition = () => {
                   marbott
                   value={payload.name}
                   onChange={(e) =>
-                    setPayload({ ...payload, name: e.target.value })
+                    setPayload({...payload, name: e.target.value})
                   }
                 />
               </div>
@@ -353,8 +368,8 @@ const DashboardCompetition = () => {
                   marbott
                 />
               </div>
-              <br />
-              <br />
+              <br/>
+              <br/>
               <Button onClicked={() => setIsSending(true)}>
                 Register Team
               </Button>
@@ -362,7 +377,7 @@ const DashboardCompetition = () => {
           </div>
         </div>
       )}
-
+      
       {/*REGISTERED TEAM*/}
       {teamData.members != null && registrationStage === 2 && (
         <div className="dashboard-section-competition-data">
@@ -377,36 +392,36 @@ const DashboardCompetition = () => {
               >
                 &larr; Kembali
               </Button>
-              <br />
-              <br />
-              <br />
-              <br />
+              <br/>
+              <br/>
+              <br/>
+              <br/>
               <Paragraph header>
                 Untuk dapat diverifikasi, setiap tim wajib melengkapi bukti
                 pembayaran. Dan setiap anggota wajib melengkapi KTM & surat
                 aktif kuliah/KRS/Riwayat studi.
               </Paragraph>
-              <br />
-              <br />
+              <br/>
+              <br/>
               <Paragraph>Kelengkapan berkas:</Paragraph>
               {!isLoading &&
-                teamData.members.map((item, index) => (
-                  <Paragraph key={index}>
-                    {index + 1}. {item.user_fullname} (KTM:{" "}
-                    {item.user_identity_pic === "" ? "❌" : "✅"} Surat
-                    Aktif/KRS/Riwayat Studi:{" "}
-                    {item.user_proof === "" ? "❌" : "✅"})
-                  </Paragraph>
-                ))}
-              <br />
-              <br />
-              <br />
-              <br />
+              teamData.members.map((item, index) => (
+                <Paragraph key={index}>
+                  {index + 1}. {item.user_fullname} (KTM:{" "}
+                  {item.user_identity_pic === "" ? "❌" : "✅"} Surat
+                  Aktif/KRS/Riwayat Studi:{" "}
+                  {item.user_proof === "" ? "❌" : "✅"})
+                </Paragraph>
+              ))}
+              <br/>
+              <br/>
+              <br/>
+              <br/>
               <div className="header">
                 <Header center size="r">
                   Berkas Team: {teamData.team_name}
                 </Header>
-                <br />
+                <br/>
                 <Paragraph>
                   Competition:{" "}
                   {
@@ -420,15 +435,15 @@ const DashboardCompetition = () => {
                 <span className="link-container">
                   <span className="link-container--link">
                     {teamData.team_join_url}
-                    <br />
-                    <br />
+                    <br/>
+                    <br/>
                     Keep this secret!
                   </span>
                   <span
                     className="icon-container"
                     onClick={() => copy(teamData.team_join_url)}
                   >
-                    <MdContentCopy className="copy-icon" />
+                    <MdContentCopy className="copy-icon"/>
                   </span>
                 </span>
               </div>
@@ -451,12 +466,12 @@ const DashboardCompetition = () => {
                   {buktiBayar && (
                     <>
                       <Paragraph>
-                        <FaCheckCircle height="14px" color="#00b900" /> File
+                        <FaCheckCircle height="14px" color="#00b900"/> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
                         Anda jika salah:
                       </Paragraph>
-                      <br />
-                      <br />
+                      <br/>
+                      <br/>
                     </>
                   )}
                   <FilePond
@@ -480,15 +495,15 @@ const DashboardCompetition = () => {
                   />
                 </div>
               </div>
-              <br />
-              <br />
+              <br/>
+              <br/>
               <div className="header">
                 <Header center size="r">
                   Berkas Account: {getUserData.user_fullname}
                 </Header>
               </div>
-              <br />
-              <br />
+              <br/>
+              <br/>
               <div className="data-container">
                 <div className="kartu-mahasiswa-container">
                   <div className="subtitle">
@@ -497,12 +512,12 @@ const DashboardCompetition = () => {
                   {kartuMahasiswwa && (
                     <>
                       <Paragraph>
-                        <FaCheckCircle height="14px" color="#00b900" /> File
+                        <FaCheckCircle height="14px" color="#00b900"/> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
                         Anda jika salah:
                       </Paragraph>
-                      <br />
-                      <br />
+                      <br/>
+                      <br/>
                     </>
                   )}
                   <FilePond
@@ -535,12 +550,12 @@ const DashboardCompetition = () => {
                   {suratKeterangan && (
                     <>
                       <Paragraph>
-                        <FaCheckCircle height="14px" color="#00b900" /> File
+                        <FaCheckCircle height="14px" color="#00b900"/> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
                         Anda jika salah:
                       </Paragraph>
-                      <br />
-                      <br />
+                      <br/>
+                      <br/>
                     </>
                   )}
                   <FilePond
@@ -568,7 +583,7 @@ const DashboardCompetition = () => {
           </div>
         </div>
       )}
-
+      
       {/*VERIFIED TEAM*/}
       {teamData.members != null && registrationStage === 3 && (
         <div className="dashboard-section-competition-data">
@@ -583,28 +598,84 @@ const DashboardCompetition = () => {
               >
                 &larr; Kembali
               </Button>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+              <br/>
+              <br/>
+              <br/>
+              <br/>
               <div>
                 <Header center size="r">
-                  Submission : {teamData.team_name}
+                  {competitionData.find((x) => x.value === currentCompetition).label} Case
                 </Header>
-                <br />
-                <br />
-                <Paragraph header>Tim Anda telah terverifikasi ✅</Paragraph>
-                <br />
-                <br />
-                <br />
-                <br />
-                <Paragraph header>
-                  Harap tunggu info lebih lanjut untuk submission.
+                <br/>
+                
+                {isGoogleDriveURL(assignmentData.find((x) => x.value === currentCompetition).data) && (
+                  <>
+                    <iframe
+                      id="iframeSoal"
+                      src={assignmentData.find((x) => x.value === currentCompetition).data}
+                    />
+                    <br/>
+                    <br/>
+                    <a
+                      target="_blank" rel="noreferrer noopener"
+                      href={assignmentData.find((x) => x.value === currentCompetition).data}
+                    >
+                      <Button variant="secondary">
+                        Open file a new tab &rarr;
+                      </Button>
+                    </a>
+                  </>
+                )}
+                
+                {assignmentData.find((x) => x.value === currentCompetition).data === "email" && (
+                  <Paragraph>
+                    Cek e-mail Anda untuk case/soal lomba yang bersangkutan.
+                  </Paragraph>
+                )}
+  
+                {assignmentData.find((x) => x.value === currentCompetition).data === "-" && (
+                  <Paragraph>
+                    Silakan cek guidebook untuk panduan pengerjaan lomba.
+                  </Paragraph>
+                )}
+                
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                
+                <Header center size="r">
+                  Submission
+                </Header>
+                <br/>
+                <Paragraph>
+                  Competition: {competitionData.find((x) => x.value === currentCompetition).label} <br/>
+                  Team: {teamData.team_name}
                 </Paragraph>
-                {/* <Fieldinput
-                  label="Submission link Google Drive"
+                <br/>
+                <Paragraph>
+                  PERHATIAN:
+                </Paragraph>
+                <br/>
+                <Paragraph>
+                  1) Link file/folder pada Google Drive harus dapat diakses oleh panitia HOLOGY 3.0 dengan cara mengeset
+                  permission ke Public atau dengan opsi "Get Shareable Link".
+                </Paragraph>
+                <br/>
+                <Paragraph>
+                  2) Pengiriman link submisi hanya bisa dilakukan SATU KALI dan TIDAK DAPAT DIUBAH KEMBALI
+                  DENGAN ALASAN APAPUN. Pastikan link yang Anda masukkan sudah BENAR dan FINAL!
+                </Paragraph>
+                <br/>
+                <Paragraph>
+                  3) Apabila peserta didapati telah memodifikasi/menambah/merevisi/mengubah apapun pada submisinya
+                  dengan alasan apapun setelah pengiriman link dilakukan, maka submisi dianggap tidak valid dan peserta
+                  akan DIDISKUALIFIKASI.
+                </Paragraph>
+                <br/>
+                <br/>
+                <Fieldinput
+                  label="Link Google Drive submisi:"
                   name="submission"
                   type="url"
                   fullWidth
@@ -613,9 +684,20 @@ const DashboardCompetition = () => {
                   value={link}
                   onChange={(e) => setLink(e.target.value)}
                 />
+                {link !== "" && isGoogleDriveURL(link) && (
+                  <Paragraph>
+                    Link Google Drive valid ✅
+                  </Paragraph>
+                )}
+                {link !== "" && !isGoogleDriveURL(link) && (
+                  <Paragraph>
+                    Link Google Drive tidak valid ❌
+                  </Paragraph>
+                )}
+                <br/>
                 <Button onClicked={() => setIsSubmitSubmission(true)}>
                   Submit
-                </Button> */}
+                </Button>
               </div>
             </div>
           </div>

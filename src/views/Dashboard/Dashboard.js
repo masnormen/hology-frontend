@@ -15,7 +15,7 @@ const Dashboard = () => {
   return (
     <CheckSession redirect>
       <Helmet>
-        <title>Competition</title>
+        <title>Dashboard</title>
       </Helmet>
       <div className="dashboard-container-full">
         <Header>Hai, {getUserData.user_fullname}</Header>

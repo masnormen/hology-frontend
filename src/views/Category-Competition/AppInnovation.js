@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 
 const data = {
   title: "App Innovation",
-  tagline: "“Mobile-Based App Development”",
+  tagline: "“Mobile and Web-Based App Development”",
   description:
-    "App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth",
+    "App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile dan web. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth",
   event_1: "Registration Period Batch 1",
   date_1: "1 SEPTEMBER - 15 SEPTEMBER 2020",
   event_2: "Registration Period Batch 2",
