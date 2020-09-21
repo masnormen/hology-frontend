@@ -75,10 +75,10 @@ const DashboardCompetition = () => {
   
   const assignmentData = [
     {value: 1, data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview"},
-    {value: 2, data: ""},
-    {value: 3, data: ""},
+    {value: 2, data: "-"},
+    {value: 3, data: "-"},
     {value: 4, data: "email"},
-    {value: 5, data: ""},
+    {value: 5, data: "-"},
     {value: 6, data: "email"},
   ];
   
@@ -644,7 +644,7 @@ const DashboardCompetition = () => {
                 <br/>
                 <br/>
                 
-                {currentCompetition === 4 || currentCompetition === 6 && (
+                {currentCompetition !== 4 || currentCompetition !== 6 && (
                   <>
   
                     <Header center size="r">
