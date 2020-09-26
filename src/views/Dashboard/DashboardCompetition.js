@@ -257,6 +257,11 @@ const DashboardCompetition = () => {
     setIsSubmitSubmission(false);
   }, [isSubmitSubmission]);
   
+  useEffect(() => {
+    console.log(currentCompetition);
+  }, [currentCompetition]);
+  
+  
   return (
     <>
       {currentCompetition === 0 && (
@@ -644,9 +649,8 @@ const DashboardCompetition = () => {
                 <br/>
                 <br/>
                 
-                {currentCompetition !== 4 || currentCompetition !== 6 && (
+                {currentCompetition !== 4 && currentCompetition !== 6 && (
                   <>
-  
                     <Header center size="r">
                       Submission
                     </Header>
