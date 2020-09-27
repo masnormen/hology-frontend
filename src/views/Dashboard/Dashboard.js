@@ -88,7 +88,7 @@ const Dashboard = () => {
               <Route
                 path="/dashboard/webinar"
                 render={() => (
-                  <DashboardWebinar fullname={getUserData.user_fullname} />
+                  <DashboardWebinar/>
                 )}
               />
               <Route

@@ -74,7 +74,8 @@ const DashboardCompetition = () => {
   ];
   
   const assignmentData = [
-    {value: 1, data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview"},
+    // {value: 1, data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview"},
+    {value: 1, data: "wait"},
     {value: 2, data: "-"},
     {value: 3, data: "-"},
     {value: 4, data: "email"},
@@ -643,13 +644,19 @@ const DashboardCompetition = () => {
                     Silakan cek guidebook untuk panduan pengerjaan lomba.
                   </Paragraph>
                 )}
+  
+                {assignmentData.find((x) => x.value === currentCompetition).data === "wait" && (
+                  <Paragraph>
+                    Tim Anda sudah terverifikasi! ✅
+                  </Paragraph>
+                )}
                 
                 <br/>
                 <br/>
                 <br/>
                 <br/>
                 
-                {currentCompetition !== 4 && currentCompetition !== 6 && (
+                {currentCompetition !== 1 && currentCompetition !== 4 && currentCompetition !== 6 && (
                   <>
                     <Header center size="r">
                       Submission

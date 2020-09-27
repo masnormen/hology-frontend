@@ -50,7 +50,8 @@
   .ticket {
     position: relative;
     margin: 2rem 0;
-    background-image: $backgroundLinear2;
+    background-image: $ticketLinear;
+    font-family: "Titillium Web", sans-serif;
     width: 100%;
     min-height: 350px;
     padding: 3rem 4rem;
@@ -93,12 +94,15 @@
       align-items: center;
       @include respon(phone-pot) {
         flex-direction: column;
+        row-gap: 40px;
       }
       @include respon(phone-land) {
         flex-direction: column;
+        row-gap: 40px;
       }
       @include respon(tb-pot) {
         flex-direction: column;
+        row-gap: 40px;
       }
 
       .hology {
@@ -108,6 +112,16 @@
           width: 3rem;
           object-fit: contain;
           margin-right: 1rem;
+          filter: drop-shadow(1px 1px 14px rgba(32, 32, 32, 0.7));
+          @include respon(phone-pot) {
+            display: none;
+          }
+          @include respon(phone-land) {
+            display: none;
+          }
+          @include respon(tb-pot) {
+            display: none;
+          }
         }
       }
 
