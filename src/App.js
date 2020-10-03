@@ -27,6 +27,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Invitation from "./views/Invitation/Invitation";
 import ForgotPass from "./views/Login/ForgotPass";
 import NewPass from "./views/Login/NewPass";
+import MediaPartner from "./components/media/MediaPartner";
 
 ReactGA.initialize("UA-38735593-5", {
   debug: false,
@@ -41,27 +42,37 @@ const App = () => {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          
+
           <Route exact path="/competition" component={Competition} />
-          <Route path="/competition/businessitcase" component={BusinessITCase} />
+          <Route
+            path="/competition/businessitcase"
+            component={BusinessITCase}
+          />
           <Route path="/competition/appinnovation" component={AppInnovation} />
           <Route path="/competition/programming" component={Programming} />
           <Route path="/competition/smartdevice" component={SmartDevice} />
-          <Route path="/competition/capturetheflag" component={CaptureTheFlag} />
-          <Route path="/competition/gamedevelopment" component={GameDevelopment} />
-          
+          <Route
+            path="/competition/capturetheflag"
+            component={CaptureTheFlag}
+          />
+          <Route
+            path="/competition/gamedevelopment"
+            component={GameDevelopment}
+          />
+
           {/*<Route path="/webinar" component={Webinar} />*/}
           {/*<Route path="/goacademy" component={GoAcademy} />*/}
-  
+
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route exact path="/forgot-password" component={ForgotPass} />
           <Route path="/forgot-password/:token" component={NewPass} />
           <Route path="/logout" component={Logout} />
-  
+
           <Route path="/invitation/:token" component={Invitation} />
           <Route path="/dashboard" component={Dashboard} />
         </Switch>
+        <MediaPartner />
         <Footer />
       </>
     </>

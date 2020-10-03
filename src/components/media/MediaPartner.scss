@@ -1,0 +1,47 @@
+@import "../../base.scss";
+
+.media-container {
+  padding: 5% 10%;
+  border-top: 5px solid #000;
+  background-image: $backgroundLinear;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .horizontal {
+      width: 40%;
+      height: 3px;
+      color: white;
+      background-color: white;
+      border-radius: 99px;
+    }
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+
+    .logo-style {
+      object-fit: contain;
+      height: 80px;
+
+      @include respon(phone-pot) {
+        width: 100%;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+      }
+    }
+  }
+
+  .supported {
+    margin-bottom: 5rem;
+  }
+}
