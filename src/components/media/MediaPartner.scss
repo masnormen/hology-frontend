@@ -14,7 +14,7 @@
     .horizontal {
       width: 40%;
       height: 3px;
-      color: white;
+      color: #ffffff;
       background-color: white;
       border-radius: 99px;
     }
@@ -22,15 +22,16 @@
 
   .image-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 2rem;
-    background-color: white;
+    background: $ticketLinear;
     border-radius: 20px;
 
     .logo-style {
       object-fit: contain;
-      height: 80px;
+      max-height: 60px;
+      max-width: 300px;
 
       @include respon(phone-pot) {
         width: 100%;

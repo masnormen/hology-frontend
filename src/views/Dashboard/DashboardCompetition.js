@@ -604,6 +604,29 @@ const DashboardCompetition = () => {
               >
                 &larr; Kembali
               </Button>
+  
+              {currentCompetition === 2 && (
+                <>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <Paragraph>
+                    UPDATE! Terdapat beberapa perubahan dan penambahan terkait lomba GAME DEVELOPMENT HOLOGY 3.0 di dalam
+                    Guidebook. Perubahan dan penambahan tersebut adalah sebagai berikut:
+                  </Paragraph>
+                  <Paragraph>
+                    - Perubahan timeline kegiatan<br/>
+                    - Perubahan ketentuan GDD pada poin no. 6 (GDD yang telah dikumpulkan tidak dapat direvisi
+                    kembali)<br/>
+                    - Penambahan pengumpulan file game pada babak final<br/>
+                  </Paragraph>
+                  <Paragraph>
+                    Dimohon kepada para peserta untuk mengecek kembali guidebook pada website HOLOGY.
+                  </Paragraph>
+                </>
+              )}
+              
               <br/>
               <br/>
               <br/>
@@ -638,13 +661,13 @@ const DashboardCompetition = () => {
                     Silakan cek e-mail Anda untuk case/soal lomba yang bersangkutan.
                   </Paragraph>
                 )}
-  
+                
                 {assignmentData.find((x) => x.value === currentCompetition).data === "-" && (
                   <Paragraph>
                     Silakan cek guidebook untuk panduan pengerjaan lomba.
                   </Paragraph>
                 )}
-  
+                
                 {assignmentData.find((x) => x.value === currentCompetition).data === "wait" && (
                   <Paragraph>
                     Tim Anda sudah terverifikasi! ✅
@@ -672,7 +695,8 @@ const DashboardCompetition = () => {
                     </Paragraph>
                     <br/>
                     <Paragraph>
-                      1) Link file/folder pada Google Drive harus dapat diakses oleh panitia HOLOGY 3.0 dengan cara mengeset
+                      1) Link file/folder pada Google Drive harus dapat diakses oleh panitia HOLOGY 3.0 dengan cara
+                      mengeset
                       permission ke Public atau dengan opsi "Get Shareable Link".
                     </Paragraph>
                     <br/>
@@ -683,18 +707,20 @@ const DashboardCompetition = () => {
                     <br/>
                     <Paragraph>
                       3) Apabila peserta didapati telah memodifikasi/menambah/merevisi/mengubah apapun pada submisinya
-                      dengan alasan apapun setelah pengiriman link dilakukan, maka submisi dianggap tidak valid dan peserta
+                      dengan alasan apapun setelah pengiriman link dilakukan, maka submisi dianggap tidak valid dan
+                      peserta
                       akan DIDISKUALIFIKASI.
                     </Paragraph>
+                    
                     <br/>
                     <br/>
-  
+                    
                     {currentTeam.submissions.length > 0 && (
                       <Paragraph>
                         Submisi telah dilakukan ✅
                       </Paragraph>
                     )}
-  
+                    
                     {currentTeam.submissions.length === 0 && (
                       <>
                         <Fieldinput
@@ -723,7 +749,7 @@ const DashboardCompetition = () => {
                         </Button>
                       </>
                     )}
-                    
+                  
                   </>
                 )}
               </div>

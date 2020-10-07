@@ -46,6 +46,11 @@ const Register = () => {
             label: item["institution_name"].replace(/\\r\\n/g, ""),
           };
         });
+        theData = theData.filter(x => x.value !== 9999);
+        theData.push({
+          value: 9999,
+          label: "LAINNYA...",
+        })
         return theData;
       })
       .then((readyData) => {
@@ -158,7 +163,7 @@ const Register = () => {
           />
         </div>
         <div className="select-container">
-          <span className="label">Universitas asal (ketik untuk mencari)</span>
+          <span className="label">Institusi</span>
           {isLoading ? (
             <Paragraph>Mohon tunggu... Memuat data...</Paragraph>
           ) : (
@@ -184,7 +189,8 @@ const Register = () => {
               />
               <br />
               <p className="hint">
-                Jika Nama Universitasmu tidak ada dilist pilih "Lainnya"
+                -&gt; Ketik untuk mencari institusi Anda. Jika bukan dari institusi pilih "UMUM/NON-PT".<br/><br/>
+                -&gt; Jika nama institusi tidak ada di list, pilih "LAINNYA" (cukup 1 orang). Rekan Anda akan dapat mendaftar dengan institusi yang baru saja ditambahkan.
               </p>
             </>
           )}
