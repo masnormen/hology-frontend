@@ -60,7 +60,7 @@ const App = () => {
             component={GameDevelopment}
           />
 
-          {/*<Route path="/webinar" component={Webinar} />*/}
+          {/* <Route path="/webinar" component={Webinar} /> */}
           {/*<Route path="/goacademy" component={GoAcademy} />*/}
 
           <Route path="/register" component={Register} />

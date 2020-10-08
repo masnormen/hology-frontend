@@ -32,56 +32,93 @@
   .tagline {
     position: relative;
     z-index: 2;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
-  .square-box-1 {
-    background-image: $circleLinear2;
-    width: 402px;
-    height: 402px;
-    bottom: -222px;
-    right: -102px;
-    position: absolute;
-    transform: rotate(45deg);
-    border-radius: 45px;
-    opacity: 0.302;
-    @include respon(phone-pot) {
-      opacity: 0.15;
-      width: 282px;
-      height: 282px;
-      top: 175px;
-      right: -180px;
+
+  .photo-webinar-container {
+    display: flex;
+    flex-direction: column;
+    // max-height: 650px;
+    .photo-webinar-1 {
+      width: 100%;
+      object-fit: contain;
+      margin-bottom: 1rem;
     }
-    @include respon(phone-land) {
-      opacity: 0.3;
-      width: 342px;
-      height: 342px;
-      top: 175px;
-      right: -220px;
+
+    .column-webinar-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .photo-webinar-2 {
+        width: 49%;
+        // max-height: 240px;
+        object-fit: contain;
+      }
     }
   }
-  .square-box-2 {
-    background-image: $circleLinear2;
-    width: 402px;
-    height: 402px;
-    bottom: -222px;
-    left: -102px;
-    position: absolute;
-    transform: rotate(45deg);
-    border-radius: 45px;
-    opacity: 0.302;
+
+  .webinar-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
     @include respon(phone-pot) {
-      opacity: 0.15;
-      width: 282px;
-      height: 282px;
-      top: 175px;
-      left: -180px;
+      flex-direction: column;
     }
     @include respon(phone-land) {
-      opacity: 0.3;
-      width: 342px;
-      height: 342px;
-      top: 175px;
-      left: -220px;
+      flex-direction: column;
+    }
+
+    .webinar-description-card {
+      padding: 3rem;
+      background-color: $primaryColor;
+      border-radius: 10px;
+      height: 100%;
+      min-height: 170px;
+      @include respon(phone-pot) {
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+      @include respon(phone-land) {
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+    }
+  }
+
+  .speaker-container {
+    text-align: left;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+
+    .description-speaker {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .image-speaker-container {
+      display: flex;
+      justify-content: space-between;
+      @include respon(phone-pot) {
+        flex-direction: column;
+      }
+      @include respon(phone-land) {
+        flex-direction: column;
+      }
+
+      .speaker-image {
+        object-fit: contain;
+        max-width: 30%;
+        @include respon(phone-pot) {
+          min-width: 100%;
+          margin-bottom: 1.25rem;
+        }
+        @include respon(phone-land) {
+          min-width: 100%;
+          margin-bottom: 1.25rem;
+        }
+      }
     }
   }
 }
