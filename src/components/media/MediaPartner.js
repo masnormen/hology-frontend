@@ -16,7 +16,7 @@ import Robotiik from "../../assets/lembaga/robotiik.png";
 
 //Media Partner
 import AnakCoding from "../../assets/mediaPartner/anakcoding.png";
-import BNCC from "../../assets/mediaPartner/BNCC_T.png";
+import BNCC from "../../assets/mediaPartner/BNCC_F.png";
 import eventCampus from "../../assets/mediaPartner/eventcanpus.png";
 import eventJatim from "../../assets/mediaPartner/eventjatim.png";
 import EVMHS3 from "../../assets/mediaPartner/evmhs3.png";
@@ -31,6 +31,7 @@ import EM1 from "../../assets/mediaPartner/EM1.png";
 import ES2 from "../../assets/mediaPartner/ES2.png";
 import BEMTELU from "../../assets/mediaPartner/logoBEM Tel-U.png";
 import LombaMhsID from "../../assets/mediaPartner/lombamhsID.png";
+import AnakIT from "../../assets/mediaPartner/AnakIT.png";
 
 const MediaPartner = () => {
   return (
@@ -118,6 +119,11 @@ const MediaPartner = () => {
           />
           <img
             src={EM}
+            alt="logo-lembaga"
+            className="logo-style margin-bottom"
+          />
+          <img
+            src={AnakIT}
             alt="logo-lembaga"
             className="logo-style margin-bottom"
           />
