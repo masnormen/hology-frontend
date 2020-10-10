@@ -65,22 +65,47 @@ const DashboardCompetition = () => {
   const [buktiBayar, setBuktiBayar] = useState(false);
   
   const competitionData = [
-    {value: 1, label: "Business IT Case"},
-    {value: 2, label: "Game Development"},
-    {value: 3, label: "App Innovation"},
-    {value: 4, label: "Programming"},
-    {value: 5, label: "Smart Device"},
-    {value: 6, label: "Capture the Flag"},
-  ];
-  
-  const assignmentData = [
-    // {value: 1, data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview"},
-    {value: 1, data: "wait"},
-    {value: 2, data: "-"},
-    {value: 3, data: "-"},
-    {value: 4, data: "email"},
-    {value: 5, data: "-"},
-    {value: 6, data: "email"},
+    {
+      value: 1,
+      label: "Business IT Case",
+      // data: "wait",
+      data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview",
+      closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
+      closeSub: new Date("2020-10-13T23:59:59.000+07:00"),
+    },
+    {
+      value: 2,
+      label: "Game Development",
+      data: "-",
+      closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
+      closeSub: new Date("2020-10-13T23:59:59.000+07:00"),
+    },
+    {
+      value: 3,
+      label: "App Innovation",
+      data: "-",
+      closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
+      closeSub: new Date("2020-10-13T23:59:59.000+07:00"),
+    },
+    {
+      value: 4,
+      label: "Programming",
+      data: "email",
+      closeReg: new Date("2020-10-20T23:59:59.000+07:00")
+    },
+    {
+      value: 5,
+      label: "Smart Device",
+      data: "-",
+      closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
+      closeSub: new Date("2020-10-13T23:59:59.000+07:00"),
+    },
+    {
+      value: 6,
+      label: "Capture the Flag",
+      data: "email",
+      closeReg: new Date("2020-10-30T23:59:59.000+07:00"),
+    },
   ];
   
   useEffect(() => {
@@ -225,7 +250,6 @@ const DashboardCompetition = () => {
   const [isSubmitSubmission, setIsSubmitSubmission] = useState(false);
   
   useEffect(() => {
-    console.log(link);
     if (!isSubmitSubmission) return;
     if (!isGoogleDriveURL(link)) {
       alert("Link tidak valid!");
@@ -257,11 +281,6 @@ const DashboardCompetition = () => {
       });
     setIsSubmitSubmission(false);
   }, [isSubmitSubmission]);
-  
-  useEffect(() => {
-    console.log(currentCompetition);
-  }, [currentCompetition]);
-  
   
   return (
     <>
@@ -303,7 +322,10 @@ const DashboardCompetition = () => {
       )}
       
       {/*TEAM NOT REGISTERED*/}
-      {currentCompetition !== 0 && registrationStage === 1 && (
+      {/*BELUM CLOSEREG*/}
+      {currentCompetition !== 0 &&
+      registrationStage === 1 &&
+      Date.now() <= competitionData.find((x) => x.value === currentCompetition).closeReg && (
         <div className="dashboard-section-competition-selection">
           <div className="academy">
             <Button
@@ -384,6 +406,45 @@ const DashboardCompetition = () => {
         </div>
       )}
       
+      {/*TEAM NOT REGISTERED*/}
+      {/*SUDAH CLOSEREG*/}
+      {currentCompetition !== 0 &&
+      registrationStage === 1 &&
+      Date.now() > competitionData.find((x) => x.value === currentCompetition).closeReg && (
+        <div className="dashboard-section-competition-selection">
+          <div className="academy">
+            <Button
+              variant="secondary"
+              onClicked={() => {
+                setCurrentCompetition(0);
+                setRegistrationStage(0);
+              }}
+            >
+              &larr; Kembali
+            </Button>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div className="header">
+              <Header center size="r">
+                {
+                  competitionData.find((x) => x.value === currentCompetition)
+                    .label
+                }
+              </Header>
+            </div>
+            <br/>
+            <br/>
+            <Paragraph style={{maxWidth: "200px"}}>
+              Pendaftaran tim untuk lomba ini sudah ditutup.<br/>
+              Tapi tenang, kamu bisa mendaftar di cabang lomba lain yang masih dibuka ;)
+            </Paragraph>
+            <br/><br/>
+          </div>
+        </div>
+      )}
+      
       {/*REGISTERED TEAM*/}
       {teamData.members != null && registrationStage === 2 && (
         <div className="dashboard-section-competition-data">
@@ -403,7 +464,7 @@ const DashboardCompetition = () => {
               <br/>
               <br/>
               <Paragraph header>
-                Untuk dapat diverifikasi, setiap tim wajib melengkapi bukti
+                Tim ini belum terverifikasi. Untuk dapat diverifikasi, setiap tim wajib melengkapi bukti
                 pembayaran. Dan setiap anggota wajib melengkapi KTM & surat
                 aktif kuliah/KRS/Riwayat studi.
               </Paragraph>
@@ -604,7 +665,7 @@ const DashboardCompetition = () => {
               >
                 &larr; Kembali
               </Button>
-  
+              
               {currentCompetition === 2 && (
                 <>
                   <br/>
@@ -612,7 +673,8 @@ const DashboardCompetition = () => {
                   <br/>
                   <br/>
                   <Paragraph>
-                    UPDATE! Terdapat beberapa perubahan dan penambahan terkait lomba GAME DEVELOPMENT HOLOGY 3.0 di dalam
+                    UPDATE! Terdapat beberapa perubahan dan penambahan terkait lomba GAME DEVELOPMENT HOLOGY 3.0 di
+                    dalam
                     Guidebook. Perubahan dan penambahan tersebut adalah sebagai berikut:
                   </Paragraph>
                   <Paragraph>
@@ -637,17 +699,17 @@ const DashboardCompetition = () => {
                 </Header>
                 <br/>
                 
-                {isGoogleDriveURL(assignmentData.find((x) => x.value === currentCompetition).data) && (
+                {isGoogleDriveURL(competitionData.find((x) => x.value === currentCompetition).data) && (
                   <>
                     <iframe
                       id="iframeSoal"
-                      src={assignmentData.find((x) => x.value === currentCompetition).data}
+                      src={competitionData.find((x) => x.value === currentCompetition).data}
                     />
                     <br/>
                     <br/>
                     <a
                       target="_blank" rel="noreferrer noopener"
-                      href={assignmentData.find((x) => x.value === currentCompetition).data}
+                      href={competitionData.find((x) => x.value === currentCompetition).data}
                     >
                       <Button variant="secondary">
                         Open file a new tab &rarr;
@@ -656,19 +718,19 @@ const DashboardCompetition = () => {
                   </>
                 )}
                 
-                {assignmentData.find((x) => x.value === currentCompetition).data === "email" && (
+                {competitionData.find((x) => x.value === currentCompetition).data === "email" && (
                   <Paragraph>
                     Silakan cek e-mail Anda untuk case/soal lomba yang bersangkutan.
                   </Paragraph>
                 )}
                 
-                {assignmentData.find((x) => x.value === currentCompetition).data === "-" && (
+                {competitionData.find((x) => x.value === currentCompetition).data === "-" && (
                   <Paragraph>
                     Silakan cek guidebook untuk panduan pengerjaan lomba.
                   </Paragraph>
                 )}
                 
-                {assignmentData.find((x) => x.value === currentCompetition).data === "wait" && (
+                {competitionData.find((x) => x.value === currentCompetition).data === "wait" && (
                   <Paragraph>
                     Tim Anda sudah terverifikasi! ✅
                   </Paragraph>
@@ -679,10 +741,13 @@ const DashboardCompetition = () => {
                 <br/>
                 <br/>
                 
-                {currentCompetition !== 1 && currentCompetition !== 4 && currentCompetition !== 6 && (
+                {/*BELUM CLOSE SUBMISSION*/}
+                {currentCompetition !== 4 &&
+                currentCompetition !== 6 &&
+                Date.now() <= competitionData.find((x) => x.value === currentCompetition).closeSub && (
                   <>
                     <Header center size="r">
-                      Submission
+                      Submission<br/>DEADLINE: {competitionData.find((x) => x.value === currentCompetition).closeSub.toLocaleString("id", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                     </Header>
                     <br/>
                     <Paragraph>
@@ -740,7 +805,7 @@ const DashboardCompetition = () => {
                         )}
                         {link !== "" && !isGoogleDriveURL(link) && (
                           <Paragraph>
-                            Link Google Drive tidak valid ❌
+                            Link Google Drive tidak valid ❌<br/><br/>
                           </Paragraph>
                         )}
                         <br/>
@@ -752,6 +817,27 @@ const DashboardCompetition = () => {
                   
                   </>
                 )}
+                
+                {/*SUDAH CLOSE SUBMISSION*/}
+                {currentCompetition !== 4 &&
+                currentCompetition !== 6 &&
+                Date.now() > competitionData.find((x) => x.value === currentCompetition).closeSub && (
+                  <>
+                    <Header center size="r">
+                      Submission
+                    </Header>
+                    <br/>
+                    <Paragraph>
+                      Competition: {competitionData.find((x) => x.value === currentCompetition).label} <br/>
+                      Team: {teamData.team_name}
+                    </Paragraph>
+                    <br/>
+                    <Paragraph>
+                      Periode submisi sudah ditutup. Terima kasih.
+                    </Paragraph>
+                  </>
+                )}
+                
               </div>
             </div>
           </div>
