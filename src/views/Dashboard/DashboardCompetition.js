@@ -71,7 +71,7 @@ const DashboardCompetition = () => {
       // data: "wait",
       data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview",
       closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
-      closeSub: new Date("2020-10-13T23:59:59.000+07:00"),
+      closeSub: new Date("2020-10-30T23:59:59.000+07:00"),
     },
     {
       value: 2,
