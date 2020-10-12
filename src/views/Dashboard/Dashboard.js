@@ -1,12 +1,12 @@
 import React from "react";
 import "./Dashboard.scss";
 import Header from "../../components/Header/Header";
-import { Route, Switch, Redirect, NavLink } from "react-router-dom";
+import {Route, Switch, Redirect, NavLink} from "react-router-dom";
 import DashboardWebinar from "./DashboardWebinar";
 import DashboardAcademy from "./DashboardAcademy";
 import DashboardCompetition from "./DashboardCompetition";
 import DashboardEditProfile from "./DashboardEditProfile";
-import { getUserData } from "../../components/SessionHelper";
+import {getUserData} from "../../components/SessionHelper";
 import CheckSession from "../../components/CheckSession";
 import Helmet from "react-helmet";
 import Paragraph from "../../components/Paragraph/Paragraph";
@@ -19,7 +19,7 @@ const Dashboard = () => {
       </Helmet>
       <div className="dashboard-container-full">
         <Header>Hai, {getUserData.user_fullname}</Header>
-        <br />
+        <br/>
         <Paragraph>Email &rarr; {getUserData.user_email}</Paragraph>
         <Paragraph>
           Tanggal lahir &rarr;{" "}
@@ -37,22 +37,20 @@ const Dashboard = () => {
         <Paragraph>
           Tim &rarr;{" "}
           {getUserData.teams != null &&
-            getUserData.teams.map((item, index) => {
-              if (index === 0) return item.team_name;
-              return ", " + item.team_name;
-            })}
+          getUserData.teams.map((item, index) => {
+            if (index === 0) return item.team_name;
+            return ", " + item.team_name;
+          })}
         </Paragraph>
         <Paragraph>
-          <NavLink style={{ color: "#FFFFFF" }} to="/dashboard/editprofile">
+          <NavLink style={{color: "#FFFFFF"}} to="/dashboard/editprofile">
             Sunting Profil
           </NavLink>
         </Paragraph>
-        <br />
+        <br/>
         <Paragraph>
-          Pengumuman: Semua tim batch 1 yang belum terverifikasi persyaratan
-          berkasnya sampai akhir periode batch 1 akan dihapus secara otomatis
-          oleh sistem. Apabila tim Anda dihapus, Anda diharuskan membuat tim
-          lagi untuk mengikuti pendaftaran batch 2.
+          PENGUMUMAN (11/10/2020): Semua tim batch 2 yang belum terverifikasi persyaratan berkasnya sampai akhir periode batch 2 akan
+          dihapus secara otomatis oleh sistem. Segera lengkapi verifikasi berkas Anda.
         </Paragraph>
         <div className="dashboard">
           <div className="sidebar">
@@ -83,7 +81,7 @@ const Dashboard = () => {
               <Route
                 exact
                 path="/dashboard"
-                render={() => <Redirect to="/dashboard/competition" />}
+                render={() => <Redirect to="/dashboard/competition"/>}
               />
               <Route
                 path="/dashboard/webinar"
@@ -93,15 +91,15 @@ const Dashboard = () => {
               />
               <Route
                 path="/dashboard/academy"
-                render={() => <DashboardAcademy />}
+                render={() => <DashboardAcademy/>}
               />
               <Route
                 path="/dashboard/competition"
-                render={() => <DashboardCompetition />}
+                render={() => <DashboardCompetition/>}
               />
               <Route
                 path="/dashboard/editprofile"
-                render={() => <DashboardEditProfile />}
+                render={() => <DashboardEditProfile/>}
               />
             </Switch>
           </div>
