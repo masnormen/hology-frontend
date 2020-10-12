@@ -3,7 +3,7 @@
 .media-container {
   padding: 5% 10%;
   border-top: 5px solid #000;
-  background-image: $backgroundLinear;
+  background-image: $backgroundFooterLinear;
 
   .header {
     display: flex;
@@ -30,8 +30,9 @@
 
     .logo-style {
       object-fit: contain;
-      max-height: 60px;
+      max-height: 50px;
       max-width: 300px;
+      margin: 10px;
 
       @include respon(phone-pot) {
         width: 100%;

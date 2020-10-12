@@ -17,7 +17,7 @@ const CheckSession = ({loggedOut = false, redirect = false, children = null}) =>
     }
     return null;
   } else if (loggedOut && hasToken) {
-    if (redirect) return <Redirect to="/"/>;
+    if (redirect) return <Redirect to="/dashboard"/>;
     return null;
   }
   if (children) return children;

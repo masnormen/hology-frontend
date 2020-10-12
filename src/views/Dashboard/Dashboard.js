@@ -64,16 +64,16 @@ const Dashboard = () => {
             <NavLink
               className="sidebar_link"
               activeClassName="sidebar_link--active"
-              to="/dashboard/academy"
+              to="/dashboard/webinar"
             >
-              Academy
+              Webinar
             </NavLink>
             <NavLink
               className="sidebar_link"
               activeClassName="sidebar_link--active"
-              to="/dashboard/webinar"
+              to="/dashboard/academy"
             >
-              Webinar
+              Academy
             </NavLink>
           </div>
           <div className="content">
