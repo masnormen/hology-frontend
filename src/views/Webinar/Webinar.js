@@ -5,6 +5,8 @@ import Paragraph from "../../components/Paragraph/Paragraph";
 import Helmet from "react-helmet";
 //Speaker Photo
 import Speaker from "../../assets/speaker/speaker.jpg";
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 //Webinar Photo
 import PhotoWebinar1 from "../../assets/Webinar/1.JPG";
 import PhotoWebinar2 from "../../assets/Webinar/2.JPG";
@@ -24,6 +26,12 @@ const Webinar = () => {
           <Paragraph header>
             Technology Effectiveness and Human Performance
           </Paragraph>
+        </div>
+
+        <div className="signup-button">
+          <Link to="/dashboard/webinar">
+            <Button>Daftar</Button>
+          </Link>
         </div>
 
         <div className="photo-webinar-container">
@@ -60,7 +68,7 @@ const Webinar = () => {
 
         {/* <div className="square-box-1"></div>
         <div className="square-box-2"></div> */}
-        <div className="speaker-container">
+        {/* <div className="speaker-container">
           <div className="description-speaker">
             <Header>SPEAKER DAY 1 (17 October 2020)</Header>
             <Paragraph header>
@@ -105,7 +113,7 @@ const Webinar = () => {
             <img src={Speaker} alt="speake" className="speaker-image" />
             <img src={Speaker} alt="speake" className="speaker-image" />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
