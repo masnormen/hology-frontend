@@ -1,27 +1,27 @@
-import React, {useState, useEffect} from "react";
-import {NavLink} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/logotext.png";
 import "./Navbar.scss";
-import {CSSTransition} from "react-transition-group";
-import {GiHamburgerMenu} from "react-icons/gi";
-import {IoMdClose} from "react-icons/io";
+import { CSSTransition } from "react-transition-group";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 import CheckSession from "../CheckSession";
 
 function Navbar() {
   const [isTransparent, setIsTrasnparent] = useState(false);
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 800px)");
     mediaQuery.addListener(handleMediaQueryChange);
     handleMediaQueryChange(mediaQuery);
-    
+
     return () => {
       mediaQuery.removeListener(handleMediaQueryChange);
     };
   }, []);
-  
+
   const handleMediaQueryChange = (mediaQuery) => {
     if (mediaQuery.matches) {
       setIsSmallScreen(true);
@@ -29,11 +29,11 @@ function Navbar() {
       setIsSmallScreen(false);
     }
   };
-  
+
   const toggleNav = () => {
     setNavVisibility(!isNavVisible);
   };
-  
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -44,10 +44,10 @@ function Navbar() {
       window.removeEventListener("scroll", null);
     };
   }, []);
-  
+
   return (
     <div className={`navbar ${isTransparent ? "navbar-color" : ""}`}>
-      <img src={Logo} alt="Logo Hology" className="logo-text"/>
+      <img src={Logo} alt="Logo Hology" className="logo-text" />
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
         timeout={350}
@@ -80,7 +80,7 @@ function Navbar() {
             </NavLink>
             <NavLink
               activeClassName="navbar__link--active"
-              className="navbar__link disabled"
+              className="navbar__link"
               to="/webinar"
             >
               Webinar
@@ -126,9 +126,9 @@ function Navbar() {
       <button onClick={toggleNav} className="Burger">
         <span role="img" aria-label="">
           {!isNavVisible ? (
-            <GiHamburgerMenu className="icon-hamburger"/>
+            <GiHamburgerMenu className="icon-hamburger" />
           ) : (
-            <IoMdClose className="icon-hamburger"/>
+            <IoMdClose className="icon-hamburger" />
           )}
         </span>
       </button>

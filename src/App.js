@@ -23,7 +23,7 @@ import Login from "./views/Login/Login";
 import Logout from "./views/Logout/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
-// import Webinar from "./views/Webinar/Webinar";
+import Webinar from "./views/Webinar/Webinar";
 import Invitation from "./views/Invitation/Invitation";
 import ForgotPass from "./views/Login/ForgotPass";
 import NewPass from "./views/Login/NewPass";
@@ -60,7 +60,7 @@ const App = () => {
             component={GameDevelopment}
           />
 
-          {/*<Route path="/webinar" component={Webinar} />*/}
+          <Route path="/webinar" component={Webinar} />
           {/*<Route path="/goacademy" component={GoAcademy} />*/}
 
           <Route path="/register" component={Register} />

@@ -3,6 +3,13 @@ import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Logo from "../../assets/logo.png";
+//webinar photo
+import PhotoWebinar1 from "../../assets/Webinar/1.JPG";
+import PhotoWebinar2 from "../../assets/Webinar/2.JPG";
+import PhotoWebinar3 from "../../assets/Webinar/3.JPG";
+import PhotoWebinar4 from "../../assets/Webinar/4.JPG";
+import PhotoWebinar5 from "../../assets/Webinar/5.JPG";
+import PhotoWebinar6 from "../../assets/Webinar/6.JPG";
 
 import "./Home.scss";
 import { Link } from "react-router-dom";
@@ -123,8 +130,23 @@ const Home = () => {
           {/*    terkini.*/}
           {/*  </Paragraph>*/}
           {/*</div>*/}
-          <div className="header fadeIn4">
-            <Paragraph header>COMING SOON.</Paragraph>
+          <div className="tagline">
+            <Paragraph header large>
+              Technology Effectiveness and Human Performance
+            </Paragraph>
+          </div>
+          <div>
+            <Link to="/webinar">
+              <Button>Webinar</Button>
+            </Link>
+          </div>
+          <div className="webinar-image-container">
+            <img src={PhotoWebinar1} alt="Webinar" className="image-webinar" />
+            <img src={PhotoWebinar2} alt="Webinar" className="image-webinar" />
+            <img src={PhotoWebinar3} alt="Webinar" className="image-webinar" />
+            <img src={PhotoWebinar4} alt="Webinar" className="image-webinar" />
+            <img src={PhotoWebinar5} alt="Webinar" className="image-webinar" />
+            <img src={PhotoWebinar6} alt="Webinar" className="image-webinar" />
           </div>
           {/*<div className="speaker-container">*/}
           {/*	<div className="image-container fadeIn4"></div>*/}
@@ -150,7 +172,8 @@ const Home = () => {
           {/*  </Paragraph>*/}
           {/*</div>*/}
           <div className="sub-header fadeIn5">
-            <br/><br/>
+            <br />
+            <br />
             <Paragraph>COMING SOON.</Paragraph>
           </div>
         </div>

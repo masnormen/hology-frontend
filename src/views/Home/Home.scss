@@ -368,10 +368,11 @@
 }
 
 .section-home-full-5 {
-  @include heightMinusNavbar;
-  padding: 0 10%;
+  // @include heightMinusNavbar;
+  padding: 5% 10% 2%;
   overflow: hidden;
   position: relative;
+  min-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -382,6 +383,37 @@
     text-align: center;
     position: relative;
     z-index: 2;
+  }
+
+  .tagline {
+    margin-bottom: 3rem;
+  }
+
+  .webinar-image-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    @include respon(phone-pot) {
+      flex-direction: column;
+    }
+    @include respon(phone-land) {
+      flex-direction: column;
+    }
+
+    .image-webinar {
+      object-fit: contain;
+      width: 30%;
+      margin-bottom: 2rem;
+      @include respon(phone-pot) {
+        width: 100%;
+        height: 200px;
+      }
+      @include respon(phone-land) {
+        width: 100%;
+        height: 300px;
+      }
+    }
   }
 
   .description {
