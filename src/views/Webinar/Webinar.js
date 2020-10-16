@@ -60,9 +60,9 @@ const Webinar = () => {
           </div>
           <div className="webinar-description-card">
             <Paragraph header>LINK REGISTRATION:</Paragraph>
-            <a href="https://bit.ly/WebinarHology" target="blank">
-              <Paragraph>bit.ly/WebinarHology</Paragraph>
-            </a>
+            <Link to="dashboard/webinar">
+              <Paragraph>Daftar Webinar</Paragraph>
+            </Link>
           </div>
         </div>
 
