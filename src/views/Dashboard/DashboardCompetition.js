@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import copy from "copy-to-clipboard";
 import Paragraph from "../../components/Paragraph/Paragraph";
@@ -6,8 +6,8 @@ import "./DashboardSection.scss";
 import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
 import Fieldinput from "../../components/Field-input/Fieldinput";
-import {FilePond, registerPlugin} from "react-filepond";
-import {MdContentCopy} from "react-icons/md";
+import { FilePond, registerPlugin } from "react-filepond";
+import { MdContentCopy } from "react-icons/md";
 import "filepond/dist/filepond.min.css";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
@@ -18,7 +18,7 @@ import {
   getAccessToken,
   invalidateSession,
 } from "../../components/SessionHelper";
-import {FaCheckCircle} from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 registerPlugin(FilePondPluginImagePreview, FilePondPluginFileValidateType);
 
@@ -42,9 +42,9 @@ const DashboardCompetition = () => {
   // stage 4: submission tim
   const [currentCompetition, setCurrentCompetition] = useState(0);
   const [currentTeam, setCurrentTeam] = useState(0);
-  
+
   const [registrationStage, setRegistrationStage] = useState(0);
-  
+
   // For stage 1
   const [institutionName, setInstitutionName] = useState("");
   const [payload, setPayload] = useState({
@@ -56,20 +56,21 @@ const DashboardCompetition = () => {
   const [isFailed, setIsFailed] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   // For stage 2
   const [teamData, setTeamData] = useState({});
-  
+
   const [kartuMahasiswwa, setKartuMahasiswa] = useState(false);
   const [suratKeterangan, setSuratKeterangan] = useState(false);
   const [buktiBayar, setBuktiBayar] = useState(false);
-  
+
   const competitionData = [
     {
       value: 1,
       label: "Business IT Case",
       // data: "wait",
-      data: "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview",
+      data:
+        "https://drive.google.com/file/d/1xSezAdN67aBtTUR1blxLUZcGnF904CGv/preview",
       closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
       closeSub: new Date("2020-10-30T23:59:59.000+07:00"),
     },
@@ -91,7 +92,7 @@ const DashboardCompetition = () => {
       value: 4,
       label: "Programming",
       data: "email",
-      closeReg: new Date("2020-10-20T23:59:59.000+07:00")
+      closeReg: new Date("2020-10-20T23:59:59.000+07:00"),
     },
     {
       value: 5,
@@ -104,19 +105,19 @@ const DashboardCompetition = () => {
       value: 6,
       label: "Capture the Flag",
       data: "email",
-      closeReg: new Date("2020-10-30T23:59:59.000+07:00"),
+      closeReg: new Date("2020-10-30T11:59:59.000+07:00"),
     },
   ];
-  
+
   useEffect(() => {
     if (!isSending) return;
-    
+
     if (!checkValid(payload)) {
       alert("Registration failed! Please check your inputed data!");
       setIsFailed(true);
       return;
     }
-    
+
     fetch("https://multazamgsd.com/hology/api/teams/", {
       method: "POST",
       headers: {
@@ -149,11 +150,11 @@ const DashboardCompetition = () => {
         setIsSending(false);
       });
   }, [isSending]);
-  
+
   useEffect(() => {
     if (currentCompetition === 0) return;
-    setPayload({...payload, competition_id: currentCompetition});
-    
+    setPayload({ ...payload, competition_id: currentCompetition });
+
     // let currentTeam = getUserData.teams.find(x => x.competition_id === currentCompetition);
     const getRegStage = async () => {
       let currentTeam = await fetch(
@@ -187,7 +188,7 @@ const DashboardCompetition = () => {
     };
     getRegStage();
   }, [currentCompetition]);
-  
+
   useEffect(() => {
     if (registrationStage === 1) {
       if (institutionName !== "") return;
@@ -244,11 +245,11 @@ const DashboardCompetition = () => {
       getTeamData();
     }
   }, [registrationStage]);
-  
+
   // for stage 4
   const [link, setLink] = useState("");
   const [isSubmitSubmission, setIsSubmitSubmission] = useState(false);
-  
+
   useEffect(() => {
     if (!isSubmitSubmission) return;
     if (!isGoogleDriveURL(link)) {
@@ -263,7 +264,7 @@ const DashboardCompetition = () => {
           Authorization: "Bearer " + getAccessToken,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({link}),
+        body: JSON.stringify({ link }),
       }
     )
       .then((raw) => {
@@ -281,7 +282,7 @@ const DashboardCompetition = () => {
       });
     setIsSubmitSubmission(false);
   }, [isSubmitSubmission]);
-  
+
   return (
     <>
       {currentCompetition === 0 && (
@@ -297,8 +298,8 @@ const DashboardCompetition = () => {
                 <Paragraph>
                   Pilih jenis competition untuk menuju dashboard tim.
                 </Paragraph>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <Select
                   theme={(theme) => ({
                     ...theme,
@@ -320,131 +321,138 @@ const DashboardCompetition = () => {
           </div>
         </div>
       )}
-      
+
       {/*TEAM NOT REGISTERED*/}
       {/*BELUM CLOSEREG*/}
       {currentCompetition !== 0 &&
-      registrationStage === 1 &&
-      Date.now() <= competitionData.find((x) => x.value === currentCompetition).closeReg && (
-        <div className="dashboard-section-competition-selection">
-          <div className="academy">
-            <Button
-              variant="secondary"
-              onClicked={() => {
-                setCurrentCompetition(0);
-                setRegistrationStage(0);
-              }}
-            >
-              &larr; Kembali
-            </Button>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <div className="header">
-              <Header center size="r">
-                {
-                  competitionData.find((x) => x.value === currentCompetition)
-                    .label
-                }
-              </Header>
-            </div>
-            <br/>
-            <br/>
-            <Paragraph style={{maxWidth: "200px"}}>
-              Ketua tim mendaftarkan tim di sini.
-              <br/>
-              Anggota tim cukup mengakses link invitation yang didapatkan ketua
-              tim untuk join ke tim.
-            </Paragraph>
-            <br/>
-            <br/>
-            <br/>
-            <div className="description">
-              <div className="input-option">
-                <Fieldinput
-                  label="Nama Tim"
-                  name="name_team"
-                  type="text"
-                  required
-                  marbott
-                  value={payload.name}
-                  onChange={(e) =>
-                    setPayload({...payload, name: e.target.value})
-                  }
-                />
-              </div>
-              <div className="input-option">
-                <Fieldinput
-                  disabled
-                  label="Ketua Tim (Anda)"
-                  name="team_captain"
-                  type="text"
-                  value={getUserData.user_fullname}
-                  required
-                  marbott
-                />
-              </div>
-              <div className="input-option">
-                <Fieldinput
-                  disabled
-                  label="Institusi"
-                  name="institution"
-                  type="text"
-                  value={institutionName}
-                  required
-                  marbott
-                />
-              </div>
-              <br/>
-              <br/>
-              <Button onClicked={() => setIsSending(true)}>
-                Register Team
+        registrationStage === 1 &&
+        Date.now() <=
+          competitionData.find((x) => x.value === currentCompetition)
+            .closeReg && (
+          <div className="dashboard-section-competition-selection">
+            <div className="academy">
+              <Button
+                variant="secondary"
+                onClicked={() => {
+                  setCurrentCompetition(0);
+                  setRegistrationStage(0);
+                }}
+              >
+                &larr; Kembali
               </Button>
+              <br />
+              <br />
+              <br />
+              <br />
+              <div className="header">
+                <Header center size="r">
+                  {
+                    competitionData.find((x) => x.value === currentCompetition)
+                      .label
+                  }
+                </Header>
+              </div>
+              <br />
+              <br />
+              <Paragraph style={{ maxWidth: "200px" }}>
+                Ketua tim mendaftarkan tim di sini.
+                <br />
+                Anggota tim cukup mengakses link invitation yang didapatkan
+                ketua tim untuk join ke tim.
+              </Paragraph>
+              <br />
+              <br />
+              <br />
+              <div className="description">
+                <div className="input-option">
+                  <Fieldinput
+                    label="Nama Tim"
+                    name="name_team"
+                    type="text"
+                    required
+                    marbott
+                    value={payload.name}
+                    onChange={(e) =>
+                      setPayload({ ...payload, name: e.target.value })
+                    }
+                  />
+                </div>
+                <div className="input-option">
+                  <Fieldinput
+                    disabled
+                    label="Ketua Tim (Anda)"
+                    name="team_captain"
+                    type="text"
+                    value={getUserData.user_fullname}
+                    required
+                    marbott
+                  />
+                </div>
+                <div className="input-option">
+                  <Fieldinput
+                    disabled
+                    label="Institusi"
+                    name="institution"
+                    type="text"
+                    value={institutionName}
+                    required
+                    marbott
+                  />
+                </div>
+                <br />
+                <br />
+                <Button onClicked={() => setIsSending(true)}>
+                  Register Team
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      
+        )}
+
       {/*TEAM NOT REGISTERED*/}
       {/*SUDAH CLOSEREG*/}
       {currentCompetition !== 0 &&
-      registrationStage === 1 &&
-      Date.now() > competitionData.find((x) => x.value === currentCompetition).closeReg && (
-        <div className="dashboard-section-competition-selection">
-          <div className="academy">
-            <Button
-              variant="secondary"
-              onClicked={() => {
-                setCurrentCompetition(0);
-                setRegistrationStage(0);
-              }}
-            >
-              &larr; Kembali
-            </Button>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <div className="header">
-              <Header center size="r">
-                {
-                  competitionData.find((x) => x.value === currentCompetition)
-                    .label
-                }
-              </Header>
+        registrationStage === 1 &&
+        Date.now() >
+          competitionData.find((x) => x.value === currentCompetition)
+            .closeReg && (
+          <div className="dashboard-section-competition-selection">
+            <div className="academy">
+              <Button
+                variant="secondary"
+                onClicked={() => {
+                  setCurrentCompetition(0);
+                  setRegistrationStage(0);
+                }}
+              >
+                &larr; Kembali
+              </Button>
+              <br />
+              <br />
+              <br />
+              <br />
+              <div className="header">
+                <Header center size="r">
+                  {
+                    competitionData.find((x) => x.value === currentCompetition)
+                      .label
+                  }
+                </Header>
+              </div>
+              <br />
+              <br />
+              <Paragraph style={{ maxWidth: "200px" }}>
+                Pendaftaran tim untuk lomba ini sudah ditutup.
+                <br />
+                Tapi tenang, kamu bisa mendaftar di cabang lomba lain yang masih
+                dibuka ;)
+              </Paragraph>
+              <br />
+              <br />
             </div>
-            <br/>
-            <br/>
-            <Paragraph style={{maxWidth: "200px"}}>
-              Pendaftaran tim untuk lomba ini sudah ditutup.<br/>
-              Tapi tenang, kamu bisa mendaftar di cabang lomba lain yang masih dibuka ;)
-            </Paragraph>
-            <br/><br/>
           </div>
-        </div>
-      )}
-      
+        )}
+
       {/*REGISTERED TEAM*/}
       {teamData.members != null && registrationStage === 2 && (
         <div className="dashboard-section-competition-data">
@@ -459,36 +467,36 @@ const DashboardCompetition = () => {
               >
                 &larr; Kembali
               </Button>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
+              <br />
+              <br />
+              <br />
+              <br />
               <Paragraph header>
-                Tim ini belum terverifikasi. Untuk dapat diverifikasi, setiap tim wajib melengkapi bukti
-                pembayaran. Dan setiap anggota wajib melengkapi KTM & surat
-                aktif kuliah/KRS/Riwayat studi.
+                Tim ini belum terverifikasi. Untuk dapat diverifikasi, setiap
+                tim wajib melengkapi bukti pembayaran. Dan setiap anggota wajib
+                melengkapi KTM & surat aktif kuliah/KRS/Riwayat studi.
               </Paragraph>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <Paragraph>Kelengkapan berkas:</Paragraph>
               {!isLoading &&
-              teamData.members.map((item, index) => (
-                <Paragraph key={index}>
-                  {index + 1}. {item.user_fullname} (KTM:{" "}
-                  {item.user_identity_pic === "" ? "❌" : "✅"} Surat
-                  Aktif/KRS/Riwayat Studi:{" "}
-                  {item.user_proof === "" ? "❌" : "✅"})
-                </Paragraph>
-              ))}
-              <br/>
-              <br/>
-              <br/>
-              <br/>
+                teamData.members.map((item, index) => (
+                  <Paragraph key={index}>
+                    {index + 1}. {item.user_fullname} (KTM:{" "}
+                    {item.user_identity_pic === "" ? "❌" : "✅"} Surat
+                    Aktif/KRS/Riwayat Studi:{" "}
+                    {item.user_proof === "" ? "❌" : "✅"})
+                  </Paragraph>
+                ))}
+              <br />
+              <br />
+              <br />
+              <br />
               <div className="header">
                 <Header center size="r">
                   Berkas Team: {teamData.team_name}
                 </Header>
-                <br/>
+                <br />
                 <Paragraph>
                   Competition:{" "}
                   {
@@ -502,15 +510,15 @@ const DashboardCompetition = () => {
                 <span className="link-container">
                   <span className="link-container--link">
                     {teamData.team_join_url}
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     Keep this secret!
                   </span>
                   <span
                     className="icon-container"
                     onClick={() => copy(teamData.team_join_url)}
                   >
-                    <MdContentCopy className="copy-icon"/>
+                    <MdContentCopy className="copy-icon" />
                   </span>
                 </span>
               </div>
@@ -533,12 +541,12 @@ const DashboardCompetition = () => {
                   {buktiBayar && (
                     <>
                       <Paragraph>
-                        <FaCheckCircle height="14px" color="#00b900"/> File
+                        <FaCheckCircle height="14px" color="#00b900" /> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
                         Anda jika salah:
                       </Paragraph>
-                      <br/>
-                      <br/>
+                      <br />
+                      <br />
                     </>
                   )}
                   <FilePond
@@ -562,15 +570,15 @@ const DashboardCompetition = () => {
                   />
                 </div>
               </div>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <div className="header">
                 <Header center size="r">
                   Berkas Account: {getUserData.user_fullname}
                 </Header>
               </div>
-              <br/>
-              <br/>
+              <br />
+              <br />
               <div className="data-container">
                 <div className="kartu-mahasiswa-container">
                   <div className="subtitle">
@@ -579,12 +587,12 @@ const DashboardCompetition = () => {
                   {kartuMahasiswwa && (
                     <>
                       <Paragraph>
-                        <FaCheckCircle height="14px" color="#00b900"/> File
+                        <FaCheckCircle height="14px" color="#00b900" /> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
                         Anda jika salah:
                       </Paragraph>
-                      <br/>
-                      <br/>
+                      <br />
+                      <br />
                     </>
                   )}
                   <FilePond
@@ -617,12 +625,12 @@ const DashboardCompetition = () => {
                   {suratKeterangan && (
                     <>
                       <Paragraph>
-                        <FaCheckCircle height="14px" color="#00b900"/> File
+                        <FaCheckCircle height="14px" color="#00b900" /> File
                         telah diupload. Tunggu verifikasi atau perbaiki file
                         Anda jika salah:
                       </Paragraph>
-                      <br/>
-                      <br/>
+                      <br />
+                      <br />
                     </>
                   )}
                   <FilePond
@@ -650,7 +658,7 @@ const DashboardCompetition = () => {
           </div>
         </div>
       )}
-      
+
       {/*VERIFIED TEAM*/}
       {teamData.members != null && registrationStage === 3 && (
         <div className="dashboard-section-competition-data">
@@ -665,51 +673,71 @@ const DashboardCompetition = () => {
               >
                 &larr; Kembali
               </Button>
-              
+
               {currentCompetition === 2 && (
                 <>
-                  <br/>
-                  <br/>
-                  <br/>
-                  <br/>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                   <Paragraph>
-                    UPDATE! Terdapat beberapa perubahan dan penambahan terkait lomba GAME DEVELOPMENT HOLOGY 3.0 di
-                    dalam
-                    Guidebook. Perubahan dan penambahan tersebut adalah sebagai berikut:
+                    UPDATE! Terdapat beberapa perubahan dan penambahan terkait
+                    lomba GAME DEVELOPMENT HOLOGY 3.0 di dalam Guidebook.
+                    Perubahan dan penambahan tersebut adalah sebagai berikut:
                   </Paragraph>
                   <Paragraph>
-                    - Perubahan timeline kegiatan<br/>
-                    - Perubahan ketentuan GDD pada poin no. 6 (GDD yang telah dikumpulkan tidak dapat direvisi
-                    kembali)<br/>
-                    - Penambahan pengumpulan file game pada babak final<br/>
+                    - Perubahan timeline kegiatan
+                    <br />
+                    - Perubahan ketentuan GDD pada poin no. 6 (GDD yang telah
+                    dikumpulkan tidak dapat direvisi kembali)
+                    <br />
+                    - Penambahan pengumpulan file game pada babak final
+                    <br />
                   </Paragraph>
                   <Paragraph>
-                    Dimohon kepada para peserta untuk mengecek kembali guidebook pada website HOLOGY.
+                    Dimohon kepada para peserta untuk mengecek kembali guidebook
+                    pada website HOLOGY.
                   </Paragraph>
                 </>
               )}
-              
-              <br/>
-              <br/>
-              <br/>
-              <br/>
+
+              <br />
+              <br />
+              <br />
+              <br />
               <div>
                 <Header center size="r">
-                  {competitionData.find((x) => x.value === currentCompetition).label} Case
+                  {
+                    competitionData.find((x) => x.value === currentCompetition)
+                      .label
+                  }{" "}
+                  Case
                 </Header>
-                <br/>
-                
-                {isGoogleDriveURL(competitionData.find((x) => x.value === currentCompetition).data) && (
+                <br />
+
+                {isGoogleDriveURL(
+                  competitionData.find((x) => x.value === currentCompetition)
+                    .data
+                ) && (
                   <>
                     <iframe
                       id="iframeSoal"
-                      src={competitionData.find((x) => x.value === currentCompetition).data}
+                      src={
+                        competitionData.find(
+                          (x) => x.value === currentCompetition
+                        ).data
+                      }
                     />
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <a
-                      target="_blank" rel="noreferrer noopener"
-                      href={competitionData.find((x) => x.value === currentCompetition).data}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href={
+                        competitionData.find(
+                          (x) => x.value === currentCompetition
+                        ).data
+                      }
                     >
                       <Button variant="secondary">
                         Open file a new tab &rarr;
@@ -717,127 +745,152 @@ const DashboardCompetition = () => {
                     </a>
                   </>
                 )}
-                
-                {competitionData.find((x) => x.value === currentCompetition).data === "email" && (
+
+                {competitionData.find((x) => x.value === currentCompetition)
+                  .data === "email" && (
                   <Paragraph>
-                    Silakan cek e-mail Anda untuk case/soal lomba yang bersangkutan.
+                    Silakan cek e-mail Anda untuk case/soal lomba yang
+                    bersangkutan.
                   </Paragraph>
                 )}
-                
-                {competitionData.find((x) => x.value === currentCompetition).data === "-" && (
+
+                {competitionData.find((x) => x.value === currentCompetition)
+                  .data === "-" && (
                   <Paragraph>
                     Silakan cek guidebook untuk panduan pengerjaan lomba.
                   </Paragraph>
                 )}
-                
-                {competitionData.find((x) => x.value === currentCompetition).data === "wait" && (
-                  <Paragraph>
-                    Tim Anda sudah terverifikasi! ✅
-                  </Paragraph>
+
+                {competitionData.find((x) => x.value === currentCompetition)
+                  .data === "wait" && (
+                  <Paragraph>Tim Anda sudah terverifikasi! ✅</Paragraph>
                 )}
-                
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                
+
+                <br />
+                <br />
+                <br />
+                <br />
+
                 {/*BELUM CLOSE SUBMISSION*/}
                 {currentCompetition !== 4 &&
-                currentCompetition !== 6 &&
-                Date.now() <= competitionData.find((x) => x.value === currentCompetition).closeSub && (
-                  <>
-                    <Header center size="r">
-                      Submission<br/>DEADLINE: {competitionData.find((x) => x.value === currentCompetition).closeSub.toLocaleString("id", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-                    </Header>
-                    <br/>
-                    <Paragraph>
-                      Competition: {competitionData.find((x) => x.value === currentCompetition).label} <br/>
-                      Team: {teamData.team_name}
-                    </Paragraph>
-                    <br/>
-                    <Paragraph>
-                      PERHATIAN:
-                    </Paragraph>
-                    <br/>
-                    <Paragraph>
-                      1) Link file/folder pada Google Drive harus dapat diakses oleh panitia HOLOGY 3.0 dengan cara
-                      mengeset
-                      permission ke Public atau dengan opsi "Get Shareable Link".
-                    </Paragraph>
-                    <br/>
-                    <Paragraph>
-                      2) Pengiriman link submisi hanya bisa dilakukan SATU KALI dan TIDAK DAPAT DIUBAH KEMBALI
-                      DENGAN ALASAN APAPUN. Pastikan link yang Anda masukkan sudah BENAR dan FINAL!
-                    </Paragraph>
-                    <br/>
-                    <Paragraph>
-                      3) Apabila peserta didapati telah memodifikasi/menambah/merevisi/mengubah apapun pada submisinya
-                      dengan alasan apapun setelah pengiriman link dilakukan, maka submisi dianggap tidak valid dan
-                      peserta
-                      akan DIDISKUALIFIKASI.
-                    </Paragraph>
-                    
-                    <br/>
-                    <br/>
-                    
-                    {currentTeam.submissions.length > 0 && (
+                  currentCompetition !== 6 &&
+                  Date.now() <=
+                    competitionData.find((x) => x.value === currentCompetition)
+                      .closeSub && (
+                    <>
+                      <Header center size="r">
+                        Submission
+                        <br />
+                        DEADLINE:{" "}
+                        {competitionData
+                          .find((x) => x.value === currentCompetition)
+                          .closeSub.toLocaleString("id", {
+                            weekday: "long",
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                      </Header>
+                      <br />
                       <Paragraph>
-                        Submisi telah dilakukan ✅
+                        Competition:{" "}
+                        {
+                          competitionData.find(
+                            (x) => x.value === currentCompetition
+                          ).label
+                        }{" "}
+                        <br />
+                        Team: {teamData.team_name}
                       </Paragraph>
-                    )}
-                    
-                    {currentTeam.submissions.length === 0 && (
-                      <>
-                        <Fieldinput
-                          label="Link Google Drive submisi:"
-                          name="submission"
-                          type="url"
-                          fullWidth
-                          required
-                          marbott
-                          value={link}
-                          onChange={(e) => setLink(e.target.value)}
-                        />
-                        {link !== "" && isGoogleDriveURL(link) && (
-                          <Paragraph>
-                            Link Google Drive valid ✅
-                          </Paragraph>
-                        )}
-                        {link !== "" && !isGoogleDriveURL(link) && (
-                          <Paragraph>
-                            Link Google Drive tidak valid ❌<br/><br/>
-                          </Paragraph>
-                        )}
-                        <br/>
-                        <Button onClicked={() => setIsSubmitSubmission(true)}>
-                          Submit
-                        </Button>
-                      </>
-                    )}
-                  
-                  </>
-                )}
-                
+                      <br />
+                      <Paragraph>PERHATIAN:</Paragraph>
+                      <br />
+                      <Paragraph>
+                        1) Link file/folder pada Google Drive harus dapat
+                        diakses oleh panitia HOLOGY 3.0 dengan cara mengeset
+                        permission ke Public atau dengan opsi "Get Shareable
+                        Link".
+                      </Paragraph>
+                      <br />
+                      <Paragraph>
+                        2) Pengiriman link submisi hanya bisa dilakukan SATU
+                        KALI dan TIDAK DAPAT DIUBAH KEMBALI DENGAN ALASAN
+                        APAPUN. Pastikan link yang Anda masukkan sudah BENAR dan
+                        FINAL!
+                      </Paragraph>
+                      <br />
+                      <Paragraph>
+                        3) Apabila peserta didapati telah
+                        memodifikasi/menambah/merevisi/mengubah apapun pada
+                        submisinya dengan alasan apapun setelah pengiriman link
+                        dilakukan, maka submisi dianggap tidak valid dan peserta
+                        akan DIDISKUALIFIKASI.
+                      </Paragraph>
+
+                      <br />
+                      <br />
+
+                      {currentTeam.submissions.length > 0 && (
+                        <Paragraph>Submisi telah dilakukan ✅</Paragraph>
+                      )}
+
+                      {currentTeam.submissions.length === 0 && (
+                        <>
+                          <Fieldinput
+                            label="Link Google Drive submisi:"
+                            name="submission"
+                            type="url"
+                            fullWidth
+                            required
+                            marbott
+                            value={link}
+                            onChange={(e) => setLink(e.target.value)}
+                          />
+                          {link !== "" && isGoogleDriveURL(link) && (
+                            <Paragraph>Link Google Drive valid ✅</Paragraph>
+                          )}
+                          {link !== "" && !isGoogleDriveURL(link) && (
+                            <Paragraph>
+                              Link Google Drive tidak valid ❌<br />
+                              <br />
+                            </Paragraph>
+                          )}
+                          <br />
+                          <Button onClicked={() => setIsSubmitSubmission(true)}>
+                            Submit
+                          </Button>
+                        </>
+                      )}
+                    </>
+                  )}
+
                 {/*SUDAH CLOSE SUBMISSION*/}
                 {currentCompetition !== 4 &&
-                currentCompetition !== 6 &&
-                Date.now() > competitionData.find((x) => x.value === currentCompetition).closeSub && (
-                  <>
-                    <Header center size="r">
-                      Submission
-                    </Header>
-                    <br/>
-                    <Paragraph>
-                      Competition: {competitionData.find((x) => x.value === currentCompetition).label} <br/>
-                      Team: {teamData.team_name}
-                    </Paragraph>
-                    <br/>
-                    <Paragraph>
-                      Periode submisi sudah ditutup. Terima kasih.
-                    </Paragraph>
-                  </>
-                )}
-                
+                  currentCompetition !== 6 &&
+                  Date.now() >
+                    competitionData.find((x) => x.value === currentCompetition)
+                      .closeSub && (
+                    <>
+                      <Header center size="r">
+                        Submission
+                      </Header>
+                      <br />
+                      <Paragraph>
+                        Competition:{" "}
+                        {
+                          competitionData.find(
+                            (x) => x.value === currentCompetition
+                          ).label
+                        }{" "}
+                        <br />
+                        Team: {teamData.team_name}
+                      </Paragraph>
+                      <br />
+                      <Paragraph>
+                        Periode submisi sudah ditutup. Terima kasih.
+                      </Paragraph>
+                    </>
+                  )}
               </div>
             </div>
           </div>
