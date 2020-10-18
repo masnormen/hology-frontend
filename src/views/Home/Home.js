@@ -130,11 +130,11 @@ const Home = () => {
           {/*    terkini.*/}
           {/*  </Paragraph>*/}
           {/*</div>*/}
-          <div className="tagline">
+          {/* <div className="tagline">
             <Paragraph header large>
               Technology Effectiveness and Human Performance
             </Paragraph>
-          </div>
+          </div> */}
           <div>
             <Link to="/webinar">
               <Button>Webinar</Button>

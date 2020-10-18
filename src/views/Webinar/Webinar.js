@@ -54,7 +54,7 @@ const Webinar = () => {
                 <img src={Speaker1} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
                   <Paragraph header>ROBIHAMANTO</Paragraph>
-                  <Paragraph>iOS Developer at Come</Paragraph>
+                  <Paragraph>CEO & Founder Come Indonesia</Paragraph>
                 </div>
               </div>
               <div className="details">
@@ -92,14 +92,14 @@ const Webinar = () => {
                 <img src={Speaker2} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
                   <Paragraph header>ANDRIANSYAH YUSUF</Paragraph>
-                  <Paragraph>Software Engineering Traveloka</Paragraph>
+                  <Paragraph>Software Engineering at Traveloka</Paragraph>
                 </div>
               </div>
               <div className="photo-container">
                 <img src={Speaker3} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
                   <Paragraph header>SARAH JOHANA</Paragraph>
-                  <Paragraph>Community Manager, Toge productions</Paragraph>
+                  <Paragraph>Community Manager at Toge Productions</Paragraph>
                 </div>
               </div>
               <div className="details">
