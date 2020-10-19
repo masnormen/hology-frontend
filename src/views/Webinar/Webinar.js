@@ -4,7 +4,6 @@ import Header from "../../components/Header/Header";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Helmet from "react-helmet";
 //Speaker Photo
-import Speaker from "../../assets/speaker/speaker.jpg";
 import Speaker1 from "../../assets/speaker/1.png";
 import Speaker2 from "../../assets/speaker/2.png";
 import Speaker3 from "../../assets/speaker/3.png";
@@ -13,9 +12,9 @@ import Speaker5 from "../../assets/speaker/5.png";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 //Webinar Photo
-import PhotoWebinar1 from "../../assets/Webinar/1.JPG";
-import PhotoWebinar2 from "../../assets/Webinar/2.JPG";
-import PhotoWebinar3 from "../../assets/Webinar/3.JPG";
+import PhotoWebinar1 from "../../assets/Webinar/1.png";
+import PhotoWebinar2 from "../../assets/Webinar/2.png";
+import PhotoWebinar3 from "../../assets/Webinar/3.png";
 //icon
 import { GoCalendar } from "react-icons/go";
 import { MdAccessTime, MdPlace } from "react-icons/md";
@@ -230,55 +229,6 @@ const Webinar = () => {
             </Link>
           </div>
         </div>
-
-        {/* <div className="square-box-1"></div>
-        <div className="square-box-2"></div> */}
-        {/* <div className="speaker-container">
-          <div className="description-speaker">
-            <Header>SPEAKER DAY 1 (17 October 2020)</Header>
-            <Paragraph header>
-              Theme : Technology Effectiveness and Human
-            </Paragraph>
-            <Paragraph>Waktu : 19.00 – 21.00 WIB</Paragraph>
-          </div>
-          <div className="image-speaker-container">
-            <img src={Speaker} alt="speake" className="speaker-image" />
-            <img src={Speaker} alt="speake" className="speaker-image" />
-            <img src={Speaker} alt="speake" className="speaker-image" />
-          </div>
-        </div>
-
-        <div className="speaker-container">
-          <div className="description-speaker">
-            <Header>SPEAKER DAY 2 (24 October 2020)</Header>
-            <Paragraph header>
-              Theme 1 : Into The Indie Verse <br />
-              Theme 2 : Developing Sustainable Mobile Apps For Long Term Success
-            </Paragraph>
-            <Paragraph>Waktu : 19.00 – 21.00 WIB</Paragraph>
-          </div>
-          <div className="image-speaker-container">
-            <img src={Speaker} alt="speake" className="speaker-image" />
-            <img src={Speaker} alt="speake" className="speaker-image" />
-            <img src={Speaker} alt="speake" className="speaker-image" />
-          </div>
-        </div>
-
-        <div className="speaker-container">
-          <div className="description-speaker">
-            <Header>SPEAKER DAY 3 (31 October 2020)</Header>
-            <Paragraph header>
-              Theme : Mempersiapkan Milenial agar Berperan dalam Pandemi ini
-              dengan Teknologi Informasi
-            </Paragraph>
-            <Paragraph>Waktu : 19.00 – 21.00 WIB</Paragraph>
-          </div>
-          <div className="image-speaker-container">
-            <img src={Speaker} alt="speake" className="speaker-image" />
-            <img src={Speaker} alt="speake" className="speaker-image" />
-            <img src={Speaker} alt="speake" className="speaker-image" />
-          </div>
-        </div> */}
       </div>
     </>
   );
