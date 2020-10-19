@@ -32,7 +32,7 @@ const DashboardWebinar = () => {
       .then((res) => {
         if (res["success"]) {
           let newData = getUserData;
-          newData["is_user_register_webinar"] = 1;
+          newData["user_register_in_webinar"] = 1;
           setUserData(newData);
           window.location.reload();
         } else {
@@ -127,7 +127,9 @@ const DashboardWebinar = () => {
                 </Paragraph>
                 <Paragraph>
                   THEME: Software Engineering: How to Develop Sustainable Mobile
-                  Apps for Long Term Success
+                  Apps for Long Term Success & The Art of Game Making :
+                  Essential Skills to Boost Your Career for The International
+                  Rivalry
                 </Paragraph>
               </div>
               <div className="details">
