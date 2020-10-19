@@ -4,12 +4,12 @@ import Button from "../../components/Button/Button";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import Logo from "../../assets/logo.png";
 //webinar photo
-import PhotoWebinar1 from "../../assets/Webinar/1.JPG";
-import PhotoWebinar2 from "../../assets/Webinar/2.JPG";
-import PhotoWebinar3 from "../../assets/Webinar/3.JPG";
-import PhotoWebinar4 from "../../assets/Webinar/4.JPG";
-import PhotoWebinar5 from "../../assets/Webinar/5.JPG";
-import PhotoWebinar6 from "../../assets/Webinar/6.JPG";
+import PhotoWebinar1 from "../../assets/Webinar/1.png";
+import PhotoWebinar2 from "../../assets/Webinar/2.png";
+import PhotoWebinar3 from "../../assets/Webinar/3.png";
+import PhotoWebinar4 from "../../assets/Webinar/4.png";
+import PhotoWebinar5 from "../../assets/Webinar/5.png";
+import PhotoWebinar6 from "../../assets/Webinar/6.png";
 
 import "./Home.scss";
 import { Link } from "react-router-dom";
