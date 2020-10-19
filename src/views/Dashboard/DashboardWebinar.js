@@ -46,7 +46,7 @@ const DashboardWebinar = () => {
   return (
     <div>
       <div className="dashboard-section-webinar">
-        {getUserData != null && getUserData.is_user_register_webinar ? (
+        {getUserData != null && getUserData.user_register_in_webinar ? (
           <>
             <div className="description">
               <Header center size="r">
