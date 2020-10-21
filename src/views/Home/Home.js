@@ -108,11 +108,6 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        {/*<div className="button-container fadeIn3">*/}
-        {/*	<Link to="/competition">*/}
-        {/*		<Button>Explore Now</Button>*/}
-        {/*	</Link>*/}
-        {/*</div>*/}
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
       </div>
