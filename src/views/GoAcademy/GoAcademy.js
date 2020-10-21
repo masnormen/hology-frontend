@@ -5,6 +5,25 @@ import "./GoAcademy.scss";
 import Button from "../../components/Button/Button";
 import Helmet from "react-helmet";
 
+const data = {
+  title: "App Innovation",
+  tagline: "“Mobile and Web-Based App Development”",
+  description:
+    "App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile dan web. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth",
+  event_1: "Registration Phase",
+  date_1: "25 OCTOBER - 29 OCTOBER 2020",
+  event_2: "Live Code",
+  date_2: "30 OCTOBER 2020",
+  event_3: "Announcement Interview",
+  date_3: "31 OCTOBER 2020",
+  event_4: "Interview",
+  date_4: "1 NOVEMBER - 2 NOVEMBER 2020",
+  event_5: "Final Announcement",
+  date_5: "3 NOVEMBER 2020",
+  event_6: "The Day Student Academy",
+  date_6: "7 NOVEMBER - 8 NOVEMBER 2020 ",
+};
+
 const GoAcademy = () => {
   return (
     <>
@@ -19,19 +38,20 @@ const GoAcademy = () => {
         </div>
         <div className="tagline">
           <Paragraph large header>
-            EMPOWERING IT ENTHUSIASTS THROUGH ONLINE COURSES
+            ONLINE STUDENT ACADEMY BY GOACADEMY
           </Paragraph>
         </div>
         <div className="description">
           <Paragraph>
-            "But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual”
+            Student Academy adalah rangkaian academy yang diselenggarakan oleh
+            HOLOGY dan berkolaborasi bersama GOJEK. Topik yang diangkat pada
+            Student Academy kali ini adalah "Engineering Best Practice". Academy
+            ini akan berlangsung selama 2 hari dan terbuka gratis untuk kalian
+            para mahasiswa UB loh
           </Paragraph>
         </div>
         <div className="buttons-container">
-          <Button>Download Guidebook</Button>
-          <Button variant="secondary">Register Now</Button>
+          <Button>Register Now</Button>
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
@@ -42,7 +62,7 @@ const GoAcademy = () => {
       <div className="section-go-academy-full-2">
         <div className="title">
           <Header size="r" center>
-            Go Academy Timeline
+            GoAcademy Timeline
           </Header>
         </div>
 
@@ -51,79 +71,59 @@ const GoAcademy = () => {
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
-                <h3>Open Registration</h3>
-                <span>24 Agustus 2020</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate.
-                </p>
+                <h3>{data.event_1}</h3>
+                <span dir="ltr">{data.date_1}</span>
               </div>
             </div>
 
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
-                <h3>Open Registration</h3>
-                <span>24 Agustus 2020</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate.
-                </p>
+                <h3>{data.event_2}</h3>
+                <span dir="ltr">{data.date_2}</span>
               </div>
             </div>
 
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
-                <h3>Open Registration</h3>
-                <span>24 Agustus 2020</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate.
-                </p>
+                <h3>{data.event_3}</h3>
+                <span dir="ltr">{data.date_3}</span>
               </div>
             </div>
 
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
-                <h3>Open Registration</h3>
-                <span>24 Agustus 2020</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate.
-                </p>
+                <h3>{data.event_4}</h3>
+                <span dir="ltr">{data.date_4}</span>
               </div>
             </div>
 
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
-                <h3>Open Registration</h3>
-                <span>24 Agustus 2020</span>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate.
-                </p>
+                <h3>{data.event_5}</h3>
+                <span dir="ltr">{data.date_5}</span>
+              </div>
+            </div>
+
+            <div className="timeline-block timeline-block-left">
+              <div className="marker"></div>
+              <div className="timeline-content">
+                <h3>{data.event_6}</h3>
+                <span dir="ltr">{data.date_6}</span>
               </div>
             </div>
           </div>
         </div>
+
+        <div className="title">
+          <Header size="r" center>
+            Competition Timeline
+          </Header>
+        </div>
+
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
         <div className="square-box-3"></div>

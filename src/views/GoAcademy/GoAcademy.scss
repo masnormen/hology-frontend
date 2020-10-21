@@ -37,23 +37,19 @@
 
   .buttons-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
     z-index: 2;
     margin: 4rem auto;
-    width: 480px;
     @include respon(phone-pot) {
       flex-direction: column;
-      justify-content: space-between;
-      height: 140px;
+      justify-content: center;
       width: 100%;
       margin: 2rem 0 2rem;
     }
     @include respon(phone-land) {
       flex-direction: column;
-      height: 150px;
-      justify-content: space-between;
+      justify-content: center;
       width: 100%;
       margin-bottom: 4rem;
     }

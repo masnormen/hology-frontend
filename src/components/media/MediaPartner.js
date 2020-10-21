@@ -32,6 +32,9 @@ import ES2 from "../../assets/mediaPartner/ES2.png";
 import BEMTELU from "../../assets/mediaPartner/logoBEM Tel-U.png";
 import LombaMhsID from "../../assets/mediaPartner/lombamhsID.png";
 import AnakIT from "../../assets/mediaPartner/AnakIT.png";
+import Blossom from "../../assets/mediaPartner/blossom.png";
+import Niagahoster from "../../assets/mediaPartner/niagahoster.png";
+import Dicoding from "../../assets/mediaPartner/dicoding.png";
 
 const MediaPartner = () => {
   return (
@@ -124,6 +127,21 @@ const MediaPartner = () => {
           />
           <img
             src={AnakIT}
+            alt="logo-lembaga"
+            className="logo-style margin-bottom"
+          />
+          <img
+            src={Blossom}
+            alt="logo-lembaga"
+            className="logo-style margin-bottom"
+          />
+          <img
+            src={Niagahoster}
+            alt="logo-lembaga"
+            className="logo-style margin-bottom"
+          />
+          <img
+            src={Dicoding}
             alt="logo-lembaga"
             className="logo-style margin-bottom"
           />

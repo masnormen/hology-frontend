@@ -73,7 +73,7 @@ function Navbar() {
             </NavLink>
             <NavLink
               activeClassName="navbar__link--active"
-              className="navbar__link disabled"
+              className="navbar__link  disabled"
               to="/goacademy"
             >
               Academy
