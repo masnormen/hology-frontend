@@ -1,25 +1,18 @@
-// DEFAULT THEMING
-// $primaryColor: #3d57f4;
-// $secondaryColor: #bc2280;
-// $backgroundBase1: #090a21;
-// $backgroundBase2: #0f1029;
-// $backgroundLinear: linear-gradient(140deg, #030207 0%, #111339 100%);
-// $backgroundFooterLinear: linear-gradient(0deg, #1c143b 0%, #111339 100%);
-// $circleLinear1: linear-gradient(140deg, #290a59 0%, #3d57f4 100%);
-// $circleLinear2: linear-gradient(140deg, #3c0f73 0%, #bc2280 100%);
-// $circleBigLinear: linear-gradient(-90deg, #290a59 0%, #3d57f4 100%);
-
 //LOGO THEMING
 $primaryColor: #1f81a0;
 $secondaryColor: #142438;
 $terneryColor: #519a9e;
 $backgroundBase1: #09121e;
-$backgroundBase2: #031d32EB;
-$backgroundLinear: linear-gradient(145deg, #011826D1 20%, #0b4066 100%);
-$backgroundLinear2: linear-gradient(145deg, #1a5b78EB 0%, #062841DF 60%);
-$backgroundFooterLinear: linear-gradient(145deg, #050e13 40%, rgba(19, 57, 92, 0.85) 100%);
+$backgroundBase2: #031d32eb;
+$backgroundLinear: linear-gradient(145deg, #011826d1 20%, #0b4066 100%);
+$backgroundLinear2: linear-gradient(145deg, #1a5b78eb 0%, #062841df 60%);
+$backgroundFooterLinear: linear-gradient(
+  145deg,
+  #050e13 40%,
+  rgba(19, 57, 92, 0.85) 100%
+);
 $circleLinear1: linear-gradient(140deg, #1f4f6b 0%, #5580a0 100%);
-$circleLinear2: linear-gradient(140deg, #78ebfbEB 0%, #1a6fb4 100%);
+$circleLinear2: linear-gradient(140deg, #78ebfbeb 0%, #1a6fb4 100%);
 $circleBigLinear: linear-gradient(-90deg, #34476c 0%, #1d8fa9 100%);
 $ticketLinear: linear-gradient(140deg, #35a4a4 0%, #0c4169 100%);
 
@@ -61,7 +54,13 @@ $paragraph: 1.2rem;
 }
 
 @keyframes floating {
-  from { transform: translate(0,  0px); }
-  50%  { transform: translate(0, -15px); }
-  to   { transform: translate(0, 0px); }
+  from {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, -15px);
+  }
+  to {
+    transform: translate(0, 0px);
+  }
 }
