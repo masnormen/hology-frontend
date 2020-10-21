@@ -131,9 +131,8 @@ const Webinar = () => {
               <div className="photo-container">
                 <img src={Speaker4} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
-                  <Paragraph header>Coming Soon</Paragraph>
-                  {/* <Paragraph header>ANDI NUGROHO DIRGANTARA</Paragraph>
-                  <Paragraph>Lead Data Engineer Traveloka</Paragraph> */}
+                  <Paragraph header>ANDI NUGROHO DIRGANTARA</Paragraph>
+                  <Paragraph>Lead Data Engineer at Traveloka</Paragraph>
                 </div>
               </div>
               <div className="details">
@@ -216,11 +215,7 @@ const Webinar = () => {
 
         <div className="webinar-description">
           <div className="webinar-description-card">
-            <Paragraph header>
-              VIA: ZOOM/GMEET
-              <br />
-              STREAM ON: YOUTUBE HOLOGY UB
-            </Paragraph>
+            <Paragraph header>STREAM ON: YOUTUBE HOLOGY UB</Paragraph>
           </div>
           <div className="webinar-description-card">
             <Paragraph header>LINK REGISTRATION:</Paragraph>
