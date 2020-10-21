@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Button from "../../components/Button/Button";
+// import Button from "../../components/Button/Button";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./DashboardSection.scss";
 import Header from "../../components/Header/Header";
-import Fieldinput from "../../components/Field-input/Fieldinput";
+// import Fieldinput from "../../components/Field-input/Fieldinput";
 //filepond
-import { FilePond, registerPlugin } from "react-filepond";
-import "filepond/dist/filepond.min.css";
-import FilePondPluginImagePreview from "filepond-plugin-image-preview";
-import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
-import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
-registerPlugin(FilePondPluginImagePreview, FilePondPluginFileValidateType);
+// import { FilePond, registerPlugin } from "react-filepond";
+// import "filepond/dist/filepond.min.css";
+// import FilePondPluginImagePreview from "filepond-plugin-image-preview";
+// import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
+// import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
+// registerPlugin(FilePondPluginImagePreview, FilePondPluginFileValidateType);
 
 const DashboardAcademy = () => {
-  const [isRegisterAcademy, setIsRegisterAcademy] = useState(false);
+  // const [isRegisterAcademy, setIsRegisterAcademy] = useState(false);
   return (
     <div className="dashboard-section-academy">
       <div className="academy">
@@ -22,7 +22,8 @@ const DashboardAcademy = () => {
             Academy
           </Header>
         </div>
-        {isRegisterAcademy ? (
+        <Paragraph header>Coming Soon</Paragraph>
+        {/* {isRegisterAcademy ? (
           <>
             <div className="description">
               <Paragraph header>
@@ -65,7 +66,7 @@ const DashboardAcademy = () => {
               Register
             </Button>
           </>
-        )}
+        )} */}
       </div>
     </div>
   );

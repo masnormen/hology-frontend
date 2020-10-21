@@ -35,6 +35,8 @@ import AnakIT from "../../assets/mediaPartner/AnakIT.png";
 import Blossom from "../../assets/mediaPartner/blossom.png";
 import Niagahoster from "../../assets/mediaPartner/niagahoster.png";
 import Dicoding from "../../assets/mediaPartner/dicoding.png";
+import Cahayu from "../../assets/mediaPartner/cahayu.png";
+import Bros from "../../assets/mediaPartner/bros.png";
 
 const MediaPartner = () => {
   return (
@@ -137,6 +139,16 @@ const MediaPartner = () => {
           />
           <img
             src={Niagahoster}
+            alt="logo-lembaga"
+            className="logo-style margin-bottom"
+          />
+          <img
+            src={Bros}
+            alt="logo-lembaga"
+            className="logo-style margin-bottom"
+          />
+          <img
+            src={Cahayu}
             alt="logo-lembaga"
             className="logo-style margin-bottom"
           />
