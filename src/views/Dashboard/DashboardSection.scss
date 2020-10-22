@@ -124,6 +124,7 @@
       .hology {
         display: flex;
         align-items: center;
+
         .logo-hology {
           width: 3rem;
           object-fit: contain;
@@ -148,6 +149,7 @@
           height: 2rem;
           margin-right: 1.5rem;
         }
+
         .margin-bottom {
           margin-bottom: 1rem;
         }
@@ -203,6 +205,26 @@
       }
     }
   }
+
+  .livestream {
+    position: relative;
+    margin: 2rem 0;
+    background-image: $ticketLinear;
+    font-family: "Titillium Web", sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include respon(phone-pot) {
+      padding: 10px;
+    }
+    @include respon(phone-land) {
+      padding: 10px;
+    }
+  }
 }
 
 .dashboard-section-competition-selection {
@@ -235,6 +257,7 @@
     .header {
       margin-bottom: 1rem;
     }
+
     .description {
       max-width: 300px;
       margin: auto;
@@ -253,6 +276,7 @@
         text-align: left;
       }
     }
+
     .input-option {
       text-align: left;
     }
@@ -271,13 +295,16 @@
 
   .team-member {
     margin: 2.5rem 0;
+
     .header {
       margin-bottom: 0.75rem;
     }
   }
+
   .view {
     width: 100%;
   }
+
   .link-team-container {
     width: 100%;
     margin: 2rem 0 2rem;
@@ -305,6 +332,7 @@
         border-radius: 999px;
         vertical-align: top;
         line-height: 12px;
+
         &:hover {
           background-color: $primaryColor;
         }
@@ -320,22 +348,28 @@
   .data-container {
     .kartu-mahasiswa-container {
       margin-bottom: 2rem;
+
       .subtitle {
         margin-bottom: 1.25rem;
       }
     }
+
     .surat-keterangan-container {
       margin-bottom: 2rem;
+
       .subtitle {
         margin-bottom: 1.25rem;
       }
     }
+
     .bukti-bayar-container {
       margin-bottom: 2rem;
+
       .subtitle {
         margin-bottom: 1.25rem;
       }
     }
+
     .filepond--wrapper {
       width: 90%;
       max-width: 400px;
@@ -345,6 +379,13 @@
 
 #iframeSoal {
   width: 100%;
-  height: 750px;
-  max-height: 90vh;
+  height: 700px;
+  max-height: 77vh;
+  border-radius: 10px;
+  @include respon(phone-pot) {
+    max-height: 50vh;
+  }
+  @include respon(phone-land) {
+    max-height: 50vh;
+  }
 }

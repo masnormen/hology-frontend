@@ -740,7 +740,7 @@ const DashboardCompetition = () => {
                       }
                     >
                       <Button variant="secondary">
-                        Open file a new tab &rarr;
+                        Open file in a new tab &rarr;
                       </Button>
                     </a>
                   </>
