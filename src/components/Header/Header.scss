@@ -35,9 +35,7 @@
   }
 
   .line-white {
-    border: 3px solid white;
     background-color: white;
-    border-radius: 5px;
   }
 }
 
@@ -87,4 +85,9 @@
   @include respon(tb-land) {
     font-size: 1.5rem;
   }
+}
+
+.wrap {
+  white-space: normal!important;
+  line-height: 1.5em;
 }

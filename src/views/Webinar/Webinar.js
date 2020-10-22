@@ -27,32 +27,41 @@ const Webinar = () => {
       </Helmet>
       <div className="section-webinar-full-1">
         <div className="title">
-          <Header size="r">Webinar National IT Hology 3.0</Header>
+          <Header size="l">Webinar National IT</Header>
+          <br/>
+          <Header size="l">HOLOGY 3.0</Header>
         </div>
         {/* <div className="tagline">
           <Paragraph header>Daftarkan Diri Anda</Paragraph>
         </div> */}
-
-        <div className="signup-button">
-          <Link to="/dashboard/webinar">
-            <Button>Daftar</Button>
-          </Link>
+  
+        <br/>
+        <div className="webinar-description">
+          <div className="webinar-description-card">
+            <Paragraph header>REGISTRASI:</Paragraph><br/><br/>
+            <Link to="/dashboard/webinar">
+              <Button>Daftar Webinar</Button>
+            </Link>
+          </div>
         </div>
-
+        
+        
+        <br/><br/>
         <div className="card-webinar-container">
           <div className="card-webinar-speaker">
-            <Paragraph>HOLOGY 3.0</Paragraph>
             <div className="theme">
-              <Paragraph header>
-                How Technology Can Improve The Economic Side Without Neglecting
+              <Header size="s" lineWhite wrap noLine>
+                WEBINAR 1:<br/>How Technology Can Improve The Economic Side Without Neglecting
                 Social Values
-              </Paragraph>
+              </Header>
             </div>
             <div className="photo-detail-speaker">
               <div className="photo-container">
                 <img src={Speaker1} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
-                  <Paragraph header>ROBIHAMANTO</Paragraph>
+                  <Paragraph header>
+                    ROBIHAMANTO
+                  </Paragraph>
                   <Paragraph>CEO & Founder Come Indonesia</Paragraph>
                 </div>
               </div>
@@ -74,31 +83,30 @@ const Webinar = () => {
           </div>
 
           <div className="card-webinar-speaker-2">
-            <Paragraph>HOLOGY 3.0</Paragraph>
             <div className="theme">
-              <Paragraph header>
-                Software Engineering: How to Develop Sustainable Mobile Apps for
+              <Header size="s" lineWhite wrap noLine>
+                WEBINAR 2:<br/>Software Engineering: How to Develop Sustainable Mobile Apps for
                 Long Term Success
                 <br />
                 &
                 <br />
                 The Art of Game Making : Essential Skills to Boost Your Career
                 for The International Rivalry
-              </Paragraph>
+              </Header>
             </div>
             <div className="photo-detail-speaker">
               <div className="photo-container">
                 <img src={Speaker2} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
                   <Paragraph header>ANDRIANSYAH YUSUF</Paragraph>
-                  <Paragraph>Software Engineering at Traveloka</Paragraph>
+                  <Paragraph>Software Engineering @ Traveloka</Paragraph>
                 </div>
               </div>
               <div className="photo-container">
                 <img src={Speaker3} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
                   <Paragraph header>SARAH JOHANA</Paragraph>
-                  <Paragraph>Community Manager at Toge Productions</Paragraph>
+                  <Paragraph>Community Manager @ Toge Productions</Paragraph>
                 </div>
               </div>
               <div className="details">
@@ -121,18 +129,17 @@ const Webinar = () => {
 
         <div className="card-webinar-container">
           <div className="card-webinar-speaker">
-            <Paragraph>HOLOGY 3.0</Paragraph>
             <div className="theme">
-              <Paragraph header>
-                How Data Can Affect Sustainability Of Business
-              </Paragraph>
+              <Header size="s" lineWhite wrap noLine>
+                WEBINAR 3:<br/>How Data Can Affect Sustainability Of Business
+              </Header>
             </div>
             <div className="photo-detail-speaker">
               <div className="photo-container">
                 <img src={Speaker4} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
                   <Paragraph header>ANDI NUGROHO DIRGANTARA</Paragraph>
-                  <Paragraph>Lead Data Engineer at Traveloka</Paragraph>
+                  <Paragraph>Lead Data Engineer @ Traveloka</Paragraph>
                 </div>
               </div>
               <div className="details">
@@ -153,19 +160,18 @@ const Webinar = () => {
           </div>
 
           <div className="card-webinar-speaker">
-            <Paragraph>HOLOGY 3.0</Paragraph>
             <div className="theme">
-              <Paragraph header>
-                The fine Art of Product Design: Involving Users Into Your
+              <Header size="s" lineWhite wrap noLine>
+                WEBINAR 4:<br/>The fine Art of Product Design: Involving Users Into Your
                 Process
-              </Paragraph>
+              </Header>
             </div>
             <div className="photo-detail-speaker">
               <div className="photo-container">
                 <img src={Speaker5} alt="Speaker" className="speaker-photo" />
                 <div className="name-speaker">
                   <Paragraph header>TRI NUGRAHA</Paragraph>
-                  <Paragraph>Product Design Lead, Gojek</Paragraph>
+                  <Paragraph>Product Design Lead @ Gojek</Paragraph>
                 </div>
               </div>
               <div className="details">
@@ -185,20 +191,21 @@ const Webinar = () => {
             </div>
           </div>
         </div>
-
-        <div className="tagline">
-          <Paragraph header>
-            Daftarkan Diri Anda di Webinar HOLOGY 3.0
-          </Paragraph>
+  
+        <div className="webinar-description">
+          <div className="webinar-description-card">
+            <Paragraph header>
+              🔴 LIVESTREAMING: <br/><br/>
+              Login&rarr;Dashboard&rarr;Webinar
+              <br/> & YT: HOLOGY UB
+            </Paragraph>
+          </div>
         </div>
-        <div className="signup-button">
-          <Link to="/dashboard/webinar">
-            <Button>Daftar</Button>
-          </Link>
-        </div>
-
+        
+        <br/><br/>
+        <Header size="r">Keseruan Acara Tahun Lalu</Header>
+        <br/><br/><br/><br/>
         <div className="photo-webinar-container">
-          <img src={PhotoWebinar1} alt="Webinar" className="photo-webinar-1" />
           <div className="column-webinar-container">
             <img
               src={PhotoWebinar2}
@@ -211,16 +218,14 @@ const Webinar = () => {
               className="photo-webinar-2"
             />
           </div>
+          <br/><br/>
+          <img src={PhotoWebinar1} alt="Webinar" className="photo-webinar-1" />
         </div>
-
         <div className="webinar-description">
           <div className="webinar-description-card">
-            <Paragraph header>STREAM ON: YOUTUBE HOLOGY UB</Paragraph>
-          </div>
-          <div className="webinar-description-card">
-            <Paragraph header>LINK REGISTRATION:</Paragraph>
-            <Link to="dashboard/webinar">
-              <Paragraph>Daftar Webinar</Paragraph>
+            <Paragraph header>REGISTRATION:</Paragraph><br/><br/>
+            <Link to="/dashboard/webinar">
+              <Button>Daftar Webinar</Button>
             </Link>
           </div>
         </div>

@@ -3,7 +3,7 @@
 .section-webinar-full-1 {
   min-height: 100vh;
   padding: 15% 10% 0;
-  background-image: $backgroundLinear;
+  background: $backgroundLinear;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -32,11 +32,11 @@
   .tagline {
     position: relative;
     z-index: 2;
-    margin-bottom: 2rem;
+    margin: 6rem 0 2rem;
   }
 
   .signup-button {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 
   .photo-webinar-container {
@@ -64,7 +64,7 @@
 
   .card-webinar-container {
     display: flex;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     justify-content: space-between;
     @include respon(phone-pot) {
       flex-direction: column;
@@ -77,7 +77,7 @@
     }
     .card-webinar-speaker {
       width: 48%;
-      background-image: linear-gradient(40deg, #16545c 0%, #025c90 100%);
+      background-image: $ticketLinear;
       padding: 5% 2%;
 
       border-radius: 20px;
@@ -124,6 +124,7 @@
             object-fit: contain;
             width: 100%;
             min-height: 400px;
+            filter: brightness(100%) contrast(120%) sepia(50%) saturate(90%) hue-rotate(-10deg) drop-shadow(2px 2px 10px #444);
           }
 
           .name-speaker {
@@ -172,7 +173,7 @@
 
     .card-webinar-speaker-2 {
       width: 48%;
-      background-image: linear-gradient(40deg, #16545c 0%, #025c90 100%);
+      background-image: $ticketLinear;
       padding: 5% 2%;
       border-radius: 20px;
       @include respon(phone-pot) {
@@ -211,6 +212,7 @@
             object-fit: contain;
             width: 100%;
             height: 300px;
+            filter: brightness(100%) contrast(120%) sepia(50%) saturate(90%) hue-rotate(-10deg) drop-shadow(2px 2px 10px #444);
           }
 
           .name-speaker {
@@ -253,7 +255,7 @@
 
   .webinar-description {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin-top: 4rem;
     @include respon(phone-pot) {
@@ -269,11 +271,10 @@
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      background-color: $primaryColor;
+      background: $ticketLinear;
       border-radius: 10px;
       height: 100%;
-      min-height: 170px;
-      max-height: 170px;
+      min-height: 200px;
       margin-bottom: 3rem;
       @include respon(phone-pot) {
         margin-bottom: 2rem;
