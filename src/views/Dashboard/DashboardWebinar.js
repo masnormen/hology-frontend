@@ -54,7 +54,7 @@ const DashboardWebinar = () => {
                 🔴 LIVESTREAM
               </Header>
             </div>
-            {Date.now() > Date.parse("2020-10-23T18:59:59.000+07:00") ? (
+            {Date.now() > Date.parse("2020-10-24T12:59:59.000+07:00") ? (
               <>
                 <a
                   target="_blank"
