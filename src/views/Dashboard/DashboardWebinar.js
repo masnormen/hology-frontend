@@ -59,14 +59,14 @@ const DashboardWebinar = () => {
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
-                  href="https://www.youtube.com/channel/UCmpZJv7Kk1TUoOLSSgZQaWg"
+                  href="https://youtu.be/lPQfHM9YVfw"
                 >
                   <Button>Stream on YouTube &rarr;</Button>
                 </a>
                 <div className="livestream">
                   <iframe
                     id="iframeSoal"
-                    src="https://www.youtube.com/embed/live_stream?channel=UCmpZJv7Kk1TUoOLSSgZQaWg"
+                    src="https://www.youtube.com/embed/lPQfHM9YVfw"
                     // src="https://www.youtube.com/embed/live_stream?channel=UCSJ4gkVC6NrvII8umztf0Ow"
                     frameBorder="0"
                     allowFullScreen
