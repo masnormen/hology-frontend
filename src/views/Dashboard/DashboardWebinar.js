@@ -54,21 +54,21 @@ const DashboardWebinar = () => {
                 🔴 LIVESTREAM
               </Header>
             </div>
-            {Date.now() > Date.parse("2020-10-24T18:59:59.000+07:00") ? (
+            {Date.now() > Date.parse("2020-10-24T18:29:59.000+07:00") ? (
               <>
                 <br />
                 <br />
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
-                  href="https://youtu.be/WzlVBmoG5mg"
+                  href="https://youtu.be/ZDm_h8gjamc"
                 >
                   <Button variant="secondary">Stream on YouTube &rarr;</Button>
                 </a>
                 <div className="livestream">
                   <iframe
                     id="video"
-                    src="https://www.youtube.com/embed/WzlVBmoG5mg"
+                    src="https://www.youtube.com/embed/ZDm_h8gjamc"
                     frameBorder="0"
                     allow="encrypted-media"
                     allowFullScreen={true}
@@ -76,7 +76,7 @@ const DashboardWebinar = () => {
                   <br />
                   <iframe
                     id="comment"
-                    src="https://www.youtube.com/live_chat?v=WzlVBmoG5mg&embed_domain=hology.ub.ac.id"
+                    src="https://www.youtube.com/live_chat?v=ZDm_h8gjamc&embed_domain=hology.ub.ac.id"
                     frameBorder="0"
                     allowFullScreen={false}
                     allow="encrypted-media"
