@@ -4,6 +4,11 @@ import Paragraph from "../../components/Paragraph/Paragraph";
 import "./GoAcademy.scss";
 import Button from "../../components/Button/Button";
 import Helmet from "react-helmet";
+//image
+import Academy1 from "../../assets/academy/1.jpg";
+import Academy2 from "../../assets/academy/2.jpg";
+import Academy3 from "../../assets/academy/3.jpg";
+import Academy4 from "../../assets/academy/4.jpg";
 
 const data = {
   title: "App Innovation",
@@ -51,7 +56,10 @@ const GoAcademy = () => {
           </Paragraph>
         </div>
         <div className="buttons-container">
-          <Button>Register Now</Button>
+          {/* <Button>Register Now</Button> */}
+          <Paragraph header large>
+            Coming Soon
+          </Paragraph>
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
@@ -120,8 +128,15 @@ const GoAcademy = () => {
 
         <div className="title">
           <Header size="r" center>
-            Competition Timeline
+            Keseruan Acara Tahun Lalu
           </Header>
+        </div>
+
+        <div className="academy-image-container">
+          <img src={Academy1} alt="academy" className="academy-image" />
+          <img src={Academy2} alt="academy" className="academy-image" />
+          <img src={Academy3} alt="academy" className="academy-image" />
+          <img src={Academy4} alt="academy" className="academy-image" />
         </div>
 
         <div className="square-box-1"></div>

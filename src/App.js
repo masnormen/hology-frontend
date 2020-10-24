@@ -18,7 +18,7 @@ import CaptureTheFlag from "./views/Category-Competition/CaptureTheFlag";
 import GameDevelopment from "./views/Category-Competition/GameDevelopment";
 import Register from "./views/Register/Register";
 import Footer from "./components/Footer/Footer";
-// import GoAcademy from "./views/GoAcademy/GoAcademy";
+import GoAcademy from "./views/GoAcademy/GoAcademy";
 import Login from "./views/Login/Login";
 import Logout from "./views/Logout/Logout";
 import Dashboard from "./views/Dashboard/Dashboard";
@@ -61,7 +61,7 @@ const App = () => {
           />
 
           <Route path="/webinar" component={Webinar} />
-          {/* <Route path="/goacademy" component={GoAcademy} /> */}
+          <Route path="/goacademy" component={GoAcademy} />
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
