@@ -60,6 +60,20 @@ const MediaPartner = () => {
           <img src={Robotiik} alt="logo-lembaga" className="logo-style" />
         </div>
       </div>
+      <div className="supported">
+        <div className="header">
+          <hr className="horizontal" />
+          <Paragraph header>Sponsored by</Paragraph>
+          <hr className="horizontal" />
+        </div>
+        <div className="image-container">
+          <img src={Blossom} alt="logo-lembaga" className="logo-style" />
+          <img src={Niagahoster} alt="logo-lembaga" className="logo-style" />
+          <img src={Bros} alt="logo-lembaga" className="logo-style" />
+          <img src={Cahayu} alt="logo-lembaga" className="logo-style" />
+          <img src={Dicoding} alt="logo-lembaga" className="logo-style" />
+        </div>
+      </div>
       <div className="media-partner">
         <div className="header">
           <hr className="horizontal" />
@@ -129,31 +143,6 @@ const MediaPartner = () => {
           />
           <img
             src={AnakIT}
-            alt="logo-lembaga"
-            className="logo-style margin-bottom"
-          />
-          <img
-            src={Blossom}
-            alt="logo-lembaga"
-            className="logo-style margin-bottom"
-          />
-          <img
-            src={Niagahoster}
-            alt="logo-lembaga"
-            className="logo-style margin-bottom"
-          />
-          <img
-            src={Bros}
-            alt="logo-lembaga"
-            className="logo-style margin-bottom"
-          />
-          <img
-            src={Cahayu}
-            alt="logo-lembaga"
-            className="logo-style margin-bottom"
-          />
-          <img
-            src={Dicoding}
             alt="logo-lembaga"
             className="logo-style margin-bottom"
           />
