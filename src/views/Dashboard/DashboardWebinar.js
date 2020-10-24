@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Button from "../../components/Button/Button";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import "./DashboardSection.scss";
 import Header from "../../components/Header/Header";
-import { GoCalendar } from "react-icons/go";
-import { MdAccessTime, MdPlace } from "react-icons/md";
+import {GoCalendar} from "react-icons/go";
+import {MdAccessTime, MdPlace} from "react-icons/md";
 import Logo from "../../assets/logo.png";
 import {
   getAccessToken,
@@ -16,10 +16,10 @@ import ReactLivestream from "react-livestream";
 
 const DashboardWebinar = () => {
   const [isRegisterWebinar, setIsRegisterWebinar] = useState(false);
-
+  
   useEffect(() => {
     if (!isRegisterWebinar) return;
-
+    
     fetch("https://multazamgsd.com/hology/api/register-webinar", {
       method: "POST",
       headers: {
@@ -43,7 +43,7 @@ const DashboardWebinar = () => {
       .catch((e) => alert("Error! Please contact IT support"));
     setIsRegisterWebinar(false);
   }, [isRegisterWebinar]);
-
+  
   return (
     <div>
       <div className="dashboard-section-webinar">
@@ -56,20 +56,25 @@ const DashboardWebinar = () => {
             </div>
             {Date.now() > Date.parse("2020-10-24T12:59:59.000+07:00") ? (
               <>
+                <br/><br/>
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
                   href="https://youtu.be/lPQfHM9YVfw"
                 >
-                  <Button>Stream on YouTube &rarr;</Button>
+                  <Button variant="secondary">Stream on YouTube &rarr;</Button>
                 </a>
                 <div className="livestream">
                   <iframe
-                    id="iframeSoal"
+                    id="video"
                     src="https://www.youtube.com/embed/lPQfHM9YVfw"
-                    // src="https://www.youtube.com/embed/live_stream?channel=UCSJ4gkVC6NrvII8umztf0Ow"
-                    frameBorder="0"
-                    allowFullScreen
+                    frameBorder="0" allow="encrypted-media" allowFullScreen={true}
+                  />
+                  <br/>
+                  <iframe
+                    id="comment"
+                    src="https://www.youtube.com/live_chat?v=lPQfHM9YVfw&embed_domain=localhost"
+                    frameBorder="0" allowFullScreen={false} allow="encrypted-media"
                   />
                 </div>
               </>
@@ -80,27 +85,27 @@ const DashboardWebinar = () => {
                 </Paragraph>
               </div>
             )}
-            <br />
-            <br />
-            <br />
-
+            <br/>
+            <br/>
+            <br/>
+            
             <div className="description">
               <Header center size="r">
                 TIKET
               </Header>
             </div>
-            <br />
+            <br/>
             <Paragraph>
               Venue dan update informasi lain terkait webinar akan diberitahukan
               di sini.
             </Paragraph>
-            <br />
-            <div className="ticket">
+            <br/>
+            <div className="ticket expired">
               <div className="description">
                 <Header lineWhite center size="r">
                   WEBINAR 1 - HOLOGY 3.0
                 </Header>
-                <br />
+                <br/>
                 <Paragraph>
                   TICKET FOR: {getUserData.user_fullname.toUpperCase()}
                 </Paragraph>
@@ -108,7 +113,7 @@ const DashboardWebinar = () => {
                   TYPE:{" "}
                   {getUserData.institution_id === 0 ? "NON-STUDENT" : "STUDENT"}
                 </Paragraph>
-                <br />
+                <br/>
                 <Paragraph>
                   THEME: How Technology Can Improve the Economic Side without
                   Neglecting Social Values
@@ -116,7 +121,7 @@ const DashboardWebinar = () => {
               </div>
               <div className="details">
                 <div className="hology">
-                  <img src={Logo} alt="Hology Logo" className="logo-hology" />
+                  <img src={Logo} alt="Hology Logo" className="logo-hology"/>
                   <Barcode
                     width="1"
                     height="36"
@@ -132,29 +137,29 @@ const DashboardWebinar = () => {
                 </div>
                 <div className="date">
                   <div className="detail margin-bottom">
-                    <GoCalendar className="icon-date" />
+                    <GoCalendar className="icon-date"/>
                     <Paragraph>23 OCT 2020</Paragraph>
                   </div>
                   <div className="detail  margin-bottom">
-                    <MdAccessTime className="icon-date" />
+                    <MdAccessTime className="icon-date"/>
                     <Paragraph>19.00 - 21.25 WIB</Paragraph>
                   </div>
                   <div className="detail">
-                    <MdPlace className="icon-date" />
+                    <MdPlace className="icon-date"/>
                     <Paragraph>ONLINE</Paragraph>
                   </div>
                 </div>
               </div>
-              <div className="circle left" />
-              <div className="circle right" />
+              <div className="circle left"/>
+              <div className="circle right"/>
             </div>
-
+            
             <div className="ticket">
               <div className="description">
                 <Header lineWhite center size="r">
                   WEBINAR 2 - HOLOGY 3.0
                 </Header>
-                <br />
+                <br/>
                 <Paragraph>
                   TICKET FOR: {getUserData.user_fullname.toUpperCase()}
                 </Paragraph>
@@ -162,7 +167,7 @@ const DashboardWebinar = () => {
                   TYPE:{" "}
                   {getUserData.institution_id === 0 ? "NON-STUDENT" : "STUDENT"}
                 </Paragraph>
-                <br />
+                <br/>
                 <Paragraph>
                   THEME: Software Engineering: How to Develop Sustainable Mobile
                   Apps for Long Term Success & the Art of Game Making :
@@ -172,7 +177,7 @@ const DashboardWebinar = () => {
               </div>
               <div className="details">
                 <div className="hology">
-                  <img src={Logo} alt="Hology Logo" className="logo-hology" />
+                  <img src={Logo} alt="Hology Logo" className="logo-hology"/>
                   <Barcode
                     width="1"
                     height="36"
@@ -188,29 +193,29 @@ const DashboardWebinar = () => {
                 </div>
                 <div className="date">
                   <div className="detail margin-bottom">
-                    <GoCalendar className="icon-date" />
+                    <GoCalendar className="icon-date"/>
                     <Paragraph>24 OCT 2020</Paragraph>
                   </div>
                   <div className="detail  margin-bottom">
-                    <MdAccessTime className="icon-date" />
+                    <MdAccessTime className="icon-date"/>
                     <Paragraph>13.00 WIB & 19.00 WIB</Paragraph>
                   </div>
                   <div className="detail">
-                    <MdPlace className="icon-date" />
+                    <MdPlace className="icon-date"/>
                     <Paragraph>ONLINE</Paragraph>
                   </div>
                 </div>
               </div>
-              <div className="circle left" />
-              <div className="circle right" />
+              <div className="circle left"/>
+              <div className="circle right"/>
             </div>
-
+            
             <div className="ticket">
               <div className="description">
                 <Header lineWhite center size="r">
                   WEBINAR 3 - HOLOGY 3.0
                 </Header>
-                <br />
+                <br/>
                 <Paragraph>
                   TICKET FOR: {getUserData.user_fullname.toUpperCase()}
                 </Paragraph>
@@ -218,14 +223,14 @@ const DashboardWebinar = () => {
                   TYPE:{" "}
                   {getUserData.institution_id === 0 ? "NON-STUDENT" : "STUDENT"}
                 </Paragraph>
-                <br />
+                <br/>
                 <Paragraph>
                   THEME: How Data Can Affect Sustainability of Business
                 </Paragraph>
               </div>
               <div className="details">
                 <div className="hology">
-                  <img src={Logo} alt="Hology Logo" className="logo-hology" />
+                  <img src={Logo} alt="Hology Logo" className="logo-hology"/>
                   <Barcode
                     width="1"
                     height="36"
@@ -241,29 +246,29 @@ const DashboardWebinar = () => {
                 </div>
                 <div className="date">
                   <div className="detail margin-bottom">
-                    <GoCalendar className="icon-date" />
+                    <GoCalendar className="icon-date"/>
                     <Paragraph>30 OCT 2020</Paragraph>
                   </div>
                   <div className="detail  margin-bottom">
-                    <MdAccessTime className="icon-date" />
+                    <MdAccessTime className="icon-date"/>
                     <Paragraph>19.00 - WIB</Paragraph>
                   </div>
                   <div className="detail">
-                    <MdPlace className="icon-date" />
+                    <MdPlace className="icon-date"/>
                     <Paragraph>ONLINE</Paragraph>
                   </div>
                 </div>
               </div>
-              <div className="circle left" />
-              <div className="circle right" />
+              <div className="circle left"/>
+              <div className="circle right"/>
             </div>
-
+            
             <div className="ticket">
               <div className="description">
                 <Header lineWhite center size="r">
                   WEBINAR 4 - HOLOGY 3.0
                 </Header>
-                <br />
+                <br/>
                 <Paragraph>
                   TICKET FOR: {getUserData.user_fullname.toUpperCase()}
                 </Paragraph>
@@ -271,7 +276,7 @@ const DashboardWebinar = () => {
                   TYPE:{" "}
                   {getUserData.institution_id === 0 ? "NON-STUDENT" : "STUDENT"}
                 </Paragraph>
-                <br />
+                <br/>
                 <Paragraph>
                   THEME: The Fine Art of Product Design: Involving Users into
                   Your Process
@@ -279,7 +284,7 @@ const DashboardWebinar = () => {
               </div>
               <div className="details">
                 <div className="hology">
-                  <img src={Logo} alt="Hology Logo" className="logo-hology" />
+                  <img src={Logo} alt="Hology Logo" className="logo-hology"/>
                   <Barcode
                     width="1"
                     height="36"
@@ -295,21 +300,21 @@ const DashboardWebinar = () => {
                 </div>
                 <div className="date">
                   <div className="detail margin-bottom">
-                    <GoCalendar className="icon-date" />
+                    <GoCalendar className="icon-date"/>
                     <Paragraph>31 OCT 2020</Paragraph>
                   </div>
                   <div className="detail  margin-bottom">
-                    <MdAccessTime className="icon-date" />
+                    <MdAccessTime className="icon-date"/>
                     <Paragraph>19.00 - 20.30 WIB</Paragraph>
                   </div>
                   <div className="detail">
-                    <MdPlace className="icon-date" />
+                    <MdPlace className="icon-date"/>
                     <Paragraph>ONLINE</Paragraph>
                   </div>
                 </div>
               </div>
-              <div className="circle left" />
-              <div className="circle right" />
+              <div className="circle left"/>
+              <div className="circle right"/>
             </div>
           </>
         ) : (

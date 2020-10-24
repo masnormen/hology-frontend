@@ -205,7 +205,9 @@
       }
     }
   }
-
+  .ticket.expired {
+    opacity: 0.4;
+  }
   .livestream {
     position: relative;
     margin: 2rem 0;
@@ -388,4 +390,18 @@
   @include respon(phone-land) {
     max-height: 50vh;
   }
+}
+
+#video {
+  width: 100%;
+  max-height: 77vh;
+  border-radius: 10px;
+  height: 700px;
+}
+#comment {
+  width: 100%;
+  border-radius: 10px;
+  min-height: 400px;
+  max-height: 50vh;
+  height: 100%;
 }
