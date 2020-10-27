@@ -104,8 +104,6 @@ const DashboardAcademy = () => {
                     allowMultiple={false}
                     acceptedFileTypes={["application/pdf"]}
                     ref={fileUploader}
-                    ins
-                    // acceptedFileTypes={["image/png", "image/jpeg"]}
                     labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.pdf max 2MB)'
                   />
                 </div>
