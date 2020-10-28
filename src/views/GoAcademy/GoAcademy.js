@@ -9,7 +9,7 @@ import Academy1 from "../../assets/academy/1.jpg";
 import Academy2 from "../../assets/academy/2.jpg";
 import Academy3 from "../../assets/academy/3.jpg";
 import Academy4 from "../../assets/academy/4.jpg";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const data = {
   title: "App Innovation",
@@ -17,7 +17,7 @@ const data = {
   description:
     "App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile dan web. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth",
   event_1: "Registration Phase",
-  date_1: "26 OCTOBER - 29 OCTOBER 2020",
+  date_1: "26 OCTOBER - 30 OCTOBER 2020",
   event_2: "Live Code",
   date_2: "30 OCTOBER 2020",
   event_3: "Announcement Interview",
@@ -47,7 +47,8 @@ const GoAcademy = () => {
             Student Academy adalah rangkaian academy yang diselenggarakan oleh
             HOLOGY dan berkolaborasi bersama GO-JEK. Topik yang diangkat pada
             Student Academy kali ini adalah "Engineering Best Practice". Academy
-            ini akan berlangsung selama 2 hari dan terbuka gratis untuk mahasiswa UB.
+            ini akan berlangsung selama 2 hari dan terbuka gratis untuk
+            mahasiswa UB.
           </Paragraph>
         </div>
         <div className="buttons-container">
@@ -63,14 +64,14 @@ const GoAcademy = () => {
         <div className="square-box-3"></div>
         <div className="square-box-4"></div>
       </div>
-      
+
       <div className="section-go-academy-full-2">
         <div className="title">
           <Header size="r" center>
             GoAcademy Timeline
           </Header>
         </div>
-        
+
         <div className="timeline-container">
           <div className="container">
             <div className="timeline-block timeline-block-right">
@@ -80,7 +81,7 @@ const GoAcademy = () => {
                 <span dir="ltr">{data.date_1}</span>
               </div>
             </div>
-            
+
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -88,7 +89,7 @@ const GoAcademy = () => {
                 <span dir="ltr">{data.date_2}</span>
               </div>
             </div>
-            
+
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -96,7 +97,7 @@ const GoAcademy = () => {
                 <span dir="ltr">{data.date_3}</span>
               </div>
             </div>
-            
+
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -104,7 +105,7 @@ const GoAcademy = () => {
                 <span dir="ltr">{data.date_4}</span>
               </div>
             </div>
-            
+
             <div className="timeline-block timeline-block-right">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -112,7 +113,7 @@ const GoAcademy = () => {
                 <span dir="ltr">{data.date_5}</span>
               </div>
             </div>
-            
+
             <div className="timeline-block timeline-block-left">
               <div className="marker"></div>
               <div className="timeline-content">
@@ -122,30 +123,33 @@ const GoAcademy = () => {
             </div>
           </div>
         </div>
-  
+
         <div className="academy-description">
           <div className="academy-description-card">
-            <Paragraph header>REGISTRASI:</Paragraph><br/><br/>
+            <Paragraph header>REGISTRASI:</Paragraph>
+            <br />
+            <br />
             <Link to="/dashboard/academy">
               <Button>Daftar Academy</Button>
             </Link>
           </div>
         </div>
-        
+
         <div className="title">
           <Header size="r" center>
             Keseruan Acara Tahun Lalu
           </Header>
         </div>
-        
+
         <div className="academy-image-container">
-          <img src={Academy1} alt="academy" className="academy-image"/>
-          <img src={Academy2} alt="academy" className="academy-image"/>
-          <img src={Academy3} alt="academy" className="academy-image"/>
-          <img src={Academy4} alt="academy" className="academy-image"/>
+          <img src={Academy1} alt="academy" className="academy-image" />
+          <img src={Academy2} alt="academy" className="academy-image" />
+          <img src={Academy3} alt="academy" className="academy-image" />
+          <img src={Academy4} alt="academy" className="academy-image" />
         </div>
-        <br/><br/>
-        
+        <br />
+        <br />
+
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
         <div className="square-box-3"></div>
