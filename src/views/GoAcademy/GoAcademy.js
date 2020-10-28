@@ -16,7 +16,7 @@ const data = {
   description:
     "App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile dan web. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth",
   event_1: "Registration Phase",
-  date_1: "25 OCTOBER - 29 OCTOBER 2020",
+  date_1: "25 OCTOBER - 30 OCTOBER 2020",
   event_2: "Live Code",
   date_2: "30 OCTOBER 2020",
   event_3: "Announcement Interview",
