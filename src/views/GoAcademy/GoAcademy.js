@@ -4,11 +4,12 @@ import Paragraph from "../../components/Paragraph/Paragraph";
 import "./GoAcademy.scss";
 import Button from "../../components/Button/Button";
 import Helmet from "react-helmet";
-//image
+import GALogo from "../../assets/academy/goacademy.png";
 import Academy1 from "../../assets/academy/1.jpg";
 import Academy2 from "../../assets/academy/2.jpg";
 import Academy3 from "../../assets/academy/3.jpg";
 import Academy4 from "../../assets/academy/4.jpg";
+import { Link } from "react-router-dom";
 
 const data = {
   title: "App Innovation",
@@ -16,7 +17,7 @@ const data = {
   description:
     "App Innovation merupakan kompetisi skala nasional yang berfokus pada kemampuan peserta dalam pengembangan aplikasi yang berbasis mobile dan web. App Innovation pada tahun ini akan mengangkat tema “Sustainable Technology to Raise Post-Pandemic Economic Growth",
   event_1: "Registration Phase",
-  date_1: "25 OCTOBER - 30 OCTOBER 2020",
+  date_1: "26 OCTOBER - 30 OCTOBER 2020",
   event_2: "Live Code",
   date_2: "30 OCTOBER 2020",
   event_3: "Announcement Interview",
@@ -33,33 +34,30 @@ const GoAcademy = () => {
   return (
     <>
       <Helmet>
-        <title>Go Academy</title>
+        <title>Academy</title>
       </Helmet>
       <div className="section-go-academy-full-1">
         <div className="title">
           <Header size="xl" center>
-            GO ACADEMY
+            <img className="logo-style" src={GALogo} />
           </Header>
-        </div>
-        <div className="tagline">
-          <Paragraph large header>
-            ONLINE STUDENT ACADEMY BY GOACADEMY
-          </Paragraph>
         </div>
         <div className="description">
           <Paragraph>
             Student Academy adalah rangkaian academy yang diselenggarakan oleh
-            HOLOGY dan berkolaborasi bersama GOJEK. Topik yang diangkat pada
+            HOLOGY dan berkolaborasi bersama GO-JEK. Topik yang diangkat pada
             Student Academy kali ini adalah "Engineering Best Practice". Academy
-            ini akan berlangsung selama 2 hari dan terbuka gratis untuk kalian
-            para mahasiswa UB loh
+            ini akan berlangsung selama 2 hari dan terbuka gratis untuk
+            mahasiswa UB.
           </Paragraph>
         </div>
         <div className="buttons-container">
-          {/* <Button>Register Now</Button> */}
-          <Paragraph header large>
-            Coming Soon
-          </Paragraph>
+          <Link to="/dashboard/academy">
+            <Button variant="secondary">Daftar Academy</Button>
+          </Link>
+          {/*<Paragraph header large>*/}
+          {/*  Coming Soon*/}
+          {/*</Paragraph>*/}
         </div>
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>
@@ -126,6 +124,17 @@ const GoAcademy = () => {
           </div>
         </div>
 
+        <div className="academy-description">
+          <div className="academy-description-card">
+            <Paragraph header>REGISTRASI:</Paragraph>
+            <br />
+            <br />
+            <Link to="/dashboard/academy">
+              <Button>Daftar Academy</Button>
+            </Link>
+          </div>
+        </div>
+
         <div className="title">
           <Header size="r" center>
             Keseruan Acara Tahun Lalu
@@ -138,6 +147,8 @@ const GoAcademy = () => {
           <img src={Academy3} alt="academy" className="academy-image" />
           <img src={Academy4} alt="academy" className="academy-image" />
         </div>
+        <br />
+        <br />
 
         <div className="square-box-1"></div>
         <div className="square-box-2"></div>

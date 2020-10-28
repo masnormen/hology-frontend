@@ -1,5 +1,47 @@
 @import "../../base.scss";
 
+.logo-style {
+  object-fit: contain;
+  width: 600px;
+  max-width: 60vw;
+  filter: drop-shadow(0 0 20px #b8d3e6);
+  margin: 10px;
+}
+
+.academy-description {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 4rem;
+  @include respon(phone-pot) {
+    flex-direction: column;
+  }
+  @include respon(phone-land) {
+    flex-direction: column;
+  }
+
+  .academy-description-card {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: $ticketLinear;
+    border-radius: 10px;
+    height: 100%;
+    min-height: 200px;
+    margin-bottom: 3rem;
+    @include respon(phone-pot) {
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+    @include respon(phone-land) {
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+  }
+}
+
 .section-go-academy-full-1 {
   min-height: 100vh;
   padding: 10% 10% 0;
