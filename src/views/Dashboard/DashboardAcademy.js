@@ -64,63 +64,70 @@ const DashboardAcademy = () => {
             GO-Academy
           </Header>
         </div>
-        {getUserData != null && getUserData.institution_id !== 174 ? (
-          <div className="description">
-            <Paragraph header>
-              Maaf. Academy hanya untuk mahasiswa Universitas Brawijaya.
-            </Paragraph>
-          </div>
-        ) :
-        getUserData != null && getUserData.academy.length === 0 ? (
-          // NOT REGISTERED
-          <>
-            <div className="description">
-              <Paragraph>
-                Nomor HP:
-              </Paragraph>
-              <div className="input-option">
-                <Fieldinput
-                  name="nohp"
-                  type="number"
-                  required
-                  marbott
-                  value={noHp}
-                  onChange={(e) =>
-                    setNoHp(e.target.value)
-                  }
-                />
-              </div>
-              <Paragraph>
-                Unggah CV/Résumé:
-              </Paragraph>
-              <br/>
-              <div className="form-container">
-                <div className="filepond-container">
-                  <FilePond
-                    maxFiles="2MB"
-                    name="resume"
-                    checkValidity
-                    dropValidation
-                    allowMultiple={false}
-                    acceptedFileTypes={["application/pdf"]}
-                    ref={fileUploader}
-                    labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.pdf max 2MB)'
-                  />
-                </div>
-              </div>
-            </div>
-            <br/><br/>
-            <Button onClicked={() => setIsRegisterAcademy(true)}>Daftar Academy</Button>
-          </>
-        ) : (
-          <>
-            <div className="description">
-              <Paragraph header>
-                Anda telah terdaftar.<br/>Silakan tunggu untuk pengumuman peserta terpilih!
-              </Paragraph>
-            </div>
-          </>
-        )}
+  
+        <div className="description">
+          <Paragraph header>
+            Maaf. Academy telah ditutup!
+          </Paragraph>
+        </div>
+        
+        {/*{getUserData != null && getUserData.institution_id !== 174 ? (*/}
+        {/*  <div className="description">*/}
+        {/*    <Paragraph header>*/}
+        {/*      Maaf. Academy hanya untuk mahasiswa Universitas Brawijaya.*/}
+        {/*    </Paragraph>*/}
+        {/*  </div>*/}
+        {/*) :*/}
+        {/*getUserData != null && getUserData.academy.length === 0 ? (*/}
+        {/*  // NOT REGISTERED*/}
+        {/*  <>*/}
+        {/*    <div className="description">*/}
+        {/*      <Paragraph>*/}
+        {/*        Nomor HP:*/}
+        {/*      </Paragraph>*/}
+        {/*      <div className="input-option">*/}
+        {/*        <Fieldinput*/}
+        {/*          name="nohp"*/}
+        {/*          type="number"*/}
+        {/*          required*/}
+        {/*          marbott*/}
+        {/*          value={noHp}*/}
+        {/*          onChange={(e) =>*/}
+        {/*            setNoHp(e.target.value)*/}
+        {/*          }*/}
+        {/*        />*/}
+        {/*      </div>*/}
+        {/*      <Paragraph>*/}
+        {/*        Unggah CV/Résumé:*/}
+        {/*      </Paragraph>*/}
+        {/*      <br/>*/}
+        {/*      <div className="form-container">*/}
+        {/*        <div className="filepond-container">*/}
+        {/*          <FilePond*/}
+        {/*            maxFiles="2MB"*/}
+        {/*            name="resume"*/}
+        {/*            checkValidity*/}
+        {/*            dropValidation*/}
+        {/*            allowMultiple={false}*/}
+        {/*            acceptedFileTypes={["application/pdf"]}*/}
+        {/*            ref={fileUploader}*/}
+        {/*            labelIdle='<span class="filepond--label-action">Klik untuk memilih file</span> atau drag-drop ke sini (.pdf max 2MB)'*/}
+        {/*          />*/}
+        {/*        </div>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*    <br/><br/>*/}
+        {/*    <Button onClicked={() => setIsRegisterAcademy(true)}>Daftar Academy</Button>*/}
+        {/*  </>*/}
+        {/*) : (*/}
+        {/*  <>*/}
+        {/*    <div className="description">*/}
+        {/*      <Paragraph header>*/}
+        {/*        Anda telah terdaftar.<br/>Silakan tunggu untuk pengumuman peserta terpilih!*/}
+        {/*      </Paragraph>*/}
+        {/*    </div>*/}
+        {/*  </>*/}
+        {/*)}*/}
       </div>
     </div>
   );
