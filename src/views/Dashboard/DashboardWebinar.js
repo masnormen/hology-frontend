@@ -54,7 +54,7 @@ const DashboardWebinar = () => {
                 🔴 LIVESTREAM
               </Header>
             </div>
-            {Date.now() > Date.parse("2020-10-31T18:29:59.000+07:00") ? (
+            {Date.now() > Date.parse("2021-10-31T18:29:59.000+07:00") ? (
               <>
                 <br />
                 <br />
@@ -215,7 +215,7 @@ const DashboardWebinar = () => {
               <div className="circle right" />
             </div>
 
-            <div className="ticket expired">
+            <div className="ticket  expired">
               <div className="description">
                 <Header lineWhite center size="r">
                   WEBINAR 3 - HOLOGY 3.0
