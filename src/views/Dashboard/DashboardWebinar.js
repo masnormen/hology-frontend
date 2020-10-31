@@ -61,14 +61,14 @@ const DashboardWebinar = () => {
                 <a
                   target="_blank"
                   rel="noreferrer noopener"
-                  href="https://youtu.be/KTKBbjcJi5g"
+                  href="https://youtu.be/T6qR-5laRlg"
                 >
                   <Button variant="secondary">Stream on YouTube &rarr;</Button>
                 </a>
                 <div className="livestream">
                   <iframe
                     id="video"
-                    src="https://www.youtube.com/embed/KTKBbjcJi5g"
+                    src="https://www.youtube.com/embed/T6qR-5laRlg"
                     frameBorder="0"
                     allow="encrypted-media"
                     allowFullScreen={true}
@@ -76,7 +76,7 @@ const DashboardWebinar = () => {
                   <br />
                   <iframe
                     id="comment"
-                    src="https://www.youtube.com/live_chat?v=KTKBbjcJi5g&embed_domain=hology.ub.ac.id"
+                    src="https://www.youtube.com/live_chat?v=T6qR-5laRlg&embed_domain=hology.ub.ac.id"
                     frameBorder="0"
                     allowFullScreen={false}
                     allow="encrypted-media"
