@@ -79,14 +79,14 @@ const DashboardCompetition = () => {
       label: "Game Development",
       data: "-",
       closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
-      closeSub: new Date("2020-10-13T23:59:59.000+07:00"),
+      closeSub: new Date("2020-11-12T23:59:59.000+07:00"),
     },
     {
       value: 3,
       label: "App Innovation",
       data: "-",
       closeReg: new Date("2020-10-10T23:59:59.000+07:00"),
-      closeSub: new Date("2020-10-13T23:59:59.000+07:00"),
+      closeSub: new Date("2020-11-10T23:59:59.000+07:00"),
     },
     {
       value: 4,
