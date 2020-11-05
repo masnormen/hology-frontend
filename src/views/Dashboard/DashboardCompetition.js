@@ -282,6 +282,11 @@ const DashboardCompetition = () => {
       });
     setIsSubmitSubmission(false);
   }, [isSubmitSubmission]);
+  
+  useEffect(() => {
+    console.log(currentTeam)
+  }, [currentTeam]);
+  
 
   return (
     <>
@@ -679,25 +684,25 @@ const DashboardCompetition = () => {
                   <br />
                   <br />
                   <br />
-                  <br />
-                  <Paragraph>
-                    UPDATE! Terdapat beberapa perubahan dan penambahan terkait
-                    lomba GAME DEVELOPMENT HOLOGY 3.0 di dalam Guidebook.
-                    Perubahan dan penambahan tersebut adalah sebagai berikut:
-                  </Paragraph>
-                  <Paragraph>
-                    - Perubahan timeline kegiatan
-                    <br />
-                    - Perubahan ketentuan GDD pada poin no. 6 (GDD yang telah
-                    dikumpulkan tidak dapat direvisi kembali)
-                    <br />
-                    - Penambahan pengumpulan file game pada babak final
-                    <br />
-                  </Paragraph>
-                  <Paragraph>
-                    Dimohon kepada para peserta untuk mengecek kembali guidebook
-                    pada website HOLOGY.
-                  </Paragraph>
+                  {/*<br />*/}
+                  {/*<Paragraph>*/}
+                  {/*  UPDATE! Terdapat beberapa perubahan dan penambahan terkait*/}
+                  {/*  lomba GAME DEVELOPMENT HOLOGY 3.0 di dalam Guidebook.*/}
+                  {/*  Perubahan dan penambahan tersebut adalah sebagai berikut:*/}
+                  {/*</Paragraph>*/}
+                  {/*<Paragraph>*/}
+                  {/*  - Perubahan timeline kegiatan*/}
+                  {/*  <br />*/}
+                  {/*  - Perubahan ketentuan GDD pada poin no. 6 (GDD yang telah*/}
+                  {/*  dikumpulkan tidak dapat direvisi kembali)*/}
+                  {/*  <br />*/}
+                  {/*  - Penambahan pengumpulan file game pada babak final*/}
+                  {/*  <br />*/}
+                  {/*</Paragraph>*/}
+                  {/*<Paragraph>*/}
+                  {/*  Dimohon kepada para peserta untuk mengecek kembali guidebook*/}
+                  {/*  pada website HOLOGY.*/}
+                  {/*</Paragraph>*/}
                 </>
               )}
 
@@ -830,11 +835,11 @@ const DashboardCompetition = () => {
                       <br />
                       <br />
 
-                      {currentTeam.submissions.length > 0 && (
+                      {currentTeam.submissions.find(item => item.submission_phase === 1) && (
                         <Paragraph>Submisi telah dilakukan ✅</Paragraph>
                       )}
 
-                      {currentTeam.submissions.length === 0 && (
+                      {! currentTeam.submissions.find(item => item.submission_phase === 1) && (
                         <>
                           <Fieldinput
                             label="Link Google Drive submisi:"
